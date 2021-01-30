@@ -1,0 +1,1274 @@
+<resources>
+    <string name="app_name">COVID-19 Risk Assessment Tool</string>
+
+    <string name="full_name">Enter your initials</string>
+    <string name="covid_19">COVID-19 Risk Assessment Tool</string>
+    <string name="risk_assessment_tool">Risk Assessment Tool</string>
+    <string name="section_1_personal_information">Section One: Personal Information</string>
+    <string name="age">Age</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="gender">Select Gender</string>
+    <string name="state">State</string>
+    <string name="lga">LGA of residence</string>
+    <string name="community">Community of residence</string>
+    <string name="screening_for_covid_19_infection">Section One: Screening for COVID-19 infection</string>
+    <string name="right_now_do_you_have_any_these_symptoms">Right now, do you have any of these symptoms?</string>
+    <string name="_1_fever">1. Fever</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="_2_cough">2. Cough</string>
+    <string name="_3_difficult_in_breathing">3. Difficult in Breathing</string>
+    <string name="_4_sneezing">4. Sneezing</string>
+    <string name="_5_chest_pain">5. Chest pain</string>
+    <string name="_6_diarrhea">6. Diarrhoea</string>
+    <string name="_7_other_flu_symptoms">7. Other flu symptoms</string>
+    <string name="_8_sore_throat">8. Sore Throat</string>
+    <string name="have_you_been_in_contact_with_somebody_with_symptoms_of_covid_19">
+        Have you been in contact with somebody with symptoms of COVID-19?</string>
+    <string name="have_you_been_in_or_near_any_health_facility_where_covid_19_has_been_reported">
+        Have you been exposed to any health facility where COVID-19 has been reported?</string>
+    <string name="which_of_these_countries_with_covid_19_have_you_visited_in_the_last_14_days">
+        Which of these countries with COVID-19 have you visited in the last 14 days?</string>
+    <string name="section_3">Section Three:</string>
+    <string name="in_the_last_14_days_have_you_been_around_anyone_with_any_of_these_symptoms">In the last 14 days, have you had close contact with anyone (team/family members inclusive) with suspected/known COVID-19 case (meaning being within 6 feet of an infected person for at least 15 minutes)?</string>
+    <string name="section_4">Section Four:</string>
+    <string name="do_you_have_any_of_these_medical_conditions_that_might_put_you_at_risk_of_severe_forms_of_covid_19_or_for_which_you_have_to_seek_care_at_health_facilities_regularly">Do you have any of these medical conditions that might put you at risk of severe forms of COVID-19 or for which you have to seek care at health facilities regularly?</string>
+    <string name="if_yes_kindly_specify">If yes, kindly specify</string>
+    <string name="_1_kidney_disease">1. Kidney Disease</string>
+    <string name="_2_pregnancy">2. Pregnancy</string>
+    <string name="_3_tuberculosis_tb">3. Tuberculosis (TB)</string>
+    <string name="_4_diabetes">4. Diabetes</string>
+    <string name="_5_liver_disease">5. Liver Disease</string>
+    <string name="_6_chronic_lung_disease">6. Chronic Lung Disease</string>
+    <string name="_7_cancer">7. Cancer</string>
+    <string name="_8_heart_disease">8. Heart Disease</string>
+    <string name="_9_hiv">9. HIV</string>
+    <string name="are_you_on_antiretroviral_therapy">Are you on antiretroviral therapy (drugs for treating HIV)?</string>
+    <string name="do_you_have_enough_drugs_to_last_up_to_3_months">Do you have enough drugs to last up to 3 months?</string>
+    <string name="is_there_someone_in_your_life_who_is_helping_you_with_managing_your_hiv_care_right_now">Is there someone in your life who is helping you with managing your HIV care right now?</string>
+    <string name="in_case_you_start_having_severe_covid_19_symptoms_is_there_someone_in_your_household_who_could_help_you_get_care">In case you start having symptoms suggestive of COVID-19, is there someone in your household who could help you get care?</string>
+    <string name="submit">Submit</string>
+    <string name="thank_you_for_taking_this_self_screening_test">Thank you for taking this self-screening test!</string>
+    <string name="based_on_your_responses_you_may_have_a_high_risk_of_having_covid_infection">Based on your responses, you may have a high risk of having COVID infection</string>
+    <string name="therefore_a_support_staff_from_the_clinic_will_reach_out_to_you_within_6_hours_by_telephone_and_provide_you_with_the_support_you_need">Therefore, a support staff from the clinic will reach out to you within 6 hours by telephone and provide you with the support you need.</string>
+    <string name="you_may_need_to_get_tested_be_isolated_and_treated_for_serious_respiratory_illness">You may need to get tested, be isolated and treated for serious respiratory illness.</string>
+    <string name="close">Close</string>
+    <string name="_9_loss_of_smell">9. Loss of smell</string>
+
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Prefer not to say</item>
+    </string-array>
+    <string name="confirm" translatable="false">confirm</string>
+
+    <string-array name="language_array">
+        <item>Select Language</item>
+        <item>English</item>
+        <item>Hausa</item>
+        <item>Igbo</item>
+        <item>Yoruba</item>
+    </string-array>
+    <string-array name="approve_array">
+        <item>Approve</item>
+        <item>Decline</item>
+    </string-array>
+
+    <string-array name="age_array">
+        <item>18"-"20</item>
+        <item>21"-"30</item>
+        <item>31"-"40</item>
+        <item>41"-50</item>
+        <item>51"-"60</item>
+        <item>Over 60</item>
+    </string-array>
+
+    <string-array name="visit_array">
+        <item>None</item>
+        <item>Belgium</item>
+        <item>Canada</item>
+        <item>China</item>
+        <item>France</item>
+        <item>Germany</item>
+        <item>Iran</item>
+        <item>Italy</item>
+        <item>Japan</item>
+        <item>Netherlands</item>
+        <item>Norway</item>
+        <item>Republic Of Korea</item>
+        <item>Spain</item>
+        <item>Switzerland</item>
+        <item>United Kingdom</item>
+        <item>USA</item>
+    </string-array>
+
+    <string-array name="user_array">
+        <item>User</item>
+    </string-array>
+
+    <string-array name="sup_array">
+        <item>Supervisor</item>
+    </string-array>
+
+    <string-array name="enable_spinner">
+        <item>TRUE</item>
+        <item>FALSE</item>
+    </string-array>
+
+    <string-array name="facility_array">
+        <item><b><u><i>ABIA STATE FACILITIES</i></u></b></item>
+
+        <item>Amachara General Hospital</item>
+        <item>Nkweogwu Primary Health Centre</item>
+        <item>Nkata Primary Health Centre</item>
+        <item>Amuzukwu Primary Health Centre</item>
+        <item>Umukabia Primary Health Centre</item>
+        <item>King of Kings Specialist Hospital</item>
+        <item>Isiama Primary Health Centre</item>
+        <item>Eziukwu Primary Health Centre</item>
+        <item>Ania or Akanu Ukwu Primary Health Centre</item>
+        <item>Agboji Primary Health Centre</item>
+        <item>Amangwu Primary Health Centre</item>
+        <item>New Era Specialist Hospital, Aba</item>
+        <item>Eziukwu Primary Health Centre</item>
+        <item>Amufuru Primary Health Centre</item>>
+        <item>College of Health Technology Aba Maternal and Child Health</item>
+        <item>Umuogele Primary Health Centre</item>>
+        <item>Ohazu Primary Health Centre</item>>
+        <item>Denokem Hospital</item>
+        <item>Umuelechi Primary Health Centre</item>
+        <item>Umudienwe Primary Health Centre</item>
+        <item>Umuebulengwu Primary Health Centre</item>
+        <item>Umudioha Primary Health Centre</item>
+        <item>Umorie Primary Health Centre</item>
+        <item>Umu Nneochi General Hospital</item>
+        <item>Leru Primary Health Centre</item>
+        <item>Ezingodo Primary Health Centre</item>
+        <item>Isuochi Primary Health Centre</item>
+        <item>Nneato Primary Health Centre</item>
+        <item>Amorji Primary Health Centre</item>
+        <item>Isikwuato General Hospital</item>
+        <item>Ahaba Primary Health Centre</item>
+        <item>Ovim Primary Health Centre</item>
+        <item>Eluama Primary Health Centre</item>
+        <item>Mbaugwu Primary Health Centre</item>
+        <item>Onuaku Primary Health Centre</item>
+        <item>Okpuala Ngwa General Hospital</item>
+        <item>Chinoyerem Hospital, Isiala Ngwa</item>
+        <item>Ronald Hospital</item>
+        <item>Ugba Umuovu Central Hospital</item>
+        <item>Ahiaba ubi Primary Health Centr</item>
+        <item>Ihie Primary Health Centre</item>
+        <item>Amaoji Primary Health Centre</item>
+        <item>Ntigha Primary Health Centre</item>
+        <item>Umuajuju Primary Health Centre</item>
+        <item>Arochukwu General Hospital</item>
+        <item>Mini Maternity Center, Arochukwu</item>
+        <item>College of Education Technical Clinic, Arochukwu</item>
+        <item>St. Anthony Hospital, Ihechiowa</item>
+        <item>Nikky Maternity Arochukwu</item>
+        <item>Abia State One Stop Shop (OSS), Umuahia</item>
+        <!--        <item></item>-->
+
+        <item><b><u>ADAMAWA STATE FACILITIES</u></b></item>
+
+        <item>Borrong General Hospital</item>
+        <item>Kpasham Primary Health Centre</item>
+        <item>Pariya Primary Health Centre</item>
+        <item>Ganye General Hosital</item>
+        <item>Sangassumi Primary Health Centre</item>
+        <item>Yebbi Basic Health Centre</item>
+        <item>Gurumpawo Health Centre</item>
+        <item>Jabbi Lamba Primary Health Centre</item>
+        <item>Lafiya Model Health Centre</item>
+        <item>Cottage Hospital Gulak</item>
+        <item>Maiha Cottage Hospital</item>
+        <item>Paka Primary Health Centre</item>
+        <item>Belel Maternal and Child Health</item>
+        <item>Numan General Hospital</item>
+        <item>Bare Maternal and Child Health Centre</item>
+        <item>Nbgalang Health Centre</item>
+        <item>Peace Hospital Jimeta</item>
+        <item>Boshong Clinic and Maternity</item>
+        <item>Malamre Primary Health Centre</item>
+        <item>Adamawa Hospital, Yola</item>
+        <item>Wuro Hausa Health Clinic</item>
+        <item>Yolde Pate Health Clinic</item>
+        <item>Njoboli Health Clinic</item>
+        <item> </item>
+
+        <item><b><u><i>ANAMBRA STATE FACILITIES</i></u></b></item>
+
+        <item>Umueri General Hospital</item>
+        <item>Chidubem Hospital, Aguleri</item>
+        <item>Mama Eliza Maternity Home</item>
+        <item>Chidera Hospital, Otuocha</item>
+        <item>Onyedika Hospital Umueri</item>
+        <item>All Saint Hospital</item>
+        <item>Enugwu Aguleri Primary Health Centre</item>
+        <item>Umuoba-Anam Primary Health Centre</item>
+        <item>Nneyi Primary Health Centre</item>
+        <item>Otuocha Maternal and Child Health</item>
+        <item>Ikem Nando Primary Health Centre</item>
+        <item>Rise Clinic, Adazi Ani</item>
+        <item>Umubani, Neni Primary Health Centre</item>
+        <item>Ichida Primary Health Centre</item>
+        <item>Akwueze Primary Health Centre</item>
+        <item>Amatutu Model Health Care Centre</item>
+        <item>Adazi Ani Primary Health Centre</item>
+        <item>Umuokpu Primary Health Centre</item>
+        <item>Nise Primary Health Centre</item>
+        <item>Nibo Primary Health Centre</item>
+        <item>Okpuno Primary Health Centre</item>
+        <item>Isiagu Primary Health Centre</item>
+        <item>Anambra State One Stop Shop (OSS), Awka</item>
+        <item>Evans Specialist Hospital</item>
+        <item>Ichi Referral Health Centre</item>
+        <item>Ihiteoha Ihualor Model Health Centre</item>
+        <item>Ozubulu Referral Health Centre</item>
+        <item>Irefi-Oraifite Primary Health Centre</item>
+        <item>Umuonwuka Ozubulu Public Health Centre, Egbema</item>
+        <item>Odida Abatete Primary Health Centre</item>
+        <item>Ideani Primary Health Centre</item>
+        <item>Eziowelle Primary Health Centre</item>
+        <item>Umuoji Basic Health Centre</item>
+        <item>Oraukwu Primary Health Centre</item>
+        <item>Enugu-Ukwu General Hospital</item>
+        <item>Ukpor General Hospital</item>
+        <item>St Raphael Hospital</item>
+        <item>Union Hospital, Ukpor</item>
+        <item>Our Lords Hospital</item>
+        <item>All Saints Maternity Home</item>
+        <item>Calvary Hospital, Ukpor</item>
+        <item>Unubi Public Health Centre</item>
+        <item>Ezinifite Primary Health Centre</item>
+        <item>Uboma Ukpor Primary Health Centre</item>
+        <item>Osumenyi Primary Health Centre</item>
+        <item>Utuh Public Health Centre</item>
+        <item>Okpoko 1 Primary Health Centre</item>
+        <item>Ochuche Primary Health Centre</item>
+        <item>Odekpe Primary Health Centre</item>
+        <item>Atani Primary Health Centre</item>
+        <item>Osamala Primary Health Centre</item>
+        <item>Onitsha General Hospital</item>
+        <item>Rushgreen Hospital</item>
+        <item>St Joseph Hospital, Adazi</item>
+        <item>Aguleri Immaculate Heart Hospital</item>
+        <item>Amichi Diocesan Hospital</item>
+        <item>Awka Faith Hospital and Maternity, Awka</item>
+        <item>Awkuzu Primary Health Centre</item>
+        <item>Chuwuemeka Odumegwu Ojukwu University Teaching Hospital</item>
+        <item>Ekwulobia General Hospital</item>
+        <item>Eziani Health Centre</item>
+        <item>God is able Maternity Home</item>
+        <item>Holy Rosary Hospital</item>
+        <item>Igboukwu Diocesan Hospital</item>
+        <item>Immaculate Heart Hospital (Nkpor)</item>
+        <item>Iyi-Enu Hospital</item>
+        <item>Madueke Memorial Hospital and Maternity</item>
+        <item>Neni Comprehensive Health Centre NAUTH</item>
+        <item>Nkpor Crown Hospital and Maternity</item>
+        <item>Nnamdi Azikiwe University Teaching Hospital</item>
+        <item>Nnewi Diocesan Hospital</item>
+        <item>Oba Comprehensive Health Centre (Trauma Centre)</item>
+        <item>Obosi St Martins Hospital</item>
+        <item>Ojotu Uno Primary Health Centre</item>
+        <item>Okpoko St Lukes Diocesan Hospital</item>
+        <item>Onitsha Pieta Hospital</item>
+        <item>Orafite General Hospital</item>
+        <item>Osumenyi Visitation Hospital</item>
+        <item>Otolo Umuenem Primary Health Centre</item>
+        <item>Our Lady of Lourdes Hospital</item>
+        <item>Patricia Memorial Hospital and Maternity Aka baby</item>
+        <item>Regina Caeli Hospital, Awka</item>
+        <item>St Charles Borromeo Hospital</item>
+        <item>Ukpo Comprehensive Health Centre</item>
+        <item>Catholic Visitation Hospital and Maternity, Umuchu</item>
+        <item>Umueri Diocesan Hospital and Maternity</item>
+        <item>Umunya Comprehensive Health Centre</item>
+        <item>Umunze Immaculate Heart Hospital</item>
+        <item> </item>
+
+        <item><b><u><i>BAUCHI STATE FACILITIES</i></u></b></item>
+
+        <item>Alkaleri General Hospital</item>
+        <item>Alkaleri Town Maternity</item>
+        <item>Futuk Primary Health Centre</item>
+        <item>Gwana Primary Health Centre</item>
+        <item>Munda-Miyo Primary Health Centre</item>
+        <item>Bayan Fada Town Maternity</item>
+        <item>Domicillary Clinic Yelwa</item>
+        <item>Durum Primary Health Centre</item>
+        <item>Kangare Maternity and Child Health</item>
+        <item> Shafa Primary Health Centre</item>
+        <item>Tashen Babiye Comprehensive Health Centre</item>
+        <item>Dagauda Primary Health Centre</item>
+        <item>Dambam General Hospital</item>
+        <item>Dambam Town Maternity</item>
+        <item>Jalam Maternity and Child Health</item>
+        <item>Yame Primary Health Centre</item>
+        <item>Darazo General Hospital</item>
+        <item>Kari Town Maternity</item>
+        <item>Sade Primary Health Centre</item>
+        <item>Aisha Isa Yuguda Under Five Clinic Darazo</item>
+        <item>Wahu Primary Health Centre</item>
+        <item>Yautare Primary Health Centre</item>
+        <item>Yelwan Darazo Primary Health Centre</item>
+        <item>Gamawa General Hospital</item>
+        <item>Gololo Model Primary Health Centre</item>
+        <item>Kubdiya Town Maternity</item>
+        <item>Raga Maternity Clinic</item>
+        <item>Udobo Model Primary Health Centre</item>
+        <item>Wabu Primary Health Centre</item>
+        <item>Kafin Madaki Primary Health Centre</item>
+        <item>Miya Model Primary Health Centre</item>
+        <item>Nassarawa Primary Health Centre</item>
+        <item>Sabon Kariya Maternity</item>
+        <item>Soro Primary Health Centre</item>
+        <item>Atafowa Primary Health Centre</item>
+        <item>Itas General Hospital</item>
+        <item>Majiya Primary Health Centre</item>
+        <item>Mashema Primary Health Centre</item>
+        <item>Dogon Jeji Primary Health Centre</item>
+        <item>Azare Urban Maternity</item>
+        <item>Bulkachuwa Primary Health Centre</item>
+        <item>Bara Primary Health Centre</item>
+        <item>Gada Maiwa Primary Health Centre</item>
+        <item>Nasaru Primary Health Centre</item>
+        <item>Ningi General Hospital</item>
+        <item>Ningi Town Primary Health Centre</item>
+        <item>Tsangaya Primary Health Centre</item>
+        <item>Yada Gungume Primary Health Centre</item>
+        <item>Andubum Maternity</item>
+        <item>Beli Maternity</item>
+        <item>Disina Primary Health Centre</item>
+        <item>Faggo Primary Health Centre</item>
+        <item>Yana Primary Health Centre</item>
+        <item>Dajin Primary Health Centre</item>
+        <item>Gital Primary Health Centre</item>
+        <item>Gori Primary Health Centre</item>
+        <item>Katsinawa Primary Health Centre</item>
+        <item>Lere Primary Health Centre</item>
+        <item>Lim Primary Health Centre</item>
+        <item>Nabardo Primary Health Centre</item>
+        <item>Rishi Primary Health Centre</item>
+        <item>Katanga Primary Health Centre</item>
+        <item> </item>
+
+        <item><b><u><i>BAYELSA STATE FACILITIES</i></u></b></item>
+
+        <item>Ayamasa Primary Health Centre</item>
+        <item>Aghoro Health Center</item>
+        <item>Agge Comprehensive Health Centre</item>
+        <item>Aleibiri Cottage Hospital</item>
+        <item>Peretorugbene Comprehensive Health Centre</item>
+        <item>Ekeremor Comprehensive Health Centre</item>
+        <item>Kolo General Hospital</item>
+        <item>Opume Primary Health Centre</item>
+        <item>Emeyal Primary Health Centre</item>
+        <item>Otueke Comprehensive Health Centre</item>
+        <item>Demonstartion Clinic</item>
+        <item>Otuabagi Cottage Hospital</item>
+        <item>Landmark Medical Centre</item>
+        <item>Sagbama General Hospital</item>
+        <item>Ebedebiri Cottage Hospital</item>
+        <item>Adagbabiri Model Primary Health Centre</item>
+        <item>Tungbo Health Centre</item>
+        <item>Trofani Health Centre</item>
+        <item>Asamabiri Comprehensive Health Centre</item>
+        <item>Amassoma General Hospital</item>
+        <item>Peremabiri Cottage Hospital</item>
+        <item>Ekowe Comprehensive Health Centre</item>
+        <item>Angiama Comprehensive Health Centre</item>
+        <item>Otuan Comprehensive Health Centre</item>
+        <item>Comprehensive Health Center Oporoma</item>
+        <item>Olugbobiri Comprehensive Health Centre</item>
+        <item>Opuama Primary Health Centre</item>
+        <item>Okigbene Primary Health Centre</item>
+        <item>Diebu Primary Health centre</item>
+        <item>Peremabiri Primary Health Centre</item>
+        <item>Anyama Primary Health Centre</item>
+        <item>Diete-Koki Memorial Specialist Hospital Yenegoa</item>
+        <item>Agudama Ekpetima (Hub) General Hospital</item>
+        <item>Grand Care Hospital, Edepie</item>
+        <item>Mercy and Favour Clinic and Diagonistic Center, Polaku</item>
+        <item>Ebipre Clinic and Maternity</item>
+        <item>New Survivor Hospital, Igbo-Gene</item>
+        <item>Egbebiri Biseni Comprehensive Health Centre</item>
+        <item>Agudama-Epie Comprehensive Health Centre</item>
+        <item>Azikoro Basic Health Centre</item>
+        <item>Zarama Primary Health Centre</item>
+        <item>Opolo Epie Primary Health Centre</item>
+        <item>Tombia Primary Health Centre</item>
+        <item>Nedugo Primary Health Centre</item>
+        <item>Alfa Clinic</item>
+        <item>Kalaba Primary Health Centre</item>
+        <item>Yenezue-Gene Primary Health Centre</item>
+        <item>Divine Grace Health Centre Okolobiri</item>
+        <item>Amarata Primary Health Centre</item>
+        <item>Hoffman and Bright Hospital, Okutukutu</item>
+        <item>St. George Hospital, Okutukutu</item>
+        <item> Express Care Clinic, Opolo</item>
+        <item>Crystal Care Hospital Ovom</item>
+        <item>Living Rock Specialist Clinic</item>
+        <item>Solomon Throne Hospital</item>
+        <item> </item>
+
+        <item><b><u>BENUE STATE FACILITIES</u></b></item>
+
+        <item>Oshigbudu Primary Health Centre</item>
+        <item>Obagaji Primary Health Centre</item>
+        <item>Ogwule Kaduna Primary Health Centre</item>
+        <item>Okokolo Primary Health Centre</item>
+        <item>Abugbe Primary Health Centre</item>
+        <item>Adi Comprehensive Health Centre</item>
+        <item>Adogo Primary Health Centre</item>
+        <item>Ugbema Primary Health Centre</item>
+        <item>Ijer Family Support Program Clinic</item>
+        <item>Vongo Primary Health Centre</item>
+        <item>Tomayiin Primary Health Centre</item>
+        <item>Mba Agbanaya Primary Health Centre</item>
+        <item>Fidel Poly Primary Health Centre</item>
+        <item>NKST Kuhe Primary Health Centre</item>
+        <item>NKST Anyogo Primary Health Centre</item>
+        <item>NKST Ikpa Primary Health Centre</item>
+        <item>Gboko General Hospital</item>
+        <item>Ikpayongo Primary Health Centre</item>
+        <item>Aliade Comprehensive Health Centre</item>
+        <item>Taraku Basic Health Centre</item>
+        <item>Gbache Primary Health Centre</item>
+        <item>Paka Primary Health Centre</item>
+        <item>Abaji Primary Health Centre</item>
+        <item>Township Comprehensive Health Centre, Katsina-Ala</item>
+        <item>Jou Mbatyough Primary Health Centre</item>
+        <item>Une Local Government Health Centre</item>
+        <item>Vingir Primary Health Centre</item>
+        <item>Katsina-Ala General Hospital</item>
+        <item>Tyogbenda Udende Primary Health Centre</item>
+        <item>Ucha Primary Health Centre</item>
+        <item>Ayua Primary Health Centre</item>
+        <item>Mdue Pawa Health Centre</item>
+        <item>Gungul Primary Health Centre</item>
+        <item>Tse Agberagba General Hospital</item>
+        <item>Awajir Primary Health Centre</item>
+        <item>Madonna Hospital</item>
+        <item>Epic Clinic and Maternity, Makurdi</item>
+        <item>Our Saviour Hospital</item>
+        <item>Novo-k Hospital North Bank, Makurdi</item>
+        <item>Aifam Primary Health Centre</item>
+        <item>Ukporo Primary Health Centre</item>
+        <item>Orido Primary Health Centre</item>
+        <item>Itabono Primary Health Centre</item>
+        <item>Ugbodigi Primary Health Centre</item>
+        <item>Oju General Hospital</item>
+        <item>Ojaba Primary Health Centre</item>
+        <item>Igede Central Primary Health Centre</item>
+        <item>Ojokwe Primary Health Centre</item>
+        <item>Ameka Owo Primary Health Centre</item>
+        <item>Oboru Primary Health Centre</item>
+        <item>Lessel General Hospital</item>
+        <item>St Elizabeth Hospital</item>
+        <item>Imoughun Primary Health Centre</item>
+        <item>Dyegh Family Support Clinic</item>
+        <item>NKST Adeiyongo Primary Health Centre</item>
+        <item>NKST Naa Primary Health Centre</item>
+        <item>Tsar Primary Health Centre</item>
+        <item> </item>
+
+        <item><b><u>BORNO STATE FACILITIES</u></b></item>
+
+        <item>Biu Maternal and Child Health Centre</item>
+        <item>Biu Town Dispensary</item>
+        <item>Mandragirau Health Clinic</item>
+        <item>Miringa Maternal and Child Health Centre</item>
+        <item>Buratai Primary Health Centre</item>
+        <item>Damboa Maternal and Child Health Centre</item>
+        <item>Umaru Shehu Ultra Modern Hospital</item>
+        <item>Konduga General Hospital</item>
+        <item>Yerwa Maternal and Child Health Centre</item>
+        <item>Gamboru Maternal and Child Health Centre</item>
+        <item>Gwange Comprehensive Health Centre</item>
+        <item>Abbaganaram Maternal and Child Health Centre</item>
+        <item>Fatima Ali Sherriff Primary Health Centre</item>
+        <item>Mala Kachalla Primary Health Centre</item>
+        <item>Monguno General Hospital</item>
+        <item>Mintar Dispensary (Bakassi Camp)</item>
+        <item> </item>
+
+        <item><b><u><i>CROSS RIVER STATE FACILITIES</i></u></b></item>
+
+        <item>Akamkpa General Hospital</item>
+        <item>Oban Cottage Hospital</item>
+        <item>Iko Ekperem Primary Health Centre</item>
+        <item>Nsan Primary Health Centre</item>
+        <item>Katchuan Irruan Model Primary Health Centre</item>
+        <item>Okubushuyu Primary Health Centre</item>
+        <item>Okubuchi Primary Health Centre</item>
+        <item>Ntamante Primary Health Centre</item>
+        <item>Borum Primary Health Centre</item>
+        <item>Bunyia Irruan Primary Health Centre</item>
+        <item>Divine Grace Clinic</item>
+        <item>Joerdy Memorial Hospital</item>
+        <item>Hiltop Healthcare Foundation</item>
+        <item>Akim Primary Health Centre</item>
+        <item>Big Qua Primary Health Centre</item>
+        <item>Ediba Primary Health Centre</item>
+        <item>Ikot Ansa Primary Health Centre</item>
+        <item>Ikot Omin Primary Health Centre (Poly Clinic)</item>
+        <item>Testimony Medical Consultants</item>
+        <item>Mevon Clinic</item>
+        <item>Agbokim Watarfall Primary Health Centre</item>
+        <item>Ajassor Primary Health Centre</item>
+        <item>Akparabong Primary Health Centre</item>
+        <item>Edor Primary Health Centre</item>
+        <item>Yala-Nkum Primary Health Centre</item>
+        <item>Awukams Clinic</item>
+        <item>Citizens Clinic and Maternity</item>
+        <item>Obims Clinic</item>
+        <item>Obanliku General Hospital</item>
+        <item>Obubra General Hospital</item>
+        <item>Obudu Urban1 Primary Health Centre</item>
+        <item>Alege-Utang Primary Health Centre</item>
+        <item>Bebuabie Primary Health Centre</item>
+        <item>Ohong Primary Health Centre</item>
+        <item>Utuguang-Central Primary Health Centre</item>
+        <item>Luksana Foundation</item>
+        <item>Mercy Clinic, Ogoja</item>
+        <item>Ekori Primary Health Centre</item>
+        <item>Idomi Primary Health Centre</item>
+        <item>Mkpani Primary Health Centre</item>
+        <item>Nko Primary Health Centre</item>
+        <item>Wanihem Comprehensive Health Centre</item>
+        <item>Oba Comprehensive Health Centre</item>
+        <item>Echumofuna Primary Health Centre</item>
+        <item>Mfuma Primary Health Centre</item>
+        <item>Okuku Women Health Centre</item>
+        <item>Bikelle Primary Health Centre</item>
+        <item>Eboh-Ipoule Primary Health Centre</item>
+        <item>Okpodon Primary Health Centre</item>
+        <item>Okperiku Primary Health Centre</item>
+        <item>Wanokom Primary Health Centre</item>
+        <item> </item>
+
+        <item><b><u><i>DELTA STATE FACILITIES</i></u></b></item>
+
+        <item>Eku Government Hospital</item>
+        <item>Ozoro General Hospital</item>
+        <item>Kwale Central Hospital</item>
+        <item>Sapele Central Hospital</item>
+        <item>Warri Central Hospital</item>
+        <item> </item>
+
+        <item><b><u><i>EBONYI STATE FACILITIES</i></u></b></item>
+
+        <item>Ukamaka - Egwu Primary Health Centre</item>
+        <item>Azuiyiokwu Maternal and Child Health Centre</item>
+        <item>Izzi Unuhu Primary Health Centre</item>
+        <item>Akpamechi Primary Health Centre</item>
+        <item>Obulechi Primary Health Centre</item>
+        <item>Elinwovbu General Hospital</item>
+        <item>Owutu General Hospital</item>
+        <item>Ikwuato Health Centre</item>
+        <item>Ezza East Maternal and Child Health</item>
+        <item>Amuzu Health Centre</item>
+        <item>Onueke Maternal and Child Health Centre</item>
+        <item>Ezzama Health Centre</item>
+        <item>St. Vincent Hospital, Amudo</item>
+        <item>Ndiagwu Amagu Health Centre</item>
+        <item>Echara Health Centre</item>
+        <item>Enyibichiri Maternal and Child Health</item>
+        <item>Agubia Cottage Hospital</item>
+        <item>Abina Health Centre</item>
+        <item>Ikwo General Hospital</item>
+        <item>Iboko General Hospital</item>
+        <item>Ndiunuhu Health Centre</item>
+        <item>Ugwulangwu Health Centre</item>
+        <item>Ojigwe Health Centre</item>
+        <item>Obiozara Health Centre</item>
+        <item>Agugwu Health Centre</item>
+        <item>Uburu Presbyterian Joint Hospital</item>
+        <item>Oshiri Primary Health Centre</item>
+        <item>Onicha Primary Health Centre</item>
+        <item>Oshiri Model Health Centre</item>
+        <item>Umuifi Health Centre</item>
+        <item>Aguenu Health Centre</item>
+        <item>Onicha General Hospital</item>
+        <item> </item>
+
+        <item><b><u><i>EDO STATE FACILITIES</i></u></b></item>
+
+        <item>Alafia Specialist Hospital</item>
+        <item>Ojirami Primary Health Centre</item>
+        <item>Ibillo Primary Health Centre</item>
+        <item>Okpe Primary Health Centre</item>
+        <item>Ogbe Primary Health Centre</item>
+        <item>Ososo Primary Health Centre</item>
+        <item>Benin Evangel Model Hospital</item>
+        <item>Oriaifo Medical Centre</item>
+        <item>Ewoyi Primary Health Centre</item>
+        <item>Obiyon Primary Health Centre</item>
+        <item>Arue Primary Health Centre</item>
+        <item>Efandion Primary Health Centre</item>
+        <item>Obeidu Primary Health Centre</item>
+        <item>Benin Central Hospital</item>
+        <item>Utagban Primary Health Centre</item>
+        <item>Ekea Primary Health Centre</item>
+        <item>New Benin Health Centre</item>
+        <item>Evbuodia Primary Health Centre</item>
+        <item>Emwinyonwan Primary Health Centre</item>
+        <item>Abudu General Hospital</item>
+        <item>Ake-Igbanke Health Centre</item>
+        <item>Umoghun-Nokhua Health Centre</item>
+        <item>Evboesi Health Centre</item>
+        <item>Iguododo Health Centre</item>
+        <item>Iru Primary Health Centre</item>
+        <item>Sabongida Ora General Hospital</item>
+        <item>Iloje Primary Health Centre (Ohia Primary Health Centre)</item>
+        <item>Uhomora Primary Health Centre</item>
+        <item>Eruere Primary Health Centre</item>
+        <item>Ozalla Primary Health Centre</item>
+        <item>Edo State One Stop Shop (OSS), Benin</item>
+        <item> </item>
+
+        <item><b><u><i>EKITI STATE FACILITIES</i></u></b></item>
+        <item>St. Gregory Hospital Ado-Ekiti</item>
+        <item>Aramoko Ekiti General Hospital</item>
+        <item>Ifaki Ekiti General Hospital</item>
+        <item>Ikole-Ekiti State Hospital</item>
+        <item> </item>
+
+        <item><b><u><i>ENUGU STATE FACILITIES</i></u></b></item>
+
+        <item>Ntasi-Obi Hospital, Enugu</item>
+        <item>Royal Hospital, Iva-ValleyEnugu</item>
+        <item>Aguobu-Umumba Primary Health Centre</item>
+        <item>Agba Umana Primary Health Centre</item>
+        <item>Mgbagbu-Owa Primary Health Centre</item>
+        <item>Oyofo Primary Health Centre</item>
+        <item>Awha- Imezi Primary Health Centre</item>
+        <item>Obinagu-Uwani Primary Health Centre</item>
+        <item>Ozalla Primary Health Centre</item>
+        <item>Agbani Primary Health Centre</item>
+        <item>O ejiundimo Primary Health Centre</item>
+        <item>Amangwu Obuoffia Health Centre</item>
+        <item>Ndiuno-Uwani (Akpugoi) Primary Health Centre</item>
+        <item>Ojiagu Primary Health Centre</item>
+        <item>Agbani District Hospital, Agbani</item>
+        <item>Eha-Ndaigu Primary Health Centre</item>
+        <item>Agbamere Health Centre</item>
+        <item>Leijjah Basic Health Centre</item>
+        <item>Iba-Gwani Primary Health Centre</item>
+        <item>Ogbeagu-Obukpa Health Centre</item>
+        <item>Bishop Shanahan Hospital, Nsukka</item>
+        <item>Ozalla Ezimo Primary Health Centre</item>
+        <item>Orba Primary Health Centre</item>
+        <item>Obollo Ettiti Basic Health Centre</item>
+        <item>Obollo-Eke Health Centre</item>
+        <item>Umuabi Primary Health Centre</item>
+        <item>Nachi Primary Health Centre</item>
+        <item>Abor Primary Health Centre</item>
+        <item>Okpatu Primary Health Centre</item>
+        <item>Ikedimkpa-Affa Health Centre</item>
+        <item>Umuaga Primary Health Centre</item>
+        <item>Obinagu Primary Health Centre</item>
+        <item>Our Lady Health of the Sick Hospital, Adani</item>
+        <item>Enugu State One Stop Shop (OSS), Enugu</item>
+        <item> </item>
+
+        <item><b><u><i>FCT FACILITIES</i></u></b></item>
+
+        <item>Ayaura Comprehensive Health Centre</item>
+        <item>New Township Primary Health Centre</item>
+        <item>Agyana Primary Health Centre</item>
+        <item>Naharat Model Primary Health Centre</item>
+        <item>Nuku Primary Health Centre</item>
+        <item>Apo Primary Health Centre</item>
+        <item>Bepos Hospital</item>
+        <item>First Hospital and Maternity</item>
+        <item>Gbagalape Primary Health Centre</item>
+        <item>Gnazawo Clinic</item>
+        <item>Heiti Hospital Yangoji</item>
+        <item>Ketti Comprehensive Health Centre</item>
+        <item>Lola Femi Clinic and Maternity</item>
+        <item>Meye Hospital</item>
+        <item>Orozo Comprehensive Primary Health Centre</item>
+        <item>Piwoyi Primary Health Centre</item>
+        <item>Pyakasa Primary Health Centre</item>
+        <item>Rainbow Hospital and Maternity</item>
+        <item>Shadalafiya Primary Health Centre</item>
+        <item>St Patricks Clinic and Maternity</item>
+        <item>State House Clinic</item>
+        <item>Wuse General Hospital</item>
+        <item>Owner Occupier Comprehensive Health Centre</item>
+        <item>Byazhin Primary Health Centre</item>
+        <item>Barangoni Health Clinic</item>
+        <item>Dutse Makaranta Primary Health Centre</item>
+        <item>Ushafa Primary Health Centre</item>
+        <item>Bwari Town Clinic</item>
+        <item>Dutse Alhaji Primary Health Centre</item>
+        <item>Old Dei-Dei Primary Health Centre</item>
+        <item>Igu Primary Health Centre</item>
+        <item>Jigo Primary Health Centre</item>
+        <item>Kawu Primary Health Centre</item>
+        <item>Gaube Comprehensive Health Centre</item>
+        <item>Kwaku Primary Health Centre</item>
+        <item>Chibiri Primary Health Centre</item>
+        <item>Gudunkarya Primary Health Centre</item>
+        <item>Dafara Primary Health Centre</item>
+        <item>Gwargwada Primary Health Centre</item>
+        <item>Pegi Primary Health Centre</item>
+        <item>Kiyi Primary Health Centre</item>
+        <item>Kasada Primary Health Centre</item>
+        <item>Yanga Primary Health Centre</item>
+        <item>Kabi Mangoro Primary Health Centre</item>
+        <item>Rhema Hospital</item>
+        <item>Yangoji Primary Health Centre</item>
+        <item>Piri Primary Health Centre</item>
+        <item>Dafa Primary Health Centre</item>
+        <item>Kwali Primary Health Centre</item>
+        <item>Kilankwa I Primary Health Centre</item>
+        <item> </item>
+
+        <item><b><u><i>GOMBE STATE FACILITIES</i></u></b></item>
+
+        <item>Kumo General Hospital</item>
+        <item>Madi Memorial Clinic and Maternity</item>
+        <item>Yambu Dok Clinic</item>
+        <item>Sabana Specialist Hospital</item>
+        <item>Bojude Cottage Hospital</item>
+        <item>Iliya Nursing Home and Maternity</item>
+        <item>Gombe State One Stop Shop (OSS), Bajoga</item>
+        <item> </item>
+
+        <item><b><u><i>IMO STATE FACILITIES</i></u></b></item>
+
+        <item>Mbano Joint Hospital</item>
+        <item>St. Damian Catholic Hospital, Orlu</item>
+        <item>Chiwendu Hospital Awo Omama</item>
+        <item>Imo Specialist Hospital, Owerri</item>
+        <item>Imo State One Stop Shop (OSS), Owerri</item>
+        <item> </item>
+
+        <item><b><u><i>JIGAWA STATE FACILITIES</i></u></b></item>
+
+        <item>Auyo Primary Health Centre</item>
+        <item>Babura General Hospital</item>
+        <item>Kanya Babba Primary Health Centre</item>
+        <item>Birniwa General Hospital</item>
+        <item>Gagarawa Basic Health Centre</item>
+        <item>Gumel General Hospital</item>
+        <item>Gwaram Cottage Hospital</item>
+        <item>Kafin Hausa General Hospital</item>
+        <item>Maigatari Primary Health Centre</item>
+        <item> </item>
+
+        <item><b><u><i>KADUNA STATE FACILITIES</i></u></b></item>
+
+        <item>Mercy Home and Maternity</item>
+        <item>Rigasa General Hospital</item>
+        <item>Gadan Gaya Primary Health Centre</item>
+        <item>Birnin Yero Primary Health Centre</item>
+        <item>Igabi Primary Health Centre</item>
+        <item>Mando Kasuwa Primary Health Centre</item>
+        <item>Miyyet Allah Rigasa Primary Health Centre</item>
+        <item>Nariya Primary Health Centre</item>
+        <item>Hayin Danmani Primary Health Centre</item>
+        <item>Rigasa Community Hospital</item>
+        <item>Ikara General Hospital</item>
+        <item>Giwa Hospital</item>
+        <item>Garden City Hospital</item>
+        <item>Sefa Hospital</item>
+        <item>Salamat Hospital</item>
+        <item>Kenyi Primary Health Centre</item>
+        <item>Idah Primary Health Centre</item>
+        <item>Kubacha Maternal and Child Health Centre</item>
+        <item>Kurmin Jibrin Primary Health Centre</item>
+        <item>Akoti Primary Health Centre</item>
+        <item>Sabon Gari Maternal and Child Health Centre</item>
+        <item>Mallagum II Maternal and Child Health Centre</item>
+        <item>Kukum Dutse Primary Health Centre</item>
+        <item>Bondong Maternal and Child Health Centre</item>
+        <item>Dusai Primary Health Centre</item>
+        <item>K/Wali Primary Health Centre</item>
+        <item>Likoro Primary Health Centre</item>
+        <item>Doka Primary Health Centre</item>
+        <item>Hunkuyi Primary Health Centre</item>
+        <item>Tashan Kade Primary Health Centre</item>
+        <item>Rahama Nursing Home and Maternity</item>
+        <item>Yakassai Primary Health Centre</item>
+        <item>Gimba Primary Health Centre</item>
+        <item>Kinkiba Primary Health Centre</item>
+        <item>Kwassalo Primary Health Centre</item>
+        <item>Zonkwa Regional Hospital</item>
+        <item>Fadan Kamanta Primary Health Centre</item>
+        <item>Mabushi Primary Health Centre</item>
+        <item>Magamia Primary Health Centre</item>
+        <item>Zonkwa Primary Health Centre</item>
+        <item>Kamuru Ikulu Primary Health Centre</item>
+        <item>St. Lukes Hospital Wusasa</item>
+        <item>City Himma</item>
+        <item>Kaduna State One Stop Shop (OSS), Kaduna</item>
+        <item>Dusai Primary Health Centre</item>
+        <item>Kubacha Modern Primary Health Centre</item>
+        <item> </item>
+
+        <item><b><u><i>KANO STATE FACILITIES</i></u></b></item>
+
+        <item>Bebeji General Hospital</item>
+        <item>Kurna Primary Health Centre</item>
+        <item>Yalwa Primary Health Centre</item>
+        <item>Salamotu Clinic and Maternity</item>
+        <item>Karmani Maternal and Child Health Centre</item>
+        <item>Gabasawa Primary Health Centre</item>
+        <item>Zakirai Primary Health Centre</item>
+        <item>Dorayi Karama Primary Health Centre</item>
+        <item>Gwale Filin Mushe Primary Health Centre</item>
+        <item>Jaen Primary Health Centre</item>
+        <item>Kabuga Primary Health Centre</item>
+        <item>Palace Hospital and Maternity</item>
+        <item>Unguwar Dabai Primary Health Centre</item>
+        <item>Durba Primary Health Centre</item>
+        <item>Kibiya Primary Health Centre</item>
+        <item>Kure Primary Health Centre</item>
+        <item>Unguwar Gai Maternal and Child Health Centre</item>
+        <item>Saya Primary Health Centre</item>
+        <item>Tarai Primary Health Centre</item>
+        <item>Nasiha Nursing and Maternity</item>
+        <item>Akilo Memorial Hospital</item>
+        <item>Kwankwaso Basic Health Centre</item>
+        <item>Burji Model Primary Health Centre</item>
+        <item>Gora Health Clinic</item>
+        <item>Kafin Agur Primary Health Centre</item>
+        <item>Kanwa Primary Health Centre</item>
+        <item>Kano State One Stop Shop (OSS), Nasarawa</item>
+        <item>Bamaiyi Sai Allah Hospital</item>
+        <item>Dawakin Dakata Primary Health Centre</item>
+        <item>Giginyu Primary Health Centre</item>
+        <item>Gwagwarwa Primary Health Centre</item>
+        <item>Hotoron Arewa Primary Health Centre</item>
+        <item>Kaura Goje Primary Health Centre</item>
+        <item>Sir Muhammad Sanusi Specialist Hospital</item>
+        <item>Crescent Clinic</item>
+        <item>Godiya Clinic and Maternity</item>
+        <item>Hausawa Maternal and Child Health Welfare Clinic</item>
+        <item>Kauyen Alu Health Clinic</item>
+        <item>Jaoji Maternal and Child Health Clinic</item>
+        <item>Daurawa Maternal and Child Health Centre</item>
+        <item>Premier Clinic</item>
+        <item>Standard Specialist Hospital</item>
+        <item>Tarauni Maternal and Child Health Centre</item>
+        <item>Triumph Clinic and Maternity</item>
+        <item>Unguwa Uku Maternal and Child Health Centre</item>
+        <item>Zacks Clinic</item>
+        <item>Bugai Model Primary Health Centre</item>
+        <item>Tofa Comprehensive Health Centre</item>
+        <item>Doka Health Centre</item>
+        <item>Jobe Health Post</item>
+        <item>Lambu Basic Health Centre</item>
+        <item>Lambu Model Primary Health Centre</item>
+        <item>Darki Primary Health Centre</item>
+        <item>Wudil General Hospital</item>
+        <item>Indabo Primary Health Centre</item>
+        <item>Lajawa Primary Health Centre</item>
+        <item>Makanwachi Primary Health Centre</item>
+        <item>Utai Primary Health Centre</item>
+        <item> </item>
+
+        <item><b><u><i>KATSINA STATE FACILITIES</i></u></b></item>
+
+        <item>Danmusa General Hospital</item>
+        <item>Daura General Hospital</item>
+        <item>Dutsinma General Hospital</item>
+        <item>Malumfashi General Hospital</item>
+        <item>Rimi General Hospital</item>
+        <item> </item>
+
+        <item><b><u><i>KEBBI STATE FACILITIES</i></u></b></item>
+
+        <item>Kamba General Hospital</item>
+        <item>Wasagu General Hospital</item>
+        <item>Martha Bamaiyi General Hospital</item>
+        <item> </item>
+
+        <item><b><u><i>KOGI STATE FACILITIES</i></u></b></item>
+
+        <item>Nagazi Comprehensive Health Centre</item>
+        <item>Iyale General Hospital</item>
+        <item>Aiyetoro Gbede General Hospital</item>
+        <item>ECWA Hospital, Egbe</item>
+        <item> </item>
+
+        <item><b><u><i>KWARA STATE FACILITIES</i></u></b></item>
+
+        <item>Shonga Comprehensive Health Centre</item>
+        <item>Bacita Maternity Centre</item>
+        <item>Gboro Primary Health Centre</item>
+        <item>Tsaragi Primary Health Centre</item>
+        <item>Shonga Maternity Centre</item>
+        <item>Edogi Dukun Primary Health Centre</item>
+        <item>Sabo Oke Medical Centre</item>
+        <item>Magaji Are Primary Health Centre, Are</item>
+        <item>Iponrin Maternity and Dispensary</item>
+        <item>Oke Ose Model Primary Health Centre</item>
+        <item>Ojagboro Primary Health Centre</item>
+        <item>Balogun Gambari (Awodi) Health Centre</item>
+        <item>Kaiama General Hospital</item>
+        <item>Bani Basic Health Centre</item>
+        <item>Gwaria Primary Health Centre</item>
+        <item>Aboki Primary Health Centre</item>
+        <item>Kugiji Model Primary Health Care Centre</item>
+        <item>Woro Primary Health Centre</item>
+        <item>Jebba State Specialist Hospital</item>
+        <item>Shao Basic Health Centre</item>
+        <item>Tepatan Health Centre</item>
+        <item>Arobadi Health Centre</item>
+        <item>Olokonla Ward Health Centre</item>
+        <item>Jebba Maternity Health Centre</item>
+        <item>Ajegunle Basic Health Centre</item>
+        <item>Ojomu Primary Health Centre</item>
+        <item>Essa Basic Health Care Centre</item>
+        <item>Gbosun Primary Health Centre</item>
+        <item>Oluyemo Basic Health Centre</item>
+        <item>Erin Ile General Hospital</item>
+        <item> </item>
+
+        <item><b><u><i>NASARAWA STATE FACILITIES</i></u></b></item>
+
+        <item>Bold Step Clinic, Masaka</item>
+        <item>Innovative Biotech</item>
+        <item>Jigwada Primary Health Centre</item>
+        <item>Kaibo Mada Primary Health Centre</item>
+        <item>Saibon Gari Primary Health Centre</item>
+        <item>Gauta Primary Health Centre</item>
+        <item>Rayyan Hospital Keffi</item>
+        <item>Al-Nur Hospital</item>
+        <item>Ebenezer Clinic and Maternity</item>
+        <item>Tsohon Kasuwa Primary Health Centre</item>
+        <item>Tudun Kauri Model Primary Health Centre</item>
+        <item>Mana Primary Health Centre</item>
+        <item>Ngwan Toni Primary Health Centre</item>
+        <item>Bukan Sidi Primary Health Centre</item>
+        <item>Agyaragu Primary Health Centre</item>
+        <item>Ewuga Clinic</item>
+        <item>Lafia Police Clinic</item>
+        <item>Nasarawa General Hospital</item>
+        <item>Mararaban Udege General Hospital</item>
+        <item>Kurudu Primary Health Centre</item>
+        <item>Area 1 Primary Health Care Clinic</item>
+        <item>Ogapa Primary Health Centre</item>
+        <item>Ngwar Malllam Primary Health Centre</item>
+        <item>Shamange Primary Health Centre</item>
+        <item>Kowa Clinic</item>
+        <item>Uwebiyi Clinic</item>
+        <item>Udegen Beki Primary Health Centre</item>
+        <item>Odu Primary Health Centre</item>
+        <item>Akum Primary Health Centre</item>
+        <item>Udege Kasa Primary Health Centre</item>
+        <item>Udenin Gida Primary Health Centre</item>
+        <item>Alushi ERCC</item>
+        <item>Bakyano Model Primary Health Centre</item>
+        <item>Mada Station Primary Health Centre</item>
+        <item>Alogani South Primary Health Centre</item>
+        <item>Walagen Primary Health Centre</item>
+        <item>Obi General Hospital</item>
+        <item>Adudu Primary Health Centre</item>
+        <item>Agwatashi Primary Health Centre</item>
+        <item>Obi 2 Maternal and Child Welfare Centre (MCWC)</item>
+        <item>Dedere Maternal and Child Welfare Centre (MCWC)</item>
+        <item>Agwade Primary Health Centre</item>
+        <item>Agyaragu Ata Clinic</item>
+        <item>Toto General Hospital</item>
+        <item>Umaisha General Hospital</item>
+        <item>Godiya Clinic Gabadueke</item>
+        <item>Kuru Primary Health Centre</item>
+        <item>Adadu Primary Health Centre</item>
+        <item>Shafan Abakpa Primary Health Centre</item>
+        <item>Toto Town Primary Health Centre</item>
+        <item>Kullo Primary Health Centre</item>
+        <item></item>
+
+        <item><b><u><i>NIGER STATE FACILITIES</i></u></b></item>
+
+        <item>Agaie General Hospital</item>
+        <item>Gbodoti Primary Health Centre</item>
+        <item>Gbangban Primary Health Centre</item>
+        <item>Gonagi Primary Health Centre</item>
+        <item>Sakpe Primary Health Centre</item>
+        <item>Gamunu Primary Health Centre</item>
+        <item>Kontagora General Hospital</item>
+        <item>Al-Azeez Medical Centre Kontagora</item>
+        <item>Gulu Maternal and Child Health (MCH) Clinic</item>
+        <item>Saminaka Basic Health Centre</item>
+        <item>Ebbo Health Care Clinic</item>
+        <item>Kpada Primary Health Centre</item>
+        <item>Takuti Primary Health Centre</item>
+        <item>Aminu Isah Kontagora General Hospital Bangi</item>
+        <item>Kofan Bobi Basic Health Centre</item>
+        <item>Bobi Maternal and Child Health Centre</item>
+        <item>Beri Primary Health Centre</item>
+        <item>Bangi Maternal and Child Health and Family Planning Clinic</item>
+        <item>Kumbashi Health Centre</item>
+        <item>Ibbi Primary Health Centre</item>
+        <item>Kasanga Health Centre</item>
+        <item>Sabon Rijiya Dispensary</item>
+        <item>Kawo Dispensary, Mashegu</item>
+        <item>Makera Model Primary Health Centre</item>
+        <item>Tabware Primary Health Centre</item>
+        <item>Kuchi Primary Health Centre</item>
+        <item>Gini Primary Health Centre</item>
+        <item>Sabon Nabula Primary Health Centre</item>
+        <item>Chibani Primary Health Centre</item>
+        <item> </item>
+
+        <item><b><u>OGUN STATE FACILITIES</u></b></item>
+
+        <item>Abeokuta State Hospital</item>
+        <item>Kugba Health Centre</item>
+        <item>Erunbe Health Centre</item>
+        <item>Oba Gbadebo Health Clinic</item>
+        <item>Keesi Primary Health Centre</item>
+        <item>Oke Ijemo Health Post</item>
+        <item>Ota State Hospital</item>
+        <item>Igbesa Health Centre</item>
+        <item>Owode Health Centre</item>
+        <item>Ketu-Adie Owe Health Centre</item>
+        <item>Atan Model Primary Health Centre</item>
+        <item>Osi Primary Health Centre</item>
+        <item>Ijebu Ife General Hospital</item>
+        <item>Itele Health Centre</item>
+        <item>Ijebu Imushin Health Centre</item>
+        <item>Owu Ikija Health Clinic</item>
+        <item>Oke - Ife Health Centre</item>
+        <item>Ehinade Health Centre</item>
+        <item>St Joseph Catholic Hospital, Ijebu Igbo</item>
+        <item>Oke Agbo Primary Health Centre</item>
+        <item>Oke Odo Primary Health Centre</item>
+        <item>Ibipe Health Centre</item>
+        <item>Oru/Awa/Ilaponu Health Centre</item>
+        <item>Atikori Health Centre</item>
+        <item>Obafemi Owode General Hospital</item>
+        <item> </item>
+
+        <item><b><u><i>ONDO STATE FACILITIES</i></u></b></item>
+
+        <item>Supare Model Primary Health Centre</item>
+        <item>First Mercy Specialist Hospital</item>
+        <item>Igbara Oke General Hospital</item>
+        <item>Ode Irele General Hospital</item>
+        <item> </item>
+
+        <item><b><u><i>OSUN STATE FACILITIES</i></u></b></item>
+
+        <item>Ejigbo Baptist Hospital</item>
+        <item>Ilawo Primary Health Centre</item>
+        <item>Ejigbo Model Primary Health Centre</item>
+        <item>Ife Odan Primary Health Centre</item>
+        <item>Olla Primary Health Centre</item>
+        <item>Popo Primary Health Centre</item>
+        <item>Eleyele Parakin Primary Health Centre</item>
+        <item>Ile Canaan Primary Health Centre</item>
+        <item>Igboya Primary Health Centre</item>
+        <item>Enunwa Primary Health Centre</item>
+        <item>Oba Aderemi Primary Health Centre</item>
+        <item>Oke-Ogbo General Hospital, Ile Ife</item>
+        <item>Ilesa General Hospital</item>
+        <item>Victory Specialist Hospital, Iwo</item>
+        <item>Alaye Model Primary Health Centre</item>
+        <item>Iwo Model Primary Health Centre</item>
+        <item>Agbo Igbo Primary Health Centre</item>
+        <item>Yidi Oba Primary Health Centre</item>
+        <item>Feesu Primary Health Centre</item>
+        <item>Enikan Oyun Primary Health Centre</item>
+        <item>Olude Primary Health Centre</item>
+        <item>Sabo Primary Health Centre</item>
+        <item>Oba Oke Primary Health Centre</item>
+        <item>Ota Efun Primary Health Centre</item>
+        <item>Ijebu-Ijesha General Hospital</item>
+        <item>Asubiaro State Hospital</item>
+        <item>Oke Baale Primary Health Centre</item>
+        <item>Alekuwodo Primary Health Centre</item>
+        <item>Odi-Olowo Primary Health Centre</item>
+        <item>Oke Abesu Primary Health Centre</item>
+        <item>Erelu Obada Primary Health Centre</item>
+        <item>OLA Catholic Hospital, Oluyoro, Ibadan</item>
+        <item></item>
+
+        <item><b><u><i>OYO STATE FACILITIES</i></u></b></item>
+
+        <item>Comfort Medical Centre, Oyo</item>
+        <item>Oyo State One Stop Shop (OSS), Ibadan</item>
+        <item>Ibadan Central Hospital, Ibadan</item>
+        <item>Olugbon Medical Centre, Igboora</item>
+        <item>Eruwa General Hospital</item>
+        <item>Bowen University Teaching Hospital (BUTH), Ogbomosho</item>
+        <item>Lad Medical Centre, Ibadan</item>
+        <item>Oyo State Hospital, Oyo</item>
+        <item>Shekina Medical Centre, Oyo</item>
+        <item>Saki State Hospital, Saki</item>
+        <item></item>
+
+        <item><b><u><i>PLATEAU STATE FACILITIES</i></u></b></item>
+
+        <item>Bassa Cottage Hospital</item>
+        <item>Bomo Primary Health Centre</item>
+        <item>Kasakuk Primary Health Centre</item>
+        <item>Hwol Buji Primary Health Centre</item>
+        <item>Bakin Kogi Primary Health Centre</item>
+        <item>Bokkos Cottage Hospital</item>
+        <item>Wumat Primary Health Centre</item>
+        <item>Mushu Primary Health Centre</item>
+        <item>Butura Kampani Primary Health Centre</item>
+        <item>Kaban Primary Health Centre</item>
+        <item>Hwolshe Medical Center</item>
+        <item>Jenta Adamu Primary Health Centre</item>
+        <item>Jos Jarawa Primary Health Centre</item>
+        <item>Jos Township Primary Health Centre</item>
+        <item>Nasarawa Primary Health Centre</item>
+        <item>Our Lady of Apostles Hospital and Orphanage, Zawan</item>
+        <item>Rantya Primary Health Centre</item>
+        <item>Du Primary Health Centre</item>
+        <item>Giring Primary Health Centre</item>
+        <item>Shen Primary Health Centre</item>
+        <item>Langtang General Hospital</item>
+        <item>Timmwat Mabe Primary Health Centre</item>
+        <item>Bapkwai Primary Health Centre</item>
+        <item>Kwanpe Primary Health Centre</item>
+        <item>Sabon Layi Primary Health Centre</item>
+        <item>Konbum Primary Health Centre</item>
+        <item>Kopal Primary Health Centre</item>
+        <item>Nyes Primary Health Centre</item>
+        <item>Bwonpe Primary Health Centre</item>
+        <item>Bidol Primary Health Centre</item>
+        <item>Ampang West Primary Health Centre</item>
+        <item>Lardang Comprehensive Health Centre</item>
+        <item>Yitlar Primary Health Centre</item>
+        <item>Dokan Kasuwa Primary Health Centre</item>
+        <item>Miket Primary Health Centre</item>
+        <item>Kwang 2 Primary Health Centre</item>
+        <item>Kwanoeng Primary Health Centre</item>
+        <item> </item>
+
+        <item><b><u><i>SOKOTO STATE FACILITIES</i></u></b></item>
+
+        <item>Bodai Sajo Upgraded Dispensary</item>
+        <item>Dange Model Primary Health Centre</item>
+        <item>Kwannawa Upgraded Dispensary</item>
+        <item>Rikina Upgraded Dispensary</item>
+        <item>Shuni Upgraded Dispensary</item>
+        <item>Dan Ba Primary Health Centre</item>
+        <item>Illela General Hospital</item>
+        <item>Gidan Hamma Primary Health Centre</item>
+        <item>Kalmalo Primary Health Centre</item>
+        <item>Sabon-Gari Primary Health Centre</item>
+        <item>Tozai Primary Health Centre</item>
+        <item>Isah General Hospital</item>
+        <item>Rabah General Hospital</item>
+        <item>Kofar Rini Comprehensive Health Centre</item>
+        <item>Helele Basic Health Clinic</item>
+        <item>Kofar Kade Basic Health Clinic</item>
+        <item>Rinin Tawaye Primary Health Centre</item>
+        <item>Rumbunkawa Basic Health Clinic</item>
+        <item>Runji Sambo Health Clinic</item>
+        <item>Sanyinna Comprehensive Health Centre</item>
+        <item>Faga/Alhassan Primary Health Centre</item>
+        <item>Jabo Primary Health Centre</item>
+        <item>Romon Sarki Primary Health Centre</item>
+        <item>Tambuwal Shifiri Primary Health Centre</item>
+        <item>Farfaru Primary Health Centre</item>
+        <item>Gumbi Primary Health Centre</item>
+        <item>Kaura Kimba Primary Health Centre</item>
+        <item>Wamakko Primary Health Centre</item>
+        <item>Yarlabe Primary Health Centre</item>
+        <item>Yarume Primary Health Centre</item>
+        <item>Wurno General Hospital</item>
+        <item> </item>
+
+        <item><b><u><i>TARABA STATE FACILITIES</i></u></b></item>
+
+        <item>Mutum Biyu First Referral Hospital</item>
+        <item>Gunduma Maternal and Child Health Centre</item>
+        <item>Mararaban Gassol Dispensary</item>
+        <item>Shagarda Maternity Clinic</item>
+        <item>Mutum Biyu Primary Health Centre</item>
+        <item>Sabon Gida Maternal and Child Health Centre</item>
+        <item>Tella MDG Clinic</item>
+        <item>Gassol Maternal and Child Health Centre</item>
+        <item>Jinya Medical Centre</item>
+        <item>Kona Model Primary Health Centre</item>
+        <item>Mayo Gwoi Primary Health Centre</item>
+        <item>Mafindi Urban Health Centre</item>
+        <item>Sabon Gari Primary Health Centre, Jalingo</item>
+        <item>Yelwa Primary Health Centre</item>
+        <item>Nukkai Maternal and Child Health Centre</item>
+        <item>Sunshine Clinic and Maternity</item>
+        <item>Abong Model Health Centre</item>
+        <item>Ndaforo Health Clinic</item>
+        <item>Didan Model Health Centre</item>
+        <item>Baissa Model Health Centre</item>
+        <item>Ashuku (MDG) Primary Health Centre</item>
+        <item>First Referral Hospital Lau</item>
+        <item>Mayo Lope Model Health Centre</item>
+        <item>Kunini Comprehensive Health Centre</item>
+        <item>Jimlari Maternal Health Clinic</item>
+        <item>Donadda (MDG) Primary Health Care</item>
+        <item>Abbare Maternal and Child Health Centre</item>
+        <item>Garin Dogo Maternal and Child Health Centre</item>
+        <item>Rapha Hospital</item>
+        <item>Chanchangi Model Health Centre</item>
+        <item>Manya Health Clinic and Maternity</item>
+        <item>Bete Maternal and Child Health Clinic</item>
+        <item>Tampa Model Health Centre</item>
+        <item>T Y Danjuma Comprehensive Health Centre</item>
+        <item>Kwararafa Hospital and Maternity</item>
+        <item>Wukari CRCN Comprehensive Health Centre</item>
+        <item>Zing General Hospital</item>
+        <item>Kakulu Dispensary</item>
+        <item>Jagambo (MDG) Primary Health Care</item>
+        <item>Taraba State One Stop Shop (OSS), Jalingo</item>
+        <item> </item>
+
+        <item><b><u><i>YOBE STATE FACILITIES</i></u></b></item>
+
+        <item>Bayamari Model Primary Health Centre</item>
+        <item>Sani Abacha Specialist Hospital, Damaturu</item>
+        <item>Damaturu Family Support Program FSP Clinic</item>
+        <item>Ngelzanma Maternal and Child Health Centre</item>
+        <item>Geidem General Hospital</item>
+        <item>Jakusko General Hospital</item>
+        <item>Banbangida Comprehensive Health Centre</item>
+        <item>Dapchi Comprehensive Health Centre</item>
+        <item> </item>
+
+        <item><b><u><i>ZAMFARA STATE FACILITIES</i></u></b></item>
+        <item>Anka General Hospital</item>
+        <item>Bungudu General Hospital</item>
+        <item>Bungudu Women and Children Welfare Clinic</item>
+        <item>Fantaru Primary Health Centre</item>
+        <item>Furfuri Primary Health Centre</item>
+        <item>Kotorkoshi Primary Health Centre</item>
+        <item>Nahuche Primary Health Centre</item>
+        <item>Gummi General Hospital</item>
+        <item>Banga Primary Health Centre</item>
+        <item>Gabake Primary Health Centre</item>
+        <item>Kaura Women and Children Welfare Clinic</item>
+        <item>Sabongari Primary Health Centre</item>
+        <item>Yankaba Primary Health Centre</item>
+        <item>Dangulbi Primary Health Centre</item>
+        <item>Dankurumi Primary Health Centre</item>
+        <item>Kanoma Primary Health Centre</item>
+        <item>Maru General Hospital</item>
+        <item>Maru Maternal and Child Health Centre</item>
+        <item>Ruwan Darawa Primary Health Centre</item>
+        <item>Galadi Primary Health Centre</item>
+        <item>Jangeru Primary Health Centre</item>
+        <item>Kware Primary Health Centre</item>
+        <item>Shinkafi Women and Children Welfare Clinic</item>
+        <item>Tubali Primary Health Centre</item>
+        <item>Talata Mafara General Hospital</item>
+        <item>Chediya Primary Health Centre</item>
+        <item>Keta Primary Health Centre</item>
+        <item>Magazu Primary Health Centre</item>
+        <item>Yankuzo Primary Health Centre</item>
+        <item>Yanware Primary Health Centre</item>
+    </string-array>
+</resources>
