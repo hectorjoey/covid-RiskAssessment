@@ -242,6 +242,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
                             fatigueSymptoms, newOrWorseningCough, difficultyInBreathingSymptom,
                             lossOfSmellSymptoms, lossOfTasteSymptoms, contactWithFamily,
                             Long.parseLong(userId), risk
+                    );
                 }
 
 
