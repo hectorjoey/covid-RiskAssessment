@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -222,6 +223,28 @@ public class UserHealthDataActivity extends AppCompatActivity {
                 System.out.println("SECTION TWO YESSES ==>>> " + sectionTwoYes);
 
 
+                if ((sectionOne.size() >= 2) || (sectionTwo.size() >=1) ) {
+                    Log.d("section2244..", "high risk: ");
+                    risk = "High Risk";
+                        registerUserHealthData(fullname, date, age, phone, feverSymptom,
+                            headacheSymptom, sneezingSymptoms, chestPainSymptoms, bodyPainSymptoms,
+                            nauseaOrVomitingSymptom, diarrhoeaSymptoms, fluSymptoms, soreThroatSymptoms,
+                            fatigueSymptoms, newOrWorseningCough, difficultyInBreathingSymptom,
+                            lossOfSmellSymptoms, lossOfTasteSymptoms, contactWithFamily,
+                            Long.parseLong(userId), risk
+                );
+                } else {
+                    Log.d("section2244..", "low risk: ");
+                    risk = "Low Risk";
+                    registerUserHealthData(fullname, date, age, phone, feverSymptom,
+                            headacheSymptom, sneezingSymptoms, chestPainSymptoms, bodyPainSymptoms,
+                            nauseaOrVomitingSymptom, diarrhoeaSymptoms, fluSymptoms, soreThroatSymptoms,
+                            fatigueSymptoms, newOrWorseningCough, difficultyInBreathingSymptom,
+                            lossOfSmellSymptoms, lossOfTasteSymptoms, contactWithFamily,
+                            Long.parseLong(userId), risk
+                }
+
+
                 /*** The below if condition alone can check for
                  *  High and Low risk (you don't really require
                  *  the section two the check since if the symptoms
@@ -243,24 +266,24 @@ public class UserHealthDataActivity extends AppCompatActivity {
 //                if (sectionOneYes.get() < 2 || sectionTwoYes.get() == 0 ) {
 //                    System.out.println("RISK IS LOW");
 //                    risk = "Low Risk";
-                if (sectionOneYes.get() >= 2 || sectionTwoYes.get() > 0) {
-                    System.out.println("RISK IS HIGH");
-                    risk = "High Risk";
-                } else if (sectionOneYes.get() > 1 && sectionTwoYes.get() > 0) {
-                    System.out.println("RISK IS HIGH");
-                    risk = "High Risk";
-                } else {
-                    System.out.println("RISK IS LOW");
-                    risk = "Low Risk";
-                }
+//                if (sectionOneYes.get() >= 2 || sectionTwoYes.get() > 0) {
+//                    System.out.println("RISK IS HIGH");
+//                    risk = "High Risk";
+//                } else if (sectionOneYes.get() > 1 && sectionTwoYes.get() > 0) {
+//                    System.out.println("RISK IS HIGH");
+//                    risk = "High Risk";
+//                } else {
+//                    System.out.println("RISK IS LOW");
+//                    risk = "Low Risk";
+//                }
 
-                registerUserHealthData(fullname, date, age, phone, feverSymptom,
-                        headacheSymptom, sneezingSymptoms, chestPainSymptoms, bodyPainSymptoms,
-                        nauseaOrVomitingSymptom, diarrhoeaSymptoms, fluSymptoms, soreThroatSymptoms,
-                        fatigueSymptoms, newOrWorseningCough, difficultyInBreathingSymptom,
-                        lossOfSmellSymptoms, lossOfTasteSymptoms, contactWithFamily,
-                        Long.parseLong(userId), risk
-                );
+//                registerUserHealthData(fullname, date, age, phone, feverSymptom,
+//                        headacheSymptom, sneezingSymptoms, chestPainSymptoms, bodyPainSymptoms,
+//                        nauseaOrVomitingSymptom, diarrhoeaSymptoms, fluSymptoms, soreThroatSymptoms,
+//                        fatigueSymptoms, newOrWorseningCough, difficultyInBreathingSymptom,
+//                        lossOfSmellSymptoms, lossOfTasteSymptoms, contactWithFamily,
+//                        Long.parseLong(userId), risk
+//                );
             }
         });
 
