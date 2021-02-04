@@ -21,6 +21,7 @@ public interface Api {
     Call<Users> createUser(
             @Field("firstname") String firstname,
             @Field("lastname") String lastname,
+            @Field("age") String age,
             @Field("designation") String designation,
             @Field("phone") String phone,
             @Field("email") String email,
@@ -35,10 +36,7 @@ public interface Api {
     @FormUrlEncoded
     @POST("userHealthData")
     Call<UserHealthData> createUserHealthData(
-            @Field("fullname") String fullname,
             @Field("date") String date,
-            @Field("age") String age,
-            @Field("phone") String phone,
 
             @Field("feverSymptom") String feverSymptom,
             @Field("headacheSymptom") String headacheSymptom,
@@ -59,7 +57,10 @@ public interface Api {
             @Field("contactWithFamily") String contactWithFamily,
 
             @Field("userId") Long userId,
+            @Field("firstname") String firstname,
+            @Field("phone") String phone,
             @Field("risk") String risk
+
     );
 
     //the users login call
@@ -91,11 +92,15 @@ public interface Api {
             @Field("password") String password
     );
 
+    
+
     //create supervisor
     @FormUrlEncoded
     @POST("supervisors")
     Call<ResponseBody> createSupervisor(
-            @Field("fullname") String fullname,
+            @Field("firstname") String firstname,
+            @Field("lastname") String lastname,
+            @Field("phone") String phone,
             @Field("email") String email,
             @Field("password") String password,
             @Field("userType") String userType,
@@ -114,7 +119,7 @@ public interface Api {
     @GET("supervisors")
     Call<List<Supervisor>> getSupervisors();
 
-    @GET("userHealthdata/{supervisorId}")
-    Call<List<UserHealthData>> getUserHealthDataBySupervisorId(@Path("supervisorId") String supervisorId);
+    @GET("userHealthdata/{userId}")
+    Call<List<UserHealthData>> getUserHealthDataBySupervisorId(@Path("userId") String userId);
 
 }

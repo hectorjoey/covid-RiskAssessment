@@ -7,12 +7,9 @@
         android:icon="@drawable/ic_search_black_24dp"
         android:orderInCategory="100"
         android:title="search"
-        app:showAsAction="always"
+        app:showAsAction="never"
         app:actionViewClass="androidx.appcompat.widget.SearchView" />
-    <item
-        android:id="@+id/main_settings"
-        android:title="Settings"
-        app:showAsAction="never" />
+
 
     <item
         android:id="@+id/main_refresh"

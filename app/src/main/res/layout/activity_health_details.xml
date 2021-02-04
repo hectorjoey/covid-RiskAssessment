@@ -33,7 +33,7 @@
             android:textStyle="bold" />
 
         <LinearLayout
-            android:id="@+id/layout_fullname"
+            android:id="@+id/layout_firstname"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="12dp"
@@ -41,16 +41,16 @@
             android:padding="8dp">
 
             <TextView
-                android:id="@+id/vFullname"
+                android:id="@+id/vFirstname"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Fullname:"
+                android:hint="Firstname:"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/detailsFullname"
+                android:id="@+id/detailsFirstname"
                 android:layout_width="0dp"
                 android:gravity="start"
                 android:layout_height="wrap_content"
@@ -224,7 +224,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:visibility="gone"
-            android:layout_marginLeft="8dp"
             android:orientation="horizontal"
             android:padding="2dp">
 
@@ -252,7 +251,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:visibility="gone"
-            android:layout_marginLeft="8dp"
             android:orientation="horizontal"
             android:padding="2dp">
 
@@ -280,7 +278,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:visibility="gone"
-            android:layout_marginLeft="8dp"
             android:orientation="horizontal"
             android:padding="2dp">
 
@@ -306,7 +303,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             android:visibility="gone"
             android:orientation="horizontal"
             android:padding="2dp">
@@ -335,7 +331,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:visibility="gone"
-            android:layout_marginLeft="8dp"
             android:orientation="horizontal"
             android:padding="2dp">
 
@@ -363,7 +358,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:visibility="gone"
-            android:layout_marginLeft="8dp"
             android:orientation="horizontal"
             android:padding="2dp">
 
@@ -391,7 +385,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:visibility="gone"
-            android:layout_marginLeft="8dp"
             android:orientation="horizontal"
             android:padding="2dp">
 
@@ -420,7 +413,6 @@
             android:layout_height="wrap_content"
             android:visibility="gone"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             android:orientation="horizontal"
             android:padding="2dp">
 
@@ -447,7 +439,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             android:visibility="gone"
             android:orientation="horizontal"
             android:padding="2dp">
@@ -504,7 +495,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:visibility="gone"
-            android:layout_marginLeft="8dp"
             android:orientation="horizontal"
             android:padding="2dp">
 
@@ -531,7 +521,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             android:visibility="gone"
             android:layout_marginTop="4dp"
             android:orientation="horizontal"

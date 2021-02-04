@@ -47,6 +47,7 @@
             android:id="@+id/textFirstname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -82,11 +83,45 @@
                 android:hint="Last name"
                 android:importantForAutofill="no"
                 android:inputType="textCapWords"
-                android:padding="4dp" />
+                android:padding="6dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#c0c0c0" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:padding="4dp"
+            android:text="@string/age"
+            android:textColor="#f76a8c"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/age_spinner"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/et_custom" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#c0c0c0" />
+
+
+<!--        phone label-->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textPhone"
+            android:layout_marginTop="6dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorEnabled="true">
@@ -101,13 +136,35 @@
                 android:background="@drawable/et_custom"
                 android:hint="Phone"
                 android:inputType="number"
-                android:padding="4dp"
+                android:padding="6dp"
                 android:textAllCaps="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!-- address Label -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addressInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/et_custom"
+                android:hint="Address"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine|textCapWords"
+                android:padding="6dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textDesignation"
             android:layout_width="match_parent"
+            android:layout_marginTop="6dp"
             android:layout_height="wrap_content"
             app:errorEnabled="true">
 
@@ -121,7 +178,7 @@
                 android:background="@drawable/et_custom"
                 android:hint="Designation"
                 android:inputType="textCapWords"
-                android:padding="4dp"
+                android:padding="6dp"
                 android:textAllCaps="true" />
         </com.google.android.material.textfield.TextInputLayout>
         <!--email-->
@@ -129,6 +186,7 @@
             android:id="@+id/textEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -142,7 +200,7 @@
                 android:hint="Email"
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
-                android:padding="4dp" />
+                android:padding="6dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Password Label -->
@@ -151,6 +209,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorEnabled="true"
+            android:layout_marginTop="6dp"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -164,7 +223,7 @@
                 android:hint="Password"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:padding="4dp" />
+                android:padding="6dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
@@ -181,7 +240,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:padding="4dp">
+                android:padding="6dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -223,26 +282,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Password Label -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/addressInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:errorEnabled="true">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/address"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/et_custom"
-                android:hint="Address"
-                android:importantForAutofill="no"
-                android:inputType="textMultiLine|textCapWords"
-                android:padding="4dp" />
-        </com.google.android.material.textfield.TextInputLayout>
 
         <View
             android:layout_width="match_parent"

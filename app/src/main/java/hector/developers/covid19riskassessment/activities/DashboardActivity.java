@@ -80,9 +80,6 @@ public class DashboardActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
-            case R.id.main_settings:
-//                settings();
-                return true;
             case R.id.main_refresh:
                 fetchData();
                 return true;

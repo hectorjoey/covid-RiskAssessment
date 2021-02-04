@@ -32,17 +32,17 @@ public class MainActivity extends AppCompatActivity {
         mImgAddUser = findViewById(R.id.imgAddUser);
         mImageViewSup = findViewById(R.id.imgViewSup);
         mImageViewUser = findViewById(R.id.imgViewUser);
-        mAnalyticButton = findViewById(R.id.analyticButton);
+//        mAnalyticButton = findViewById(R.id.analyticButton);
 
 
-        mAnalyticButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent chartIntent = new Intent(getApplicationContext(), ChartActivity.class);
-                startActivity(chartIntent);
-                finish();
-            }
-        });
+//        mAnalyticButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent chartIntent = new Intent(getApplicationContext(), ChartActivity.class);
+//                startActivity(chartIntent);
+//                finish();
+//            }
+//        });
 
         mImageSup.setOnClickListener(new View.OnClickListener() {
             @Override

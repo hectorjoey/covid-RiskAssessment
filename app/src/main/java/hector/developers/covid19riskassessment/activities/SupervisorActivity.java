@@ -10,6 +10,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.ColorSpace;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -60,7 +62,7 @@ public class SupervisorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supervisor);
         HashMap<String, String> id = getSupperVisorId1();
-        String userId = id.get("suppervisorId");
+        String userId = id.get("userId");
         rv = findViewById(R.id.recyclerView);
         rv.setLayoutManager(new LinearLayoutManager(this));
         mToolbar = findViewById(R.id.main_page_toolbar);
@@ -68,7 +70,7 @@ public class SupervisorActivity extends AppCompatActivity {
         setTitle("Supervisor Dashboard");
         userHealthDataList = populateList();
         loadingBar = new ProgressDialog(this);
-        fetchHealthData(Long.valueOf(userId));
+        fetchHealthData(userId);
         enableSwipe();
     }
 
@@ -162,12 +164,12 @@ public class SupervisorActivity extends AppCompatActivity {
         return userHealthDataArrayList;
     }
 
-    public void fetchHealthData(Long supervisorId) {
-        System.out.println("userHealthDataListID " + supervisorId);
+    public void fetchHealthData(String userId) {
+        System.out.println("userHealthDataListID " + userId);
         Call<List<UserHealthData>> call = RetrofitClient
                 .getInstance()
                 .getApi()
-                .getUserHealthDataBySupervisorId(String.valueOf(supervisorId));
+                .getUserHealthDataBySupervisorId(String.valueOf(userId));
         call.enqueue(new Callback<List<UserHealthData>>() {
             @Override
             public void onResponse(@NonNull Call<List<UserHealthData>> call, @NonNull Response<List<UserHealthData>> response) {
@@ -203,36 +205,43 @@ public class SupervisorActivity extends AppCompatActivity {
         }
     }
 
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater inflater =
+//                getMenuInflater();
+//        inflater.inflate(R.menu.options_menu, menu);
+//        // Associate searchable configuration with the SearchView
+//        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+//
+//        searchView = (SearchView) menu.findItem(R.id.action_search)
+//                .getActionView();
+//        searchView.setSearchableInfo(searchManager
+//                .getSearchableInfo(getComponentName()));
+//        searchView.setMaxWidth(Integer.MAX_VALUE);
+//
+//        // listening to search query text change
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                // filter recycler view when query submitted
+//                adapter.getFilter().filter(query);
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String query) {
+//                // filter recycler view when text is changed
+//                adapter.getFilter().filter(query);
+//                return false;
+//            }
+//        });
+//        return true;
+//    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater =
-                getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
-        // Associate searchable configuration with the SearchView
-        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-
-        searchView = (SearchView) menu.findItem(R.id.action_search)
-                .getActionView();
-        searchView.setSearchableInfo(searchManager
-                .getSearchableInfo(getComponentName()));
-        searchView.setMaxWidth(Integer.MAX_VALUE);
-
-        // listening to search query text change
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                // filter recycler view when query submitted
-                adapter.getFilter().filter(query);
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String query) {
-                // filter recycler view when text is changed
-                adapter.getFilter().filter(query);
-                return false;
-            }
-        });
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
         return true;
     }
 
@@ -240,13 +249,10 @@ public class SupervisorActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
-
-            case R.id.main_settings:
-//                settings();
-                return true;
             case R.id.main_refresh:
                 // fetchData(userId);
-
+            case R.id.main_userHealthData:
+                userHealthData();
                 return true;
             case R.id.main_logout:
                 logout();
@@ -254,6 +260,13 @@ public class SupervisorActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void userHealthData() {
+        Intent userHealthDataIntent = new Intent(SupervisorActivity.this, UserHealthDataActivity.class);
+        userHealthDataIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(userHealthDataIntent);
+        finish();
     }
 
     private void logout() {
@@ -280,8 +293,8 @@ public class SupervisorActivity extends AppCompatActivity {
 
     public HashMap<String, String> getSupperVisorId1() {
         HashMap<String, String> id = new HashMap<>();
-        SharedPreferences sharedPreferences = this.getSharedPreferences("suppervisorId", Context.MODE_PRIVATE);
-        id.put("suppervisorId", sharedPreferences.getString("suppervisorId", null));
+        SharedPreferences sharedPreferences = this.getSharedPreferences("userId", Context.MODE_PRIVATE);
+        id.put("userId", sharedPreferences.getString("userId", null));
         return id;
     }
 }

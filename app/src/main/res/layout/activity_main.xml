@@ -185,13 +185,13 @@
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
-    <Button
-        android:id="@+id/analyticButton"
-        android:layout_marginTop="22dp"
-        android:layout_width="300dp"
-        android:layout_gravity="center"
-        android:background="@drawable/registration_button"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="Veiw Analytics"/>
+<!--    <Button-->
+<!--        android:id="@+id/analyticButton"-->
+<!--        android:layout_marginTop="22dp"-->
+<!--        android:layout_width="300dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:background="@drawable/registration_button"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:text="Veiw Analytics"/>-->
 </LinearLayout>

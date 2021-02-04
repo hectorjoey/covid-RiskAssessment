@@ -8,18 +8,9 @@ import java.io.Serializable;
 //@IgnoreExtraProperties
 public class UserHealthData implements Serializable {
 
-    @SerializedName("fullname")
-    @Expose
-    private String fullname;
-
     @SerializedName("date")
     @Expose
     private String date;
-
-    @SerializedName("phone")
-    @Expose
-    private String phone;
-
     //    section one
     @SerializedName("feverSymptom")
     @Expose
@@ -86,20 +77,20 @@ public class UserHealthData implements Serializable {
     private Long userId;
 
     private String risk;
+    private String firstname;
+    private String phone;
 
     public UserHealthData() {
     }
 
-    public UserHealthData(String fullname, String date, String phone, String feverSymptom,
+    public UserHealthData(String date, String feverSymptom,
                           String headacheSymptom, String sneezingSymptom, String chestPainSymptom,
                           String bodyPainSymptom, String nauseaOrVomitingSymptom, String diarrhoeaSymptom,
                           String fluSymptom, String soreThroatSymptom, String fatigueSymptom,
                           String newOrWorseningCough, String difficultyInBreathing,
                           String lossOfOrDiminishedSenseOfSmell, String lossOfOrDiminishedSenseOfTaste,
-                          String contactWithFamily, Long userId, String risk) {
-        this.fullname = fullname;
+                          String contactWithFamily, Long userId, String firstname, String phone, String risk) {
         this.date = date;
-        this.phone = phone;
         this.feverSymptom = feverSymptom;
         this.headacheSymptom = headacheSymptom;
         this.sneezingSymptom = sneezingSymptom;
@@ -116,16 +107,11 @@ public class UserHealthData implements Serializable {
         this.lossOfOrDiminishedSenseOfTaste = lossOfOrDiminishedSenseOfTaste;
         this.contactWithFamily = contactWithFamily;
         this.userId = userId;
+        this.firstname = firstname;
+        this.phone = phone;
         this.risk = risk;
     }
 
-    public String getFullname() {
-        return fullname;
-    }
-
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
-    }
 
     public String getDate() {
         return date;
@@ -133,14 +119,6 @@ public class UserHealthData implements Serializable {
 
     public void setDate(String date) {
         this.date = date;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
     }
 
     public String getFeverSymptom() {
@@ -277,5 +255,21 @@ public class UserHealthData implements Serializable {
 
     public void setRisk(String risk) {
         this.risk = risk;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

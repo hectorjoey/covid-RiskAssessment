@@ -8,14 +8,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -29,7 +25,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -50,8 +45,18 @@ import retrofit2.Response;
 public class UserHealthDataActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     final Calendar myCalendar = Calendar.getInstance();
-    EditText mFullname, mDate, mPhone;
-    Spinner mAgeSpinner;
+    EditText mDate;
+
+    private ProgressDialog loadingBar;
+    private Spinner mVisitSpinner, mLanguageSpinner;
+    private String mGender, mVisit, mAge;
+    private List<String> states;
+    private String userId;
+    private String firstname;
+    private String phone;
+
+    private String risk;
+
     Users users;
     //global variables
     AtomicInteger sectionOneYes = new AtomicInteger();
@@ -60,7 +65,6 @@ public class UserHealthDataActivity extends AppCompatActivity {
     //local variables
     ArrayList<String> sectionOne = new ArrayList<>();
     ArrayList<String> sectionTwo = new ArrayList<>();
-    String phone;
     RadioGroup mFever, mHeadache, mSneezing, mChestPain,
             mBodyPain, mNauseaOrVomitingSymptom, mDiarrhoea,
             mFlu, mSoreThroatSymptoms, mFatigueSymptom,
@@ -87,22 +91,11 @@ public class UserHealthDataActivity extends AppCompatActivity {
             updateLabel();
         }
     };
-    private Toolbar mToolbar;
-    private ProgressDialog loadingBar;
-    private Spinner mVisitSpinner, mLanguageSpinner;
-    private String mGender, mVisit, mAge;
-    private List<String> states;
-    private String userId;
-
-    private String risk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_health_data);
-        mToolbar = findViewById(R.id.main_page_toolbar);
-        setSupportActionBar(mToolbar);
-        setTitle("User Dashboard");
         loadingBar = new ProgressDialog(this);
 
         currentLanguage = getIntent().getStringExtra(currentLang);
@@ -114,11 +107,15 @@ public class UserHealthDataActivity extends AppCompatActivity {
         list.add("Igbo");
         HashMap<String, String> id = getUserId();
         userId = id.get("userId");
-        mAgeSpinner = findViewById(R.id.age_spinner);
+
+        HashMap<String, String> firstName = getUserFirstname();
+        firstname = firstName.get("firstname");
+
+        HashMap<String, String> phoneNumber = getUserPhoneNumber();
+        phone = phoneNumber.get("phone");
+
 //
-        mFullname = findViewById(R.id.edit_text_fullname);
         mDate = findViewById(R.id.edit_date);
-        mPhone = findViewById(R.id.phone);
         //section1
         mFever = findViewById(R.id.radio_fever);
         mHeadache = findViewById(R.id.radio_headache);
@@ -138,7 +135,6 @@ public class UserHealthDataActivity extends AppCompatActivity {
         //section 3
         mContactWithFamily = findViewById(R.id.radio_contactWithFamily);
 
-        mAgeSpinner = findViewById(R.id.age_spinner);
 
         mBtn_submit = findViewById(R.id.btn_submit);
 //        mUserId = findViewById(R.id.userId);
@@ -146,10 +142,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
         mBtn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String fullname = mFullname.getText().toString().trim();
                 String date = mDate.getText().toString().trim();
-                final String age = String.valueOf(mAgeSpinner.getSelectedItem());
-                final String phone = mPhone.getText().toString().trim();
 
                 final String feverSymptom = ((RadioButton) findViewById(mFever.getCheckedRadioButtonId())).getText().toString();
                 final String headacheSymptom = ((RadioButton) findViewById(mHeadache.getCheckedRadioButtonId())).getText().toString();
@@ -170,22 +163,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
                 final String contactWithFamily = ((RadioButton) findViewById(mContactWithFamily.getCheckedRadioButtonId())).getText().toString();
 
                 //validations of fields
-                if (TextUtils.isEmpty(fullname)) {
-                    mFullname.setError("Please enter initials!");
-                    mFullname.requestFocus();
-                    return;
-                }
-                if (TextUtils.isEmpty(phone)) {
-                    mPhone.setError("Phone number is required!");
-                    mPhone.requestFocus();
-                    return;
-                }
-                if (fullname.contains(".") || fullname.contains(",") || fullname.contains("&")
-                        || fullname.contains("*") || fullname.contains("-")) {
-                    mFullname.setError("special characters not allowed here!");
-                    mFullname.requestFocus();
-                    return;
-                }
+
                 if (TextUtils.isEmpty(date)) {
                     mDate.setError("Enter date!");
                     mDate.requestFocus();
@@ -223,78 +201,23 @@ public class UserHealthDataActivity extends AppCompatActivity {
                 System.out.println("SECTION TWO YESSES ==>>> " + sectionTwoYes);
 
 
-                if ((sectionOne.size() >= 2) || (sectionTwo.size() >=1) ) {
+                if ((sectionOneYes.get() >= 2) || (sectionTwoYes.get() >= 1)) {
                     Log.d("section2244..", "high risk: ");
                     risk = "High Risk";
-                        registerUserHealthData(fullname, date, age, phone, feverSymptom,
-                            headacheSymptom, sneezingSymptoms, chestPainSymptoms, bodyPainSymptoms,
-                            nauseaOrVomitingSymptom, diarrhoeaSymptoms, fluSymptoms, soreThroatSymptoms,
-                            fatigueSymptoms, newOrWorseningCough, difficultyInBreathingSymptom,
-                            lossOfSmellSymptoms, lossOfTasteSymptoms, contactWithFamily,
-                            Long.parseLong(userId), risk
-                );
                 } else {
                     Log.d("section2244..", "low risk: ");
                     risk = "Low Risk";
-                    registerUserHealthData(fullname, date, age, phone, feverSymptom,
-                            headacheSymptom, sneezingSymptoms, chestPainSymptoms, bodyPainSymptoms,
-                            nauseaOrVomitingSymptom, diarrhoeaSymptoms, fluSymptoms, soreThroatSymptoms,
-                            fatigueSymptoms, newOrWorseningCough, difficultyInBreathingSymptom,
-                            lossOfSmellSymptoms, lossOfTasteSymptoms, contactWithFamily,
-                            Long.parseLong(userId), risk
-                    );
                 }
 
-
-                /*** The below if condition alone can check for
-                 *  High and Low risk (you don't really require
-                 *  the section two the check since if the symptoms
-                 *  in section 1 gives more than 2 yess then it is high risk
-                 */
-//                if (sectionOneYes.get() < 2) {
-//                    risk = "Low Risk";
-//                    System.out.println("RISK IS LOW");
-//                } else {
-//                    risk = "High Risk";
-//                    System.out.println("RISK IS High");
-//            }
-
-
-                /***
-                 * BUt you can still add condition from section 2  just to fulfill all righteousness :)
-                 * NOTE: you can replace the if condition below with the above one ...enjoy...
-                 */
-//                if (sectionOneYes.get() < 2 || sectionTwoYes.get() == 0 ) {
-//                    System.out.println("RISK IS LOW");
-//                    risk = "Low Risk";
-//                if (sectionOneYes.get() >= 2 || sectionTwoYes.get() > 0) {
-//                    System.out.println("RISK IS HIGH");
-//                    risk = "High Risk";
-//                } else if (sectionOneYes.get() > 1 && sectionTwoYes.get() > 0) {
-//                    System.out.println("RISK IS HIGH");
-//                    risk = "High Risk";
-//                } else {
-//                    System.out.println("RISK IS LOW");
-//                    risk = "Low Risk";
-//                }
-
-//                registerUserHealthData(fullname, date, age, phone, feverSymptom,
-//                        headacheSymptom, sneezingSymptoms, chestPainSymptoms, bodyPainSymptoms,
-//                        nauseaOrVomitingSymptom, diarrhoeaSymptoms, fluSymptoms, soreThroatSymptoms,
-//                        fatigueSymptoms, newOrWorseningCough, difficultyInBreathingSymptom,
-//                        lossOfSmellSymptoms, lossOfTasteSymptoms, contactWithFamily,
-//                        Long.parseLong(userId), risk
-//                );
+                registerUserHealthData(date, feverSymptom,
+                        headacheSymptom, sneezingSymptoms, chestPainSymptoms, bodyPainSymptoms,
+                        nauseaOrVomitingSymptom, diarrhoeaSymptoms, fluSymptoms, soreThroatSymptoms,
+                        fatigueSymptoms, newOrWorseningCough, difficultyInBreathingSymptom,
+                        lossOfSmellSymptoms, lossOfTasteSymptoms, contactWithFamily,
+                        Long.parseLong(userId), firstname, phone, risk
+                );
             }
         });
-
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> ageAdapter = ArrayAdapter.createFromResource(this,
-                R.array.age_array, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-        ageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        mAgeSpinner.setAdapter(ageAdapter);
 
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> languageAdapter = ArrayAdapter.createFromResource(this,
@@ -415,16 +338,12 @@ public class UserHealthDataActivity extends AppCompatActivity {
         rbContactWithFamily = findViewById(radioButtonId);
     }
 
-    public void registerUserHealthData(String fullname, String date, String age, String phone,
-                                       String feverSymptom, String headacheSymptom, String sneezingSymptom,
-                                       String chestPainSymptom,
-                                       String bodyPainSymptoms,
-                                       String nauseaOrVomitingSymptom,
-                                       String diarrhoeaSymptom,
-                                       String fluSymptom, String soreThroatSymptom,
+    public void registerUserHealthData(String date, String feverSymptom, String headacheSymptom, String sneezingSymptom,
+                                       String chestPainSymptom, String bodyPainSymptoms, String nauseaOrVomitingSymptom,
+                                       String diarrhoeaSymptom, String fluSymptom, String soreThroatSymptom,
                                        String fatigueSymptom, String newOrWorseningCough, String difficultyInBreathing,
                                        String lossOfOrDiminishedSenseOfSmell, String lossOfOrDiminishedSenseOfTaste,
-                                       String contactWithFamily, Long userId, String risk) {
+                                       String contactWithFamily, Long userId, String firstname, String phone, String risk) {
         //making api calls
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Sending Data...");
@@ -435,14 +354,14 @@ public class UserHealthDataActivity extends AppCompatActivity {
                 .getInstance()
                 .getApi()
                 .createUserHealthData(
-                        fullname, date, age, phone, feverSymptom, headacheSymptom, sneezingSymptom, chestPainSymptom,
+                        date, feverSymptom, headacheSymptom, sneezingSymptom, chestPainSymptom,
                         bodyPainSymptoms,
                         nauseaOrVomitingSymptom,
                         diarrhoeaSymptom,
                         fluSymptom, soreThroatSymptom,
                         fatigueSymptom, newOrWorseningCough, difficultyInBreathing,
                         lossOfOrDiminishedSenseOfSmell, lossOfOrDiminishedSenseOfTaste, contactWithFamily,
-                        userId, risk);
+                        userId, firstname, phone, risk);
         call.enqueue(new Callback<UserHealthData>() {
             @Override
             public void onResponse(Call<UserHealthData> call, Response<UserHealthData> response) {
@@ -451,7 +370,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
                         loadingBar.dismiss();
                         Toast.makeText(UserHealthDataActivity.this, "Data Saved!", Toast.LENGTH_LONG).show();
                         Intent highRiskIntent = new Intent(UserHealthDataActivity.this, HighRiskActivity.class);
-                        highRiskIntent.putExtra("risk", "High risk");
+                        highRiskIntent.putExtra("risk", "High Risk");
                         startActivity(highRiskIntent);
                         finish();
                     } else {
@@ -477,35 +396,6 @@ public class UserHealthDataActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.user_options_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.main_settings:
-//                settings();
-                return true;
-            case R.id.main_logout:
-                logout();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    private void logout() {
-        Intent intent = new Intent(UserHealthDataActivity.this, LoginActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-        finish();
-    }
-
     public void onBackPressed() {
         new AlertDialog.Builder(this)
                 .setTitle("Go back?")
@@ -514,7 +404,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface arg0, int arg1) {
                         Intent intent = new Intent(UserHealthDataActivity.this, LoginActivity.class);
-                       // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                         finish();
                     }
@@ -528,14 +418,25 @@ public class UserHealthDataActivity extends AppCompatActivity {
         return id;
     }
 
+    public HashMap<String, String> getUserFirstname() {
+        HashMap<String, String> firstName = new HashMap<>();
+        SharedPreferences sharedPreferences = this.getSharedPreferences("firstname", Context.MODE_PRIVATE);
+        firstName.put("firstname", sharedPreferences.getString("firstname", null));
+        return firstName;
+    }
+
+    public HashMap<String, String> getUserPhoneNumber() {
+        HashMap<String, String> phoneNumber = new HashMap<>();
+        SharedPreferences sharedPreferences = this.getSharedPreferences("phone", Context.MODE_PRIVATE);
+        phoneNumber.put("phone", sharedPreferences.getString("phone", null));
+        return phoneNumber;
+    }
     //method that should be outside the onCreate(){}
     private void checkSectionCount(ArrayList<String> section, AtomicInteger count) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            section.forEach(symptom -> {
-                if (symptom.equalsIgnoreCase("Yes")) {
-                    count.getAndIncrement();
-                }
-            });
+        for (String sections : section) {
+            if (sections.equalsIgnoreCase("Yes")) {
+                count.incrementAndGet();
+            }
         }
     }
 }

@@ -19,7 +19,7 @@ import hector.developers.covid19riskassessment.model.UserHealthData;
 
 
 public class HealthDetailsActivity extends AppCompatActivity {
-    TextView detailFullname;
+    TextView detailFirstname;
     TextView detailDate;
     TextView detailFeverSymptom;
     TextView detailsHeadacheSymptom;
@@ -48,7 +48,7 @@ public class HealthDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_details);
-        detailFullname = findViewById(R.id.detailsFullname);
+        detailFirstname = findViewById(R.id.detailsFirstname);
         detailDate = findViewById(R.id.detailsDate);
         detailFeverSymptom = findViewById(R.id.detailsFever);
         detailsHeadacheSymptom = findViewById(R.id.detailsHeadacheSymptom);
@@ -91,9 +91,9 @@ public class HealthDetailsActivity extends AppCompatActivity {
         UserHealthData userHealthData;
         userHealthData = (UserHealthData) getIntent().getSerializableExtra("key");
         assert userHealthData != null;
-        detailFullname.setText(userHealthData.getFullname());
+//        detailFirstname.setText(userHealthData.getFullname());
         detailDate.setText(userHealthData.getDate().toString());
-        detailsPhone.setText(userHealthData.getPhone());
+//        detailsPhone.setText(userHealthData.getPhone());
         detailFeverSymptom.setText(userHealthData.getFeverSymptom());
         detailsHeadacheSymptom.setText(userHealthData.getHeadacheSymptom());
         detailSneezingSymptoms.setText(userHealthData.getSneezingSymptom());

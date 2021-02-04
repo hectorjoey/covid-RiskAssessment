@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -33,15 +34,16 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     EditText mEmail, mPassword;
     Button mLogin;
-    TextView supLink;
     ProgressDialog progressDialog;
     private Util util;
     private SessionManagement sessionManagement;
+
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +52,13 @@ public class LoginActivity extends AppCompatActivity {
         mEmail = findViewById(R.id.et_email);
         mPassword = findViewById(R.id.et_password);
         mLogin = findViewById(R.id.btn_login);
-        supLink = findViewById(R.id.tvSupervisorLink);
 //        loadingBar = new ProgressDialog(this);
         HashMap<String, String> status = status();
         String statuss = status.get("status");
         util = new Util();
+
+        sharedPreferences = this.getSharedPreferences("userId", Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
 
         sessionManagement = new SessionManagement(this);
 
@@ -66,15 +70,6 @@ public class LoginActivity extends AppCompatActivity {
         } else {
             showCustomDialog();
         }
-
-        supLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent superviseIntent = new Intent(LoginActivity.this, SupLoginActivity.class);
-                startActivity(superviseIntent);
-                finish();
-            }
-        });
 
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,15 +124,6 @@ public class LoginActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
 
                     Users users = response.body();
-                    System.out.println("users ..... " + users);
-                    Log.d("user33", "response:..  " + new Gson().toJson(response.body()));
-                    String phone = response.body().getPhone();
-                    System.out.println("phone " + phone);
-                    String email = response.body().getEmail();
-                    System.out.println("email " + email);
-                    String state = response.body().getState();
-                    System.out.println("state " + state);
-
                     System.out.println("users XXXXXX " + response);
                     assert response.body() != null;
 //                    userID = response.body().getId();
@@ -153,7 +139,7 @@ public class LoginActivity extends AppCompatActivity {
                         finish();
                         Toast.makeText(LoginActivity.this, "Welcome Admin!", Toast.LENGTH_LONG).show();
                         progressDialog.dismiss();
-                    } else {
+                    } else if (users.getUserType().equalsIgnoreCase("user")){
                         Intent intent = new Intent(LoginActivity.this, UserHealthDataActivity.class);
                         intent.putExtra("userId ", users.getId());
                         saveUserId(users.getId());
@@ -161,10 +147,30 @@ public class LoginActivity extends AppCompatActivity {
                         assert response.body() != null;
                         intent.putExtra("User", response.body().getUserType());
                         intent.putExtra("state", response.body().getState());
+                        intent.putExtra("firstname", response.body().getFirstname());
+                        System.out.println("firstname ++:" + users.getFirstname());
+                        intent.putExtra("phone", response.body().getPhone());
+                        System.out.println("phone ++:" + users.getPhone());
                         startActivity(intent);
                         sessionManagement.setLoginEmail(email);
                         sessionManagement.setLoginPassword(password);
                         Toast.makeText(LoginActivity.this, "Welcome User!", Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
+                    }else {
+                        Intent intent = new Intent(LoginActivity.this, SupervisorActivity.class);
+                        editor.putLong("userId", users.getId());
+                        editor.apply();
+                        intent.putExtra("userId ", users.getId());
+                        saveUserId(Long.valueOf(users.getId()));
+
+                        System.out.println("users ,,,," + users.getId());
+                        assert response.body() != null;
+                        intent.putExtra("User", response.body().getUserType());
+                        intent.putExtra("state", response.body().getState());
+                        startActivity(intent);
+                        sessionManagement.setLoginEmail(email);
+                        sessionManagement.setLoginPassword(password);
+                        Toast.makeText(LoginActivity.this, "Welcome Supervisor!", Toast.LENGTH_SHORT).show();
                         progressDialog.dismiss();
                     }
                 } else {
@@ -186,8 +192,16 @@ public class LoginActivity extends AppCompatActivity {
     public void saveUserId(Long id) {
         SharedPreferences sharedPreferences = this.getSharedPreferences("userId", Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sharedPreferences.edit();
-        edit.clear();
+//        edit.clear();
         edit.putString("userId", id + "");
+        edit.apply();
+    }
+
+    public void saveUserPhone(String phones) {
+        SharedPreferences sharedPreferences = this.getSharedPreferences("phone", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+//        edit.clear();
+        edit.putString("phone", phones + "");
         edit.apply();
     }
 

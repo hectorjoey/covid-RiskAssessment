@@ -47,6 +47,7 @@
             android:id="@+id/textFirstname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
             app:errorEnabled="true">
 
             <EditText
@@ -58,17 +59,63 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/et_custom"
-                android:hint="Full name"
+                android:hint="Firstname"
                 android:importantForAutofill="no"
                 android:inputType="textCapWords"
-                android:padding="4dp" />
+                android:padding="6dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--  lastname Label -->
+        <!--lastname-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textLastname"
+            android:layout_width="match_parent"
+            android:layout_marginTop="6dp"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true">
 
+            <EditText
+                android:id="@+id/SupLastname"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/et_custom"
+                android:hint="Last name"
+                android:importantForAutofill="no"
+                android:inputType="textCapWords"
+                android:padding="6dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--phone label-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            app:errorEnabled="true">
+
+            <EditText
+                android:id="@+id/SupPhone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/et_custom"
+                android:hint="Phone"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:padding="6dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--  designation Label -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/designationInput"
             android:layout_width="match_parent"
+            android:layout_marginTop="6dp"
             android:layout_height="wrap_content"
             app:errorEnabled="true">
 
@@ -87,7 +134,6 @@
                 android:padding="4dp"
                 android:textAllCaps="true" />
         </com.google.android.material.textfield.TextInputLayout>
-
 
 
         <LinearLayout
@@ -148,6 +194,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textEmail"
             android:layout_width="match_parent"
+            android:layout_marginTop="6dp"
             android:layout_height="wrap_content"
             app:errorEnabled="true">
 
@@ -163,7 +210,7 @@
                 android:hint="Email"
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
-                android:padding="4dp" />
+                android:padding="6dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Password Label -->
@@ -172,6 +219,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorEnabled="true"
+            android:layout_marginTop="6dp"
             app:passwordToggleEnabled="true">
 
             <EditText
@@ -186,7 +234,7 @@
                 android:hint="Password"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:padding="4dp" />
+                android:padding="6dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <View
@@ -201,12 +249,12 @@
             android:layout_marginTop="4dp"
             android:background="#c0c0c0" />
 
-        <!-- Signup Button -->
-
+        <!-- SignUp Button -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
+            android:layout_marginTop="6dp"
             android:orientation="vertical">
 
             <Button

@@ -69,7 +69,7 @@ public class UserHealthAdapter extends RecyclerView.Adapter<UserHealthAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         UserHealthData userHealthData = userHealthDataList.get(position);
-        holder.tvFullname.setText(userHealthData.getFullname());
+//        holder.tvFullname.setText(userHealthData.getFullname());
         holder.tvDate.setText(userHealthData.getDate());
         holder.tvRisk.setText(userHealthData.getRisk());
 
@@ -104,14 +104,14 @@ public class UserHealthAdapter extends RecyclerView.Adapter<UserHealthAdapter.Vi
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvFullname;
+        private TextView tvFirstname;
         private TextView tvDate;
         private CardView cardView;
         private TextView tvRisk;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tvFullname = itemView.findViewById(R.id.tvFullname);
+            tvFirstname = itemView.findViewById(R.id.tvFirstname);
             tvDate = itemView.findViewById(R.id.tvDate);
             tvRisk = itemView.findViewById(R.id.tvRisk);
             cardView = itemView.findViewById(R.id.cardView);

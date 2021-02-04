@@ -81,28 +81,28 @@
             android:layout_height="0.5dp"
             android:background="#c0c0c0" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/intialInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:errorEnabled="true">
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/intialInput"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:errorEnabled="true">-->
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_text_fullname"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="14dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/et_custom"
-                android:hint="@string/full_name"
-                android:inputType="textCapWords"
-                android:padding="4dp"
-                android:textAllCaps="true"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                tools:ignore="Autofill,TextFields" />
-        </com.google.android.material.textfield.TextInputLayout>
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/edit_text_fullname"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:layout_marginTop="14dp"-->
+<!--                android:layout_marginRight="20dp"-->
+<!--                android:background="@drawable/et_custom"-->
+<!--                android:hint="@string/full_name"-->
+<!--                android:inputType="textCapWords"-->
+<!--                android:padding="4dp"-->
+<!--                android:textAllCaps="true"-->
+<!--                android:textSize="15sp"-->
+<!--                android:textStyle="bold"-->
+<!--                tools:ignore="Autofill,TextFields" />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/date"
@@ -128,56 +128,56 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="#c0c0c0" />
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0.5dp"-->
+<!--            android:background="#c0c0c0" />-->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:fontFamily="sans-serif-condensed"
-            android:padding="4dp"
-            android:text="@string/age"
-            android:textColor="#f76a8c"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:fontFamily="sans-serif-condensed"-->
+<!--            android:padding="4dp"-->
+<!--            android:text="@string/age"-->
+<!--            android:textColor="#f76a8c"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold" />-->
 
-        <Spinner
-            android:id="@+id/age_spinner"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/et_custom" />
+<!--        <Spinner-->
+<!--            android:id="@+id/age_spinner"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            android:background="@drawable/et_custom" />-->
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textPhone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:errorEnabled="true">
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/textPhone"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:errorEnabled="true">-->
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/phone"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/et_custom"
-                android:hint="@string/phone_number"
-                android:inputType="number"
-                android:textSize="15sp"
-                android:padding="4dp" />
-        </com.google.android.material.textfield.TextInputLayout>
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/phone"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:layout_marginRight="20dp"-->
+<!--                android:layout_marginBottom="8dp"-->
+<!--                android:background="@drawable/et_custom"-->
+<!--                android:hint="@string/phone_number"-->
+<!--                android:inputType="number"-->
+<!--                android:textSize="15sp"-->
+<!--                android:padding="4dp" />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="#c0c0c0" />
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0.5dp"-->
+<!--            android:background="#c0c0c0" />-->
 
         <TextView
             android:layout_width="match_parent"

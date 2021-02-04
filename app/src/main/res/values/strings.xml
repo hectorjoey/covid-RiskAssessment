@@ -102,13 +102,12 @@
         <item>USA</item>
     </string-array>
 
-    <string-array name="user_array">
+    <string-array name="userType_array">
         <item>User</item>
-    </string-array>
-
-    <string-array name="sup_array">
         <item>Supervisor</item>
     </string-array>
+
+
 
     <string-array name="enable_spinner">
         <item>TRUE</item>
@@ -198,7 +197,6 @@
         <item> </item>
 
         <item><b><u><i>ANAMBRA STATE FACILITIES</i></u></b></item>
-
         <item>Umueri General Hospital</item>
         <item>Chidubem Hospital, Aguleri</item>
         <item>Mama Eliza Maternity Home</item>

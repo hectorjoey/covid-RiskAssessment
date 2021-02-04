@@ -53,11 +53,11 @@ public class RegisterActivity extends AppCompatActivity {
     private String mState, mLga, mAge, mSupervisor;
     private List<String> states;
 
-    private Spinner spSupervisor;
+    private Spinner spSupervisor, mAgeSpinner;
     private SmartMaterialSpinner spEmptyItem;
     private List<String> supervisorsList;
     ArrayAdapter<String> adapter;
-    String id, fullname, stateName;
+    String id, firstname, stateName, userType;
 
     private Util util;
 
@@ -81,12 +81,13 @@ public class RegisterActivity extends AppCompatActivity {
         mDesignation = findViewById(R.id.designation);
         loadingBar = new ProgressDialog(this);
         spSupervisor = findViewById(R.id.spinner1);
+        mAgeSpinner = findViewById(R.id.age_spinner);
 
         Intent intent = new Intent();
 
 //        String state_n = getIntent().getExtras().getString("state");
 
-        Log.d("state33", "state: "+getIntent().getStringExtra("state"));
+        Log.d("state33", "state: " + getIntent().getStringExtra("state"));
 //        mSupervisorSpinner = findViewById(R.id.supervisorSpinner);
 //        fetchJSON();
         util = new Util();
@@ -103,6 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final String firstname = mFirstname.getText().toString().trim();
                 final String lastname = mLastname.getText().toString().trim();
+                final String age = String.valueOf(mAgeSpinner.getSelectedItem());
                 final String designation = mDesignation.getText().toString().trim();
                 final String userType = String.valueOf(mUserTypeSpinner.getSelectedItem());
                 final String gender = String.valueOf(mGender.getSelectedItem());
@@ -165,8 +167,8 @@ public class RegisterActivity extends AppCompatActivity {
                     HashMap<String, String> id = getId();
                     String id1 = id.get("id");
 
-                    registerUser(firstname, lastname, phone, designation, email, password,
-                            gender, address, userType, state, lga, id1);
+                    registerUser(firstname, lastname, age,designation,  email, phone, userType,
+                            gender, address, password, state, lga, id1);
                 } else {
                     Toast.makeText(RegisterActivity.this, "Please Check your network connection...", Toast.LENGTH_SHORT).show();
                 }
@@ -174,12 +176,20 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
         // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> userAdapter = ArrayAdapter.createFromResource(this,
-                R.array.user_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> ageAdapter = ArrayAdapter.createFromResource(this,
+                R.array.age_array, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        ageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        mAgeSpinner.setAdapter(ageAdapter);
+
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> userTypeAdapter = ArrayAdapter.createFromResource(this,
+                R.array.userType_array, android.R.layout.simple_spinner_item);
 // Specify the layout to use when the list of choices appears
-        userAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        userTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
-        mUserTypeSpinner.setAdapter(userAdapter);
+        mUserTypeSpinner.setAdapter(userTypeAdapter);
 
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> genderAdapter = ArrayAdapter.createFromResource(this,
@@ -253,7 +263,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     private void network() {
-        AndroidNetworking.get("https://covid-19-risk-assesment-server.herokuapp.com/api/v1/supervisors")
+        AndroidNetworking.get("https://covid-19-risk-assesment-server.herokuapp.com/api/v1/users")
                 .addHeaders("token", "1234")
                 .setTag("test")
                 .setPriority(Priority.LOW)
@@ -264,25 +274,27 @@ public class RegisterActivity extends AppCompatActivity {
                         // do anything with response
                         Log.d("resp2", response.toString());
 
-                        List<String> fullNames = new ArrayList<>();
+                        List<String> firstNames = new ArrayList<>();
                         List<Long> idss = new ArrayList<>();
                         for (int i = 0; i < response.length(); i++) {
                             try {
                                 JSONObject json_data = response.getJSONObject(i);
                                 id = json_data.getString("id");
-                                fullname = json_data.getString("fullname");
-                                Long id = json_data.getLong("id");
-                                Log.d("resp4", "id: " + id + " fullname: " + fullname);
-                                //initializing spinner;
-                                idss.add(id);
-                                fullNames.add(fullname);
-                                System.out.println("IDD  +++++ " + idss);
-
+                                userType = json_data.getString("userType");
+                                if (userType.equalsIgnoreCase("supervisor") || userType.equalsIgnoreCase("ADMIN")) {
+                                    firstname = json_data.getString("firstname");
+                                    Long id = json_data.getLong("id");
+                                    Log.d("resp4", "id: " + id + " firstname: " + firstname);
+                                    //initializing spinner;
+                                    idss.add(id);
+                                    firstNames.add(firstname);
+                                    System.out.println("IDD  +++++ " + idss);
+                                }
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
                         }
-                        spinner(idss, fullNames);
+                        spinner(idss, firstNames);
                     }
 
                     @Override
@@ -409,42 +421,9 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    public void registerUser(String firstname, String lastname, String phone, String designation,
-                             String email, String userType, String gender, String address, String password,
+    public void registerUser(String firstname, String lastname, String age,String designation,  String email,
+                             String phone, String userType, String gender, String address, String password,
                              String state, String lga, String supervisedBy) {
-        //do registration API call
-//        final ProgressDialog progressDialog = new ProgressDialog(this);
-//        progressDialog.setMessage("Signing Up...");
-//        progressDialog.show();
-//
-//        System.out.println("sup ///// " + supervisedBy);
-//        Call<Users> call = RetrofitClient
-//                .getInstance()
-//                .getApi()
-//                .createUser(firstname, lastname, designation, email, userType,
-//                        password, gender, state, supervisedBy);
-//        call.enqueue(new Callback<Users>() {
-//            @Override
-//            public void onResponse(Call<Users> call, Response<Users> response) {
-//                if (response.isSuccessful()) {
-//                    Toast.makeText(RegisterActivity.this, "Registered Successfully!", Toast.LENGTH_SHORT).show();
-//                    System.out.println("Responding ::: " + response);
-//                    progressDialog.dismiss();
-//                    clearFields();
-//                } else {
-//                    Toast.makeText(RegisterActivity.this, "Registration failed!", Toast.LENGTH_LONG).show();
-//                    progressDialog.dismiss();
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Users> call, Throwable t) {
-//                Toast.makeText(RegisterActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-//                System.out.println("throwing " + t);
-//            }
-//        });
-//    }
-
 
         //do registration API call
         final ProgressDialog progressDialog = new ProgressDialog(this);
@@ -453,14 +432,12 @@ public class RegisterActivity extends AppCompatActivity {
         Call<Users> call = RetrofitClient
                 .getInstance()
                 .getApi()
-                .createUser(firstname, lastname, phone, designation, email, userType,
-                        password, gender, address, state, lga, supervisedBy);
+                .createUser(firstname, lastname, age, designation, phone, email, password, userType, gender, address, state, lga, supervisedBy);
         call.enqueue(new Callback<Users>() {
             @Override
             public void onResponse(Call<Users> call, Response<Users> response) {
                 progressDialog.dismiss();
-//            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-//            startActivity(intent);
+
                 Toast.makeText(RegisterActivity.this, "Registered Successfully!", Toast.LENGTH_SHORT).show();
                 System.out.println("Responding ::: " + response);
                 clearFields();

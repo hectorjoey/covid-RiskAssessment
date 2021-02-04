@@ -42,7 +42,7 @@ import retrofit2.Response;
 public class RegisterUserActivity extends AppCompatActivity {
 
     private static final int SPINNER_HEIGHT = 500;
-    EditText mFirstname, mEmail, mPassword, mDesignation;
+    EditText mFirstname, mLastname, mPhone, mEmail, mPassword, mDesignation;
     Button supRegister;
 
     Spinner mUserTypeSpinner, mStateSpinner;
@@ -60,6 +60,8 @@ public class RegisterUserActivity extends AppCompatActivity {
 
         mStateSpinner = findViewById(R.id.stateSpinner);
         mFirstname = findViewById(R.id.Supfirstname);
+        mLastname = findViewById(R.id.SupLastname);
+        mPhone = findViewById(R.id.SupPhone);
         mEmail = findViewById(R.id.Supemail);
         mPassword = findViewById(R.id.Suppassword);
         mUserTypeSpinner = findViewById(R.id.SupUsertype_spinner);
@@ -83,43 +85,55 @@ public class RegisterUserActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final String email = mEmail.getText().toString().trim();
                 final String password = mPassword.getText().toString().trim();
-                final String fullname = mFirstname.getText().toString().trim();
+                final String firstname = mFirstname.getText().toString().trim();
+                final String lastname = mLastname.getText().toString().trim();
+                final String phone = mPhone.getText().toString().trim();
                 final String userType = String.valueOf(mUserTypeSpinner.getSelectedItem());
                 final String state = String.valueOf(mStateSpinner.getSelectedItem());
                 final String designation = mDesignation.getText().toString().trim();
 
                 //validating fields
                 if (util.isNetworkAvailable(getApplicationContext())) {
-                if (TextUtils.isEmpty(fullname)) {
-                    mFirstname.setError("first name is required!");
-                    mFirstname.requestFocus();
-                    return;
-                }
-                if (TextUtils.isEmpty(email)) {
-                    mEmail.setError("Email is required!");
-                    mEmail.requestFocus();
-                    return;
-                }
-                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    mEmail.setError("Enter a valid email!");
-                    mEmail.requestFocus();
-                    return;
-                }
-                if (TextUtils.isEmpty(password)) {
-                    mPassword.setError("Password is required!");
-                    mPassword.requestFocus();
-                    return;
-                }
-                if (password.length() < 6) {
-                    mPassword.setError("Password length is too short!");
-                    mPassword.requestFocus();
-                }
-                if (TextUtils.isEmpty(designation)) {
-                    mDesignation.setError("Designation is required!");
-                }
+                    if (TextUtils.isEmpty(firstname)) {
+                        mFirstname.setError("first name is required!");
+                        mFirstname.requestFocus();
+                        return;
+                    }
+                    if (TextUtils.isEmpty(lastname)) {
+                        mLastname.setError("last name is required!");
+                        mLastname.requestFocus();
+                        return;
+                    }
+                    if (TextUtils.isEmpty(phone)) {
+                        mPhone.setError("Phone number is required!");
+                        mPhone.requestFocus();
+                        return;
+                    }
+                    if (TextUtils.isEmpty(email)) {
+                        mEmail.setError("Email is required!");
+                        mEmail.requestFocus();
+                        return;
+                    }
+                    if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                        mEmail.setError("Enter a valid email!");
+                        mEmail.requestFocus();
+                        return;
+                    }
+                    if (TextUtils.isEmpty(password)) {
+                        mPassword.setError("Password is required!");
+                        mPassword.requestFocus();
+                        return;
+                    }
+                    if (password.length() < 6) {
+                        mPassword.setError("Password length is too short!");
+                        mPassword.requestFocus();
+                    }
+                    if (TextUtils.isEmpty(designation)) {
+                        mDesignation.setError("Designation is required!");
+                    }
 
-                registerSup(fullname, email, password,
-                        userType, state, designation);
+                    registerSup(firstname, lastname, phone, email, password,
+                            userType, state, designation);
 
                 } else {
                     Toast.makeText(RegisterUserActivity.this, "Please Check your network connection...", Toast.LENGTH_SHORT).show();
@@ -129,54 +143,54 @@ public class RegisterUserActivity extends AppCompatActivity {
         });
 
         // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> supAdapter = ArrayAdapter.createFromResource(this,
-                R.array.sup_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> userTypeAdapter = ArrayAdapter.createFromResource(this,
+                R.array.userType_array, android.R.layout.simple_spinner_item);
 // Specify the layout to use when the list of choices appears
-        supAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        userTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
-        mUserTypeSpinner.setAdapter(supAdapter);
+        mUserTypeSpinner.setAdapter(userTypeAdapter);
     }
 
     private void statesFetch() {
-            AndroidNetworking.get("https://covid-19-risk-assesment-server.herokuapp.com/api/v1/states")
-                    .addHeaders("token", "1234")
-                    .setTag("test")
-                    .setPriority(Priority.LOW)
-                    .build()
-                    .getAsJSONArray(new JSONArrayRequestListener() {
-                        @Override
-                        public void onResponse(JSONArray response) {
-                            // do anything with response
-                            Log.d("resp2", response.toString());
+        AndroidNetworking.get("https://covid-19-risk-assesment-server.herokuapp.com/api/v1/states")
+                .addHeaders("token", "1234")
+                .setTag("test")
+                .setPriority(Priority.LOW)
+                .build()
+                .getAsJSONArray(new JSONArrayRequestListener() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        // do anything with response
+                        Log.d("resp2", response.toString());
 
-                            List<String> stateNames = new ArrayList<>();
-                            List<Long> idss2 = new ArrayList<>();
-                            for (int i = 0; i < response.length(); i++) {
-                                try {
-                                    JSONObject json_data = response.getJSONObject(i);
-                                    id = json_data.getString("id");
-                                    stateName = json_data.getString("stateName");
-                                    Long id = json_data.getLong("id");
-                                    Log.d("resp4", "id: " + id + " stateName: " + stateName);
-                                    //initializing spinner;
-                                    idss2.add(id);
-                                    stateNames.add(stateName);
+                        List<String> stateNames = new ArrayList<>();
+                        List<Long> idss2 = new ArrayList<>();
+                        for (int i = 0; i < response.length(); i++) {
+                            try {
+                                JSONObject json_data = response.getJSONObject(i);
+                                id = json_data.getString("id");
+                                stateName = json_data.getString("stateName");
+                                Long id = json_data.getLong("id");
+                                Log.d("resp4", "id: " + id + " stateName: " + stateName);
+                                //initializing spinner;
+                                idss2.add(id);
+                                stateNames.add(stateName);
 //                                System.out.println("IDD22  +++++ " + idss2);
 
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                }
+                            } catch (Exception e) {
+                                e.printStackTrace();
                             }
-                            spinner(idss2, stateNames);
                         }
+                        spinner(idss2, stateNames);
+                    }
 
-                        @Override
-                        public void onError(ANError error) {
-                            // handle error
-                            Log.d("err2", error.toString());
-                        }
-                    });
-        }
+                    @Override
+                    public void onError(ANError error) {
+                        // handle error
+                        Log.d("err2", error.toString());
+                    }
+                });
+    }
 
     private void spinner(List<Long> idLits2, List<String> stateNames1) {
 //        System.out.println("idsggsgs " + idLits2 + "nmammeme" + stateNames1);
@@ -197,15 +211,13 @@ public class RegisterUserActivity extends AppCompatActivity {
         });
     }
 
-        public void saveId(Long id) {
-            SharedPreferences sharedPreferences = this.getSharedPreferences("id", Context.MODE_PRIVATE);
-            SharedPreferences.Editor edit = sharedPreferences.edit();
-            edit.clear();
-            edit.putString("id", id + "");
-            edit.apply();
-        }
-
-
+    public void saveId(Long id) {
+        SharedPreferences sharedPreferences = this.getSharedPreferences("id", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.clear();
+        edit.putString("id", id + "");
+        edit.apply();
+    }
 
 
     /**
@@ -254,8 +266,7 @@ public class RegisterUserActivity extends AppCompatActivity {
 //            ex.printStackTrace();
 //        }
 //    }
-
-    public void registerSup(String fullname, String email, String password,
+    public void registerSup(String firstname, String lastname, String phone, String email, String password,
                             String userType, String state, String designation) {
 
         //do registration API call
@@ -265,7 +276,7 @@ public class RegisterUserActivity extends AppCompatActivity {
         Call<ResponseBody> call = RetrofitClient
                 .getInstance()
                 .getApi()
-                .createSupervisor(fullname, email, password,
+                .createSupervisor(firstname, lastname, phone, email, password,
                         userType, state, designation);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
@@ -273,6 +284,7 @@ public class RegisterUserActivity extends AppCompatActivity {
                 progressDialog.dismiss();
                 Toast.makeText(RegisterUserActivity.this, "Registered Successfully!", Toast.LENGTH_SHORT).show();
                 System.out.println("Responding ::: " + response);
+                Intent intent = getIntent();
                 clearFields();
             }
 
@@ -286,11 +298,11 @@ public class RegisterUserActivity extends AppCompatActivity {
     }
 
     private void clearFields() {
-            mEmail.setText("");
-            mPassword.setText("");
-            mFirstname.setText("");
-            mDesignation.setText("");
-        }
+        mEmail.setText("");
+        mPassword.setText("");
+        mFirstname.setText("");
+        mDesignation.setText("");
+    }
 
     public void onBackPressed() {
         new AlertDialog.Builder(this)
