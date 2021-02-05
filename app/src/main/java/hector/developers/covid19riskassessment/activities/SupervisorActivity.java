@@ -182,6 +182,7 @@ public class SupervisorActivity extends AppCompatActivity {
                     adapter = new UserHealthAdapter(SupervisorActivity.this, userHealthDataList);
                     sortData(true);
                     rv.setAdapter(adapter);
+
                 } else {
                     Toast.makeText(getApplicationContext(), "failed!", Toast.LENGTH_LONG).show();
                     System.out.println("failed!");

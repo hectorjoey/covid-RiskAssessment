@@ -105,14 +105,16 @@ public class UserHealthDataActivity extends AppCompatActivity {
         list.add("English");
         list.add("Hausa");
         list.add("Igbo");
+
         HashMap<String, String> id = getUserId();
         userId = id.get("userId");
 
-        HashMap<String, String> firstName = getUserFirstname();
-        firstname = firstName.get("firstname");
+        HashMap<String, String> phones = getPhone();
+        phone = phones.get("phone");
 
-        HashMap<String, String> phoneNumber = getUserPhoneNumber();
-        phone = phoneNumber.get("phone");
+        HashMap<String, String> firstnames = getFirstname();
+        firstname = firstnames.get("firstname");
+
 
 //
         mDate = findViewById(R.id.edit_date);
@@ -265,7 +267,6 @@ public class UserHealthDataActivity extends AppCompatActivity {
         });
     }
 
-
     private void updateLabel() {
         String myFormat = "MM/dd/yy";   //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
@@ -371,12 +372,14 @@ public class UserHealthDataActivity extends AppCompatActivity {
                         Toast.makeText(UserHealthDataActivity.this, "Data Saved!", Toast.LENGTH_LONG).show();
                         Intent highRiskIntent = new Intent(UserHealthDataActivity.this, HighRiskActivity.class);
                         highRiskIntent.putExtra("risk", "High Risk");
+                        highRiskIntent.getStringExtra(phone);
                         startActivity(highRiskIntent);
                         finish();
                     } else {
                         loadingBar.dismiss();
                         Toast.makeText(UserHealthDataActivity.this, "Data Saved!", Toast.LENGTH_LONG).show();
                         Intent lowRiskIntent = new Intent(UserHealthDataActivity.this, LowRiskActivity.class);
+                        lowRiskIntent.getStringExtra(phone);
                         startActivity(lowRiskIntent);
                         finish();
                     }
@@ -418,19 +421,20 @@ public class UserHealthDataActivity extends AppCompatActivity {
         return id;
     }
 
-    public HashMap<String, String> getUserFirstname() {
-        HashMap<String, String> firstName = new HashMap<>();
-        SharedPreferences sharedPreferences = this.getSharedPreferences("firstname", Context.MODE_PRIVATE);
-        firstName.put("firstname", sharedPreferences.getString("firstname", null));
-        return firstName;
+    private HashMap<String, String> getPhone() {
+        HashMap<String, String> phones = new HashMap<>();
+        SharedPreferences sharedPreferences = this.getSharedPreferences("phone", Context.MODE_PRIVATE);
+        phones.put("phone", sharedPreferences.getString("phone", null));
+        return phones;
     }
 
-    public HashMap<String, String> getUserPhoneNumber() {
-        HashMap<String, String> phoneNumber = new HashMap<>();
-        SharedPreferences sharedPreferences = this.getSharedPreferences("phone", Context.MODE_PRIVATE);
-        phoneNumber.put("phone", sharedPreferences.getString("phone", null));
-        return phoneNumber;
+    private HashMap<String, String> getFirstname() {
+        HashMap<String, String> firstnames = new HashMap<>();
+        SharedPreferences sharedPreferences = this.getSharedPreferences("firstname", Context.MODE_PRIVATE);
+        firstnames.put("firstname", sharedPreferences.getString("firstname", null));
+        return firstnames;
     }
+
     //method that should be outside the onCreate(){}
     private void checkSectionCount(ArrayList<String> section, AtomicInteger count) {
         for (String sections : section) {

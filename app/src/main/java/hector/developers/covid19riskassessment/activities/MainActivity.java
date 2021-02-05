@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,9 +48,7 @@ public class MainActivity extends AppCompatActivity {
         mImageSup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent addSupIntent = new Intent(MainActivity.this, RegisterUserActivity.class);
-                startActivity(addSupIntent);
-                finish();
+                Toast.makeText(getApplicationContext(), "Click on add user to add", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -65,9 +64,7 @@ public class MainActivity extends AppCompatActivity {
         mImageViewSup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent viewSUpIntent = new Intent(MainActivity.this, SupervisorListActivity.class);
-                startActivity(viewSUpIntent);
-                finish();
+                Toast.makeText(getApplicationContext(), "Click on add user to view all", Toast.LENGTH_LONG).show();
             }
         });
 

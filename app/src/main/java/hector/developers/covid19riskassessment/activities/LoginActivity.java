@@ -144,6 +144,14 @@ public class LoginActivity extends AppCompatActivity {
                         intent.putExtra("userId ", users.getId());
                         saveUserId(users.getId());
                         System.out.println("users ,,,," + users.getId());
+
+                        intent.putExtra("phone", users.getPhone());
+                        saveUserPhone(users.getPhone());
+                        System.out.println("users ,,,," + users.getPhone());
+
+                        intent.putExtra("firstname", users.getFirstname());
+                        saveUserFirstname(users.getFirstname());
+                        System.out.println("users ,,,," + users.getFirstname());
                         assert response.body() != null;
                         intent.putExtra("User", response.body().getUserType());
                         intent.putExtra("state", response.body().getState());
@@ -161,12 +169,22 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putLong("userId", users.getId());
                         editor.apply();
                         intent.putExtra("userId ", users.getId());
-                        saveUserId(Long.valueOf(users.getId()));
-
+                        saveUserId(users.getId());
                         System.out.println("users ,,,," + users.getId());
+
+                        intent.putExtra("phone", users.getPhone());
+                        saveUserPhone(users.getPhone());
+                        System.out.println("users ,,,," + users.getPhone());
+                        intent.putExtra("firstname", users.getFirstname());
+                        saveUserFirstname(users.getFirstname());
+                        System.out.println("users ,,,," + users.getFirstname());
                         assert response.body() != null;
                         intent.putExtra("User", response.body().getUserType());
                         intent.putExtra("state", response.body().getState());
+                        intent.putExtra("phone", response.body().getPhone());
+                        //attach the key value pair using putExtra to this intent
+
+                        intent.putExtra("phone", response.body().getPhone());
                         startActivity(intent);
                         sessionManagement.setLoginEmail(email);
                         sessionManagement.setLoginPassword(password);
@@ -202,6 +220,14 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences.Editor edit = sharedPreferences.edit();
 //        edit.clear();
         edit.putString("phone", phones + "");
+        edit.apply();
+    }
+
+    public void saveUserFirstname(String firstnames) {
+        SharedPreferences sharedPreferences = this.getSharedPreferences("firstname", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+//        edit.clear();
+        edit.putString("firstname", firstnames + "");
         edit.apply();
     }
 

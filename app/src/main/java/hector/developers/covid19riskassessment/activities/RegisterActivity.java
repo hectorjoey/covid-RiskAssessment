@@ -88,8 +88,7 @@ public class RegisterActivity extends AppCompatActivity {
 //        String state_n = getIntent().getExtras().getString("state");
 
         Log.d("state33", "state: " + getIntent().getStringExtra("state"));
-//        mSupervisorSpinner = findViewById(R.id.supervisorSpinner);
-//        fetchJSON();
+
         util = new Util();
 
         network();
@@ -167,7 +166,7 @@ public class RegisterActivity extends AppCompatActivity {
                     HashMap<String, String> id = getId();
                     String id1 = id.get("id");
 
-                    registerUser(firstname, lastname, age,designation,  email, phone, userType,
+                    registerUser(firstname, lastname, age, designation, email, phone, userType,
                             gender, address, password, state, lga, id1);
                 } else {
                     Toast.makeText(RegisterActivity.this, "Please Check your network connection...", Toast.LENGTH_SHORT).show();
@@ -421,7 +420,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    public void registerUser(String firstname, String lastname, String age,String designation,  String email,
+    public void registerUser(String firstname, String lastname, String age, String designation, String email,
                              String phone, String userType, String gender, String address, String password,
                              String state, String lga, String supervisedBy) {
 
@@ -437,7 +436,6 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Users> call, Response<Users> response) {
                 progressDialog.dismiss();
-
                 Toast.makeText(RegisterActivity.this, "Registered Successfully!", Toast.LENGTH_SHORT).show();
                 System.out.println("Responding ::: " + response);
                 clearFields();

@@ -44,6 +44,7 @@ public class HealthDetailsActivity extends AppCompatActivity {
 
     Button mBtnCall, mBtnText;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,13 +88,23 @@ public class HealthDetailsActivity extends AppCompatActivity {
                 makeCall();
             }
         });
+        Intent intent = getIntent();
+        String phoneString = intent.getStringExtra("phone");
+        String firstnameString = intent.getStringExtra("firstname");
+
+        detailFirstname.setText(firstnameString);
+        detailsPhone.setText(phoneString);
+
+        System.out.println("phone String +++" + detailsPhone);
+        System.out.println("first name String ++++" + detailFirstname);
+
 
         UserHealthData userHealthData;
         userHealthData = (UserHealthData) getIntent().getSerializableExtra("key");
         assert userHealthData != null;
-//        detailFirstname.setText(userHealthData.getFullname());
+        detailFirstname.setText(userHealthData.getFirstname());
         detailDate.setText(userHealthData.getDate().toString());
-//        detailsPhone.setText(userHealthData.getPhone());
+        detailsPhone.setText(userHealthData.getPhone());
         detailFeverSymptom.setText(userHealthData.getFeverSymptom());
         detailsHeadacheSymptom.setText(userHealthData.getHeadacheSymptom());
         detailSneezingSymptoms.setText(userHealthData.getSneezingSymptom());

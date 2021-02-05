@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed-medium"
             android:gravity="center"
-            android:text="Personal Information"
+            android:text="Take Your Screening for Covid-19"
             android:textSize="19sp"
             android:textStyle="bold" />
 
@@ -80,29 +80,6 @@
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:background="#c0c0c0" />
-
-<!--        <com.google.android.material.textfield.TextInputLayout-->
-<!--            android:id="@+id/intialInput"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:errorEnabled="true">-->
-
-<!--            <com.google.android.material.textfield.TextInputEditText-->
-<!--                android:id="@+id/edit_text_fullname"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="50dp"-->
-<!--                android:layout_marginLeft="20dp"-->
-<!--                android:layout_marginTop="14dp"-->
-<!--                android:layout_marginRight="20dp"-->
-<!--                android:background="@drawable/et_custom"-->
-<!--                android:hint="@string/full_name"-->
-<!--                android:inputType="textCapWords"-->
-<!--                android:padding="4dp"-->
-<!--                android:textAllCaps="true"-->
-<!--                android:textSize="15sp"-->
-<!--                android:textStyle="bold"-->
-<!--                tools:ignore="Autofill,TextFields" />-->
-<!--        </com.google.android.material.textfield.TextInputLayout>-->
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/date"
