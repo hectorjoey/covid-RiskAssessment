@@ -72,13 +72,15 @@ public class UserHealthData implements Serializable {
     //section three
     @SerializedName("contactWithFamily")
     @Expose
-    private String contactWithFamily;;
+    private String contactWithFamily;
+    ;
 
     private Long userId;
 
     private String risk;
     private String firstname;
     private String phone;
+    private String userType;
 
     public UserHealthData() {
     }
@@ -89,7 +91,7 @@ public class UserHealthData implements Serializable {
                           String fluSymptom, String soreThroatSymptom, String fatigueSymptom,
                           String newOrWorseningCough, String difficultyInBreathing,
                           String lossOfOrDiminishedSenseOfSmell, String lossOfOrDiminishedSenseOfTaste,
-                          String contactWithFamily, Long userId, String firstname, String phone, String risk) {
+                          String contactWithFamily, Long userId, String firstname, String phone, String userType, String risk) {
         this.date = date;
         this.feverSymptom = feverSymptom;
         this.headacheSymptom = headacheSymptom;
@@ -109,9 +111,9 @@ public class UserHealthData implements Serializable {
         this.userId = userId;
         this.firstname = firstname;
         this.phone = phone;
+        this.userType = userType;
         this.risk = risk;
     }
-
 
     public String getDate() {
         return date;
@@ -271,5 +273,13 @@ public class UserHealthData implements Serializable {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 }

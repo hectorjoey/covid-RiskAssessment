@@ -83,9 +83,9 @@ public class DashboardActivity extends AppCompatActivity {
             case R.id.main_refresh:
                 fetchData();
                 return true;
-            case R.id.main_logout:
-                logout();
-                return true;
+//            case R.id.main_logout:
+//                logout();
+//                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

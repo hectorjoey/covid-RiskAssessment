@@ -139,7 +139,7 @@ public class LoginActivity extends AppCompatActivity {
                         finish();
                         Toast.makeText(LoginActivity.this, "Welcome Admin!", Toast.LENGTH_LONG).show();
                         progressDialog.dismiss();
-                    } else if (users.getUserType().equalsIgnoreCase("user")){
+                    } else if (users.getUserType().equalsIgnoreCase("user")) {
                         Intent intent = new Intent(LoginActivity.this, UserHealthDataActivity.class);
                         intent.putExtra("userId ", users.getId());
                         saveUserId(users.getId());
@@ -152,6 +152,11 @@ public class LoginActivity extends AppCompatActivity {
                         intent.putExtra("firstname", users.getFirstname());
                         saveUserFirstname(users.getFirstname());
                         System.out.println("users ,,,," + users.getFirstname());
+
+                        intent.putExtra("userType", users.getUserType());
+                        saveUserType(users.getUserType());
+                        System.out.println("users ,,,," + users.getUserType());
+
                         assert response.body() != null;
                         intent.putExtra("User", response.body().getUserType());
                         intent.putExtra("state", response.body().getState());
@@ -164,7 +169,7 @@ public class LoginActivity extends AppCompatActivity {
                         sessionManagement.setLoginPassword(password);
                         Toast.makeText(LoginActivity.this, "Welcome User!", Toast.LENGTH_SHORT).show();
                         progressDialog.dismiss();
-                    }else {
+                    } else {
                         Intent intent = new Intent(LoginActivity.this, SupervisorActivity.class);
                         editor.putLong("userId", users.getId());
                         editor.apply();
@@ -175,9 +180,14 @@ public class LoginActivity extends AppCompatActivity {
                         intent.putExtra("phone", users.getPhone());
                         saveUserPhone(users.getPhone());
                         System.out.println("users ,,,," + users.getPhone());
+
                         intent.putExtra("firstname", users.getFirstname());
                         saveUserFirstname(users.getFirstname());
                         System.out.println("users ,,,," + users.getFirstname());
+
+                        intent.putExtra("userType", users.getUserType());
+                        saveUserType(users.getUserType());
+                        System.out.println("users ,,,," + users.getUserType());
                         assert response.body() != null;
                         intent.putExtra("User", response.body().getUserType());
                         intent.putExtra("state", response.body().getState());
@@ -228,6 +238,14 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences.Editor edit = sharedPreferences.edit();
 //        edit.clear();
         edit.putString("firstname", firstnames + "");
+        edit.apply();
+    }
+
+    public void saveUserType(String userTypes) {
+        SharedPreferences sharedPreferences = this.getSharedPreferences("userType", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+//        edit.clear();
+        edit.putString("userType", userTypes + "");
         edit.apply();
     }
 

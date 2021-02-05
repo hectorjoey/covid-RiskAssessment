@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Covid19RiskAssessment">
+        <activity android:name=".PasswordChangeActivity"></activity>
         <activity android:name=".chart.PieChartActivity" />
         <activity android:name=".chart.BarChartActivity" />
         <activity android:name=".chart.ChartActivity" />

@@ -8,29 +8,30 @@
     tools:context=".activities.HealthDetailsActivity">
 
     <LinearLayout
-        android:padding="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="15dp">
 
         <TextView
             android:id="@+id/displayResult"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="4dp"
-            android:padding="5dp"
-            android:visibility="gone"
             android:gravity="center"
+            android:padding="5dp"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="gone" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:visibility="gone"
             android:gravity="center"
             android:text="Section One"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="gone" />
 
         <LinearLayout
             android:id="@+id/layout_firstname"
@@ -46,17 +47,15 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Firstname:"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/detailsFirstname"
                 android:layout_width="0dp"
-                android:gravity="start"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textStyle="bold"
-                android:textSize="20sp" />
+                android:gravity="start"
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -72,16 +71,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Date:"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/detailsDate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textStyle="bold"
-                android:textSize="20sp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -89,10 +86,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:visibility="gone"
-            android:layout_marginLeft="8dp"
             android:orientation="horizontal"
-            android:padding="2dp">
+            android:padding="2dp"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/vPhone"
@@ -115,36 +111,36 @@
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_marginTop="4dp"
-            android:visibility="gone"
-            android:background="#c0c0c0" />
+            android:background="#c0c0c0"
+            android:visibility="gone" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:visibility="gone"
             android:gravity="center"
             android:text="Section Two"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="gone" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:visibility="gone"
             android:gravity="center"
             android:text="Right Now, Do you have any of these Symptoms?"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="gone" />
 
         <LinearLayout
-            android:visibility="gone"
             android:id="@+id/layout_fever"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:orientation="horizontal"
-            android:padding="2dp">
+            android:padding="2dp"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/vFever"
@@ -163,15 +159,16 @@
                 android:gravity="center"
                 android:textSize="10sp" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/layout_headacheSymptom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:orientation="horizontal"
-            android:padding="2dp">
+            android:padding="2dp"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/vHeadacheSymptom"
@@ -190,15 +187,16 @@
                 android:gravity="center"
                 android:textSize="10sp" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/layout_sneezingSymptoms"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:orientation="horizontal"
-            android:padding="2dp">
+            android:padding="2dp"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/vSneezingSymptoms"
@@ -223,9 +221,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:visibility="gone"
             android:orientation="horizontal"
-            android:padding="2dp">
+            android:padding="2dp"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/vChestPainSymptoms"
@@ -250,9 +248,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:visibility="gone"
             android:orientation="horizontal"
-            android:padding="2dp">
+            android:padding="2dp"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/vBodyPainSymptoms"
@@ -277,9 +275,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:visibility="gone"
             android:orientation="horizontal"
-            android:padding="2dp">
+            android:padding="2dp"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/vNauseaOrVomitingSymptom"
@@ -298,14 +296,15 @@
                 android:gravity="center"
                 android:textSize="10sp" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/layout_diarrhoeaSymptoms"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:visibility="gone"
             android:orientation="horizontal"
-            android:padding="2dp">
+            android:padding="2dp"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/vDiarrhoeaSymptoms"
@@ -330,9 +329,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:visibility="gone"
             android:orientation="horizontal"
-            android:padding="2dp">
+            android:padding="2dp"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/vFluSymptoms"
@@ -357,9 +356,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:visibility="gone"
             android:orientation="horizontal"
-            android:padding="2dp">
+            android:padding="2dp"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/vSoreThroatSymptoms"
@@ -384,9 +383,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:visibility="gone"
             android:orientation="horizontal"
-            android:padding="2dp">
+            android:padding="2dp"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/vFatigueSymptoms"
@@ -411,10 +410,10 @@
             android:id="@+id/layout_coughSymptom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
             android:layout_marginStart="8dp"
             android:orientation="horizontal"
-            android:padding="2dp">
+            android:padding="2dp"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/vCoughSymptom"
@@ -439,9 +438,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:visibility="gone"
             android:orientation="horizontal"
-            android:padding="2dp">
+            android:padding="2dp"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/vDifficultyInBreathingSymptom"
@@ -466,10 +465,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:visibility="gone"
             android:layout_marginLeft="8dp"
             android:orientation="horizontal"
-            android:padding="2dp">
+            android:padding="2dp"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/vLossOfSmellSymptoms"
@@ -494,9 +493,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:visibility="gone"
             android:orientation="horizontal"
-            android:padding="2dp">
+            android:padding="2dp"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/vLossOfTasteSymptoms"
@@ -521,10 +520,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:visibility="gone"
             android:layout_marginTop="4dp"
             android:orientation="horizontal"
-            android:padding="2dp">
+            android:padding="2dp"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/vContactWithFamily"
@@ -543,6 +542,7 @@
                 android:gravity="center"
                 android:textSize="10sp" />
         </LinearLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
@@ -554,27 +554,27 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:padding="10dp"
             android:layout_marginBottom="12dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="10dp">
 
             <Button
                 android:id="@+id/btnCall"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Call"
-                android:padding="4dp"
                 android:background="@drawable/registration_button"
+                android:padding="4dp"
+                android:text="Call"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btnText"
                 android:layout_width="0dp"
-                android:padding="4dp"
-                android:background="@drawable/registration_button"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/registration_button"
+                android:padding="4dp"
                 android:text="Text"
                 android:textAllCaps="false" />
         </LinearLayout>

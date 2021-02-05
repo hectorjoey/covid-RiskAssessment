@@ -2,16 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/main_refresh"
-        android:title="Refresh"
-        app:showAsAction="never" />
+<!--    <item-->
+<!--        android:id="@+id/main_refresh"-->
+<!--        android:title="Refresh"-->
+<!--        app:showAsAction="never" />-->
     <item
         android:id="@+id/main_userHealthData"
         android:title="Create User Health Data"
         app:showAsAction="always" />
-    <item
-        android:id="@+id/main_logout"
-        android:title="Logout"
-        app:showAsAction="never" />
+<!--    <item-->
+<!--        android:id="@+id/main_logout"-->
+<!--        android:title="Logout"-->
+<!--        app:showAsAction="never" />-->
 </menu>

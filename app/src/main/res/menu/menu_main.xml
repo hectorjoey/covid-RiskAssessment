@@ -1,22 +1,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-   >
-    <item
-        android:id="@+id/action_search"
-        android:icon="@drawable/ic_search_black_24dp"
-        android:orderInCategory="100"
-        android:title="search"
-        app:showAsAction="never"
-        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+    xmlns:tools="http://schemas.android.com/tools">
+    <!--    <item-->
+    <!--        android:id="@+id/action_search"-->
+    <!--        android:icon="@drawable/ic_search_black_24dp"-->
+    <!--        android:orderInCategory="100"-->
+    <!--        android:title="search"-->
+    <!--        app:showAsAction="never"-->
+    <!--        app:actionViewClass="androidx.appcompat.widget.SearchView" />-->
 
 
     <item
         android:id="@+id/main_refresh"
-        android:title="Refresh"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/main_logout"
-        android:title="Logout"
-        app:showAsAction="never" />
+        android:title="Move to Supervisor"
+        app:showAsAction="always" />
+    <!--    <item-->
+    <!--        android:id="@+id/main_logout"-->
+    <!--        android:title="Logout"-->
+    <!--        app:showAsAction="never" />-->
 </menu>
