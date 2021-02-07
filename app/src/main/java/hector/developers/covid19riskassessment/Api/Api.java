@@ -59,6 +59,7 @@ public interface Api {
             @Field("userId") Long userId,
             @Field("firstname") String firstname,
             @Field("phone") String phone,
+            @Field("userType") String userType,
             @Field("risk") String risk
 
     );

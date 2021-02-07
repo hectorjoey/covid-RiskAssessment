@@ -255,9 +255,9 @@ public class SupervisorActivity extends AppCompatActivity {
             case R.id.main_userHealthData:
                 userHealthData();
                 return true;
-            case R.id.main_logout:
-                logout();
-                return true;
+//            case R.id.main_logout:
+//                logout();
+//                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

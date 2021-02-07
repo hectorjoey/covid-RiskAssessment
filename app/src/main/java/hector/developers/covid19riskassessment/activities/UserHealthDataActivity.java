@@ -12,6 +12,9 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -25,6 +28,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -44,8 +48,10 @@ import retrofit2.Response;
 
 public class UserHealthDataActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
+    private Toolbar mToolbar;
     final Calendar myCalendar = Calendar.getInstance();
     EditText mDate;
+
 
     private ProgressDialog loadingBar;
     private Spinner mVisitSpinner, mLanguageSpinner;
@@ -54,6 +60,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
     private String userId;
     private String firstname;
     private String phone;
+    private String userType;
 
     private String risk;
 
@@ -97,6 +104,9 @@ public class UserHealthDataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_health_data);
         loadingBar = new ProgressDialog(this);
+        mToolbar = findViewById(R.id.main_page_toolbar);
+        setSupportActionBar(mToolbar);
+        setTitle("User Health Data");
 
         currentLanguage = getIntent().getStringExtra(currentLang);
         mLanguageSpinner = findViewById(R.id.language_spinner);
@@ -115,8 +125,15 @@ public class UserHealthDataActivity extends AppCompatActivity {
         HashMap<String, String> firstnames = getFirstname();
         firstname = firstnames.get("firstname");
 
+        HashMap<String, String> userTypes = getUserType();
+        userType = userTypes.get("userType");
 
-//
+        if (userType.equalsIgnoreCase("user")) {
+            mToolbar.setVisibility(View.INVISIBLE);
+        } else {
+            mToolbar.setVisibility(View.VISIBLE);
+        }
+
         mDate = findViewById(R.id.edit_date);
         //section1
         mFever = findViewById(R.id.radio_fever);
@@ -216,7 +233,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
                         nauseaOrVomitingSymptom, diarrhoeaSymptoms, fluSymptoms, soreThroatSymptoms,
                         fatigueSymptoms, newOrWorseningCough, difficultyInBreathingSymptom,
                         lossOfSmellSymptoms, lossOfTasteSymptoms, contactWithFamily,
-                        Long.parseLong(userId), firstname, phone, risk
+                        Long.parseLong(userId), firstname, phone, risk, userType
                 );
             }
         });
@@ -344,7 +361,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
                                        String diarrhoeaSymptom, String fluSymptom, String soreThroatSymptom,
                                        String fatigueSymptom, String newOrWorseningCough, String difficultyInBreathing,
                                        String lossOfOrDiminishedSenseOfSmell, String lossOfOrDiminishedSenseOfTaste,
-                                       String contactWithFamily, Long userId, String firstname, String phone, String risk) {
+                                       String contactWithFamily, Long userId, String firstname, String phone, String userType, String risk) {
         //making api calls
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Sending Data...");
@@ -362,7 +379,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
                         fluSymptom, soreThroatSymptom,
                         fatigueSymptom, newOrWorseningCough, difficultyInBreathing,
                         lossOfOrDiminishedSenseOfSmell, lossOfOrDiminishedSenseOfTaste, contactWithFamily,
-                        userId, firstname, phone, risk);
+                        userId, firstname, phone, userType, risk);
         call.enqueue(new Callback<UserHealthData>() {
             @Override
             public void onResponse(Call<UserHealthData> call, Response<UserHealthData> response) {
@@ -396,7 +413,36 @@ public class UserHealthDataActivity extends AppCompatActivity {
                 Toast.makeText(UserHealthDataActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.main_refresh:
+                // fetchData(userId);
+            case R.id.main_userHealthData:
+                moveToSupervisor();
+                return true;
+//            case R.id.main_logout:
+//                logout();
+//                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void moveToSupervisor() {
+        Intent supIntent = new Intent(getApplicationContext(), SupervisorActivity.class);
+        startActivity(supIntent);
+        finish();
     }
 
     public void onBackPressed() {
@@ -433,6 +479,13 @@ public class UserHealthDataActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = this.getSharedPreferences("firstname", Context.MODE_PRIVATE);
         firstnames.put("firstname", sharedPreferences.getString("firstname", null));
         return firstnames;
+    }
+
+    private HashMap<String, String> getUserType() {
+        HashMap<String, String> userTypes = new HashMap<>();
+        SharedPreferences sharedPreferences = this.getSharedPreferences("userType", Context.MODE_PRIVATE);
+        userTypes.put("userType", sharedPreferences.getString("userType", null));
+        return userTypes;
     }
 
     //method that should be outside the onCreate(){}

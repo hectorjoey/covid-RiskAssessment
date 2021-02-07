@@ -70,11 +70,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed-medium"
+            android:textColor="@color/colorBlack"
             android:gravity="center"
             android:text="Take Your Screening for Covid-19"
             android:textSize="19sp"
             android:textStyle="bold" />
-
 
         <View
             android:layout_width="match_parent"
@@ -93,6 +93,7 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:textColor="@color/colorBlack"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/et_custom"
                 android:clickable="true"
@@ -105,56 +106,56 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-<!--        <View-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="0.5dp"-->
-<!--            android:background="#c0c0c0" />-->
+        <!--        <View-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="0.5dp"-->
+        <!--            android:background="#c0c0c0" />-->
 
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:layout_marginLeft="20dp"-->
-<!--            android:layout_marginRight="20dp"-->
-<!--            android:fontFamily="sans-serif-condensed"-->
-<!--            android:padding="4dp"-->
-<!--            android:text="@string/age"-->
-<!--            android:textColor="#f76a8c"-->
-<!--            android:textSize="20sp"-->
-<!--            android:textStyle="bold" />-->
+        <!--        <TextView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:layout_marginLeft="20dp"-->
+        <!--            android:layout_marginRight="20dp"-->
+        <!--            android:fontFamily="sans-serif-condensed"-->
+        <!--            android:padding="4dp"-->
+        <!--            android:text="@string/age"-->
+        <!--            android:textColor="#f76a8c"-->
+        <!--            android:textSize="20sp"-->
+        <!--            android:textStyle="bold" />-->
 
-<!--        <Spinner-->
-<!--            android:id="@+id/age_spinner"-->
-<!--            android:layout_width="200dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:layout_marginLeft="20dp"-->
-<!--            android:layout_marginRight="20dp"-->
-<!--            android:layout_marginBottom="8dp"-->
-<!--            android:background="@drawable/et_custom" />-->
+        <!--        <Spinner-->
+        <!--            android:id="@+id/age_spinner"-->
+        <!--            android:layout_width="200dp"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:layout_marginLeft="20dp"-->
+        <!--            android:layout_marginRight="20dp"-->
+        <!--            android:layout_marginBottom="8dp"-->
+        <!--            android:background="@drawable/et_custom" />-->
 
-<!--        <com.google.android.material.textfield.TextInputLayout-->
-<!--            android:id="@+id/textPhone"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:errorEnabled="true">-->
+        <!--        <com.google.android.material.textfield.TextInputLayout-->
+        <!--            android:id="@+id/textPhone"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            app:errorEnabled="true">-->
 
-<!--            <com.google.android.material.textfield.TextInputEditText-->
-<!--                android:id="@+id/phone"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="50dp"-->
-<!--                android:layout_marginLeft="20dp"-->
-<!--                android:layout_marginRight="20dp"-->
-<!--                android:layout_marginBottom="8dp"-->
-<!--                android:background="@drawable/et_custom"-->
-<!--                android:hint="@string/phone_number"-->
-<!--                android:inputType="number"-->
-<!--                android:textSize="15sp"-->
-<!--                android:padding="4dp" />-->
-<!--        </com.google.android.material.textfield.TextInputLayout>-->
+        <!--            <com.google.android.material.textfield.TextInputEditText-->
+        <!--                android:id="@+id/phone"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="50dp"-->
+        <!--                android:layout_marginLeft="20dp"-->
+        <!--                android:layout_marginRight="20dp"-->
+        <!--                android:layout_marginBottom="8dp"-->
+        <!--                android:background="@drawable/et_custom"-->
+        <!--                android:hint="@string/phone_number"-->
+        <!--                android:inputType="number"-->
+        <!--                android:textSize="15sp"-->
+        <!--                android:padding="4dp" />-->
+        <!--        </com.google.android.material.textfield.TextInputLayout>-->
 
-<!--        <View-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="0.5dp"-->
-<!--            android:background="#c0c0c0" />-->
+        <!--        <View-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="0.5dp"-->
+        <!--            android:background="#c0c0c0" />-->
 
         <TextView
             android:layout_width="match_parent"
@@ -163,6 +164,7 @@
             android:fontFamily="sans-serif-condensed-medium"
             android:gravity="center"
             android:padding="4dp"
+            android:textColor="@color/colorBlack"
             android:text="@string/screening_for_covid_19_infection"
             android:textSize="19sp"
             android:textStyle="bold" />
@@ -182,6 +184,7 @@
             android:layout_height="wrap_content"
             android:padding="4dp"
             android:text="@string/_1_fever"
+            android:textColor="@color/colorBlack"
             android:textSize="17sp" />
 
         <RadioGroup
@@ -195,7 +198,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="onRadioButtonClicked"
-                android:text="@string/yes" />
+                android:text="@string/yes"
+                android:textColor="@color/colorBlack" />
 
             <RadioButton
                 android:id="@+id/radio_fever_no"
@@ -203,7 +207,8 @@
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:onClick="onRadioButtonClicked"
-                android:text="@string/no" />
+                android:text="@string/no"
+                android:textColor="@color/colorBlack" />
 
         </RadioGroup>
 
@@ -212,17 +217,20 @@
             android:layout_height="wrap_content"
             android:padding="4dp"
             android:text="2. Headache"
+            android:textColor="@color/colorBlack"
             android:textSize="17sp" />
 
         <RadioGroup
             android:id="@+id/radio_headache"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:textColor="@color/colorBlack">
 
             <RadioButton
                 android:id="@+id/radio_headache_yes"
                 android:layout_width="wrap_content"
+
                 android:layout_height="wrap_content"
                 android:onClick="onRadioButtonClicked"
                 android:text="@string/yes" />
@@ -244,13 +252,15 @@
             android:layout_marginBottom="4dp"
             android:padding="4dp"
             android:text="3. Sneezing"
+            android:textColor="@color/colorBlack"
             android:textSize="17sp" />
 
         <RadioGroup
             android:id="@+id/radio_sneezingSymptoms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:textColor="@color/colorBlack">
 
             <RadioButton
                 android:id="@+id/radio_sneezing_yes"
@@ -275,13 +285,15 @@
             android:layout_marginBottom="4dp"
             android:padding="4dp"
             android:text="4. Chest Pain"
+            android:textColor="@color/colorBlack"
             android:textSize="17sp" />
 
         <RadioGroup
             android:id="@+id/radio_chestPainSymptoms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:textColor="@color/colorBlack">
 
             <RadioButton
                 android:id="@+id/radio_chestPain_yes"
@@ -306,13 +318,15 @@
             android:layout_marginBottom="4dp"
             android:padding="4dp"
             android:text="5. Body Pain"
+            android:textColor="@color/colorBlack"
             android:textSize="17sp" />
 
         <RadioGroup
             android:id="@+id/radio_bodyPainSymptom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:textColor="@color/colorBlack">
 
             <RadioButton
                 android:id="@+id/radio_bodyPain_yes"
@@ -337,13 +351,15 @@
             android:layout_marginBottom="4dp"
             android:padding="4dp"
             android:text="6. Nausea/Vomiting"
+            android:textColor="@color/colorBlack"
             android:textSize="17sp" />
 
         <RadioGroup
             android:id="@+id/radio_nauseaSymptom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:textColor="@color/colorBlack">
 
             <RadioButton
                 android:id="@+id/radio_nausea_yes"
@@ -369,13 +385,15 @@
             android:layout_marginBottom="4dp"
             android:padding="4dp"
             android:text="7. Diarrhoea"
+            android:textColor="@color/colorBlack"
             android:textSize="17sp" />
 
         <RadioGroup
             android:id="@+id/radio_diarrhoeaSymptoms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:textColor="@color/colorBlack">
 
             <RadioButton
                 android:id="@+id/radio_diarrhoea_yes"
@@ -401,13 +419,15 @@
             android:layout_marginBottom="4dp"
             android:padding="4dp"
             android:text="8. Other Flu Symptom"
+            android:textColor="@color/colorBlack"
             android:textSize="17sp" />
 
         <RadioGroup
             android:id="@+id/radio_fluSymptoms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:textColor="@color/colorBlack">
 
             <RadioButton
                 android:id="@+id/radio_flu_yes"
@@ -432,13 +452,15 @@
             android:layout_marginBottom="4dp"
             android:padding="4dp"
             android:text="9. Sore throat"
+            android:textColor="@color/colorBlack"
             android:textSize="17sp" />
 
         <RadioGroup
             android:id="@+id/radio_soreSymptoms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:textColor="@color/colorBlack">
 
             <RadioButton
                 android:id="@+id/radio_sore_yes"
@@ -463,13 +485,15 @@
             android:layout_marginBottom="4dp"
             android:padding="4dp"
             android:text="10. Fatigue"
+            android:textColor="@color/colorBlack"
             android:textSize="17sp" />
 
         <RadioGroup
             android:id="@+id/fatigueSymptoms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:textColor="@color/colorBlack">
 
             <RadioButton
                 android:id="@+id/fatigueSymptoms_yes"
@@ -501,6 +525,7 @@
             android:fontFamily="sans-serif-condensed-medium"
             android:padding="4dp"
             android:text="Section Two:"
+            android:textColor="@color/colorBlack"
             android:textSize="19sp"
             android:textStyle="bold" />
 
@@ -511,13 +536,15 @@
             android:layout_marginBottom="4dp"
             android:padding="4dp"
             android:text="11. New or Worsening Cough"
+            android:textColor="@color/colorBlack"
             android:textSize="17sp" />
 
         <RadioGroup
             android:id="@+id/cough"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:textColor="@color/colorBlack">
 
             <RadioButton
                 android:id="@+id/cough_yes"
@@ -542,13 +569,15 @@
             android:layout_height="wrap_content"
             android:padding="4dp"
             android:text="12. Difficult In Breathing"
+            android:textColor="@color/colorBlack"
             android:textSize="17sp" />
 
         <RadioGroup
             android:id="@+id/radio_difficultBreathing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:textColor="@color/colorBlack">
 
             <RadioButton
                 android:id="@+id/radio_difficult_yes"
@@ -573,13 +602,15 @@
             android:layout_marginBottom="4dp"
             android:padding="4dp"
             android:text="13. Loss Of Smell"
+            android:textColor="@color/colorBlack"
             android:textSize="17sp" />
 
         <RadioGroup
             android:id="@+id/lossOfSmellSymptoms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:textColor="@color/colorBlack">
 
             <RadioButton
                 android:id="@+id/lossOfSmellSymptoms_yes"
@@ -604,13 +635,15 @@
             android:layout_marginBottom="4dp"
             android:padding="4dp"
             android:text="14. Loss of Taste"
+            android:textColor="@color/colorBlack"
             android:textSize="17sp" />
 
         <RadioGroup
             android:id="@+id/lossTasteSymptoms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:textColor="@color/colorBlack">
 
             <RadioButton
                 android:id="@+id/lossTasteSymptoms_yes"
@@ -648,7 +681,8 @@
             android:id="@+id/radio_contactWithFamily"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:textColor="@color/colorBlack">
 
             <RadioButton
                 android:id="@+id/radio_contactWithFamily_yes"
@@ -665,7 +699,6 @@
                 android:checked="true"
                 android:onClick="onRadioButtonClicked"
                 android:text="@string/no" />
-
         </RadioGroup>
 
 

@@ -108,7 +108,6 @@
     </string-array>
 
 
-
     <string-array name="enable_spinner">
         <item>TRUE</item>
         <item>FALSE</item>
