@@ -17,7 +17,6 @@ import androidx.core.content.ContextCompat;
 import hector.developers.covid19riskassessment.R;
 import hector.developers.covid19riskassessment.model.UserHealthData;
 
-
 public class HealthDetailsActivity extends AppCompatActivity {
     TextView detailFirstname;
     TextView detailDate;

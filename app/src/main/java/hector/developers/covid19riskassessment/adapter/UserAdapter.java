@@ -1,6 +1,7 @@
 package hector.developers.covid19riskassessment.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,8 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import hector.developers.covid19riskassessment.R;
+import hector.developers.covid19riskassessment.activities.DetailsActivity;
+import hector.developers.covid19riskassessment.activities.HealthDetailsActivity;
 import hector.developers.covid19riskassessment.model.Users;
-
 
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
@@ -42,7 +44,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         Users users = userList.get(position);
         holder.tvFirstName.setText(users.getFirstname());
         holder.tvEmail.setText(users.getEmail());
-        holder.tvDesignation.setText(users.getDesignation());
+//        holder.tvDesignation.setText(users.getDesignation());
         holder.tvUserType.setText(users.getUserType());
 
         holder.cardView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_scale));
@@ -51,6 +53,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         } else {
             holder.itemView.setBackgroundColor(Color.parseColor("#BBDEFB"));
         }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailsActivity.class);
+                intent.putExtra("key", users);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -61,7 +71,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView tvFirstName;
         private TextView tvEmail;
-        private TextView tvDesignation;
+//        private TextView tvDesignation;
         private TextView tvUserType;
         CardView cardView;
 
@@ -70,7 +80,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             super(itemView);
             tvFirstName = itemView.findViewById(R.id.tvFirstname);
             tvEmail = itemView.findViewById(R.id.tvEmail);
-            tvDesignation = itemView.findViewById(R.id.tvDesignation);
+//            tvDesignation = itemView.findViewById(R.id.tvDesignation);
             tvUserType = itemView.findViewById(R.id.tvUserType);
             cardView = itemView.findViewById(R.id.cardView);
         }

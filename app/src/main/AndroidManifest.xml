@@ -19,7 +19,7 @@
         <activity android:name=".chart.PieChartActivity" />
         <activity android:name=".chart.BarChartActivity" />
         <activity android:name=".chart.ChartActivity" />
-        <activity android:name=".activities.SupLoginActivity" />
+        <activity android:name=".activities.DetailsActivity" />
         <activity android:name=".activities.SupervisorListActivity" />
         <activity android:name=".activities.HealthDetailsActivity" />
         <activity android:name=".activities.RegisterUserActivity" />

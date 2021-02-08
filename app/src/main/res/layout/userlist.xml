@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
+        app:cardElevation="2dp"
         app:cardUseCompatPadding="true">
 
         <RelativeLayout
@@ -22,7 +22,7 @@
             <ImageView
                 android:id="@+id/img2"
                 android:layout_width="60dp"
-                android:layout_height="110dp"
+                android:layout_height="60dp"
                 android:background="#819282"
                 android:padding="5dp"
                 android:src="@drawable/img"
@@ -33,9 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
                 android:layout_toEndOf="@id/img2"
-                android:layout_toRightOf="@id/img2"
                 android:orientation="vertical"
                 tools:ignore="UselessParent">
 
@@ -46,7 +44,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:layout_marginBottom="4dp"
                     android:orientation="horizontal"
                     android:padding="2dp">
 
@@ -57,42 +54,42 @@
                         android:layout_weight="1"
                         android:text="Firstname :"
                         android:textColor="#4cbbb9"
-                        android:textSize="15sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/tvFirstname"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="15sp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/layout_designation"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginBottom="4dp"
-                    android:orientation="horizontal"
-                    android:padding="2dp">
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/layout_designation"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="8dp"-->
+<!--                    android:layout_marginRight="8dp"-->
+<!--                    android:layout_marginBottom="4dp"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:padding="2dp">-->
 
-                    <TextView
-                        android:id="@+id/vDesignation"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Designation :"
-                        android:textColor="#4cbbb9"
-                        android:textSize="15sp" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/vDesignation"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:text="Designation :"-->
+<!--                        android:textColor="#4cbbb9"-->
+<!--                        android:textSize="12sp" />-->
 
-                    <TextView
-                        android:id="@+id/tvDesignation"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textSize="15sp" />
-                </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:id="@+id/tvDesignation"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:textSize="12sp" />-->
+<!--                </LinearLayout>-->
 
                 <LinearLayout
                     android:id="@+id/layout_userType"
@@ -100,7 +97,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:layout_marginBottom="4dp"
                     android:orientation="horizontal"
                     android:padding="2dp">
 
@@ -111,14 +107,14 @@
                         android:layout_weight="1"
                         android:text="User Type :"
                         android:textColor="#4cbbb9"
-                        android:textSize="15sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/tvUserType"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="15sp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
 
 
@@ -128,7 +124,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:layout_marginBottom="4dp"
                     android:orientation="horizontal"
                     android:padding="2dp">
 
@@ -139,14 +134,14 @@
                         android:layout_weight="1"
                         android:text="Email :"
                         android:textColor="#4cbbb9"
-                        android:textSize="15sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/tvEmail"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="15sp" />
+                        android:textSize="12sp"/>
                 </LinearLayout>
             </LinearLayout>
         </RelativeLayout>
