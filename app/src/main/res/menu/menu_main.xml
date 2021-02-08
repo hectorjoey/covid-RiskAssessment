@@ -12,7 +12,7 @@
 
     <item
         android:id="@+id/main_refresh"
-        android:title="Move to Supervisor"
+        android:title="Supervisees"
         app:showAsAction="always" />
     <!--    <item-->
     <!--        android:id="@+id/main_logout"-->

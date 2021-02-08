@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import hector.developers.covid19riskassessment.R;
-import hector.developers.covid19riskassessment.chart.ChartActivity;
 
 
 public class MainActivity extends AppCompatActivity {

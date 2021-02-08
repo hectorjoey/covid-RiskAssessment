@@ -8,7 +8,7 @@
 <!--        app:showAsAction="never" />-->
     <item
         android:id="@+id/main_userHealthData"
-        android:title="Create User Health Data"
+        android:title="Covid Screening"
         app:showAsAction="always" />
 <!--    <item-->
 <!--        android:id="@+id/main_logout"-->
