@@ -33,6 +33,7 @@ import androidx.appcompat.widget.Toolbar;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -49,12 +50,12 @@ import retrofit2.Response;
 public class UserHealthDataActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private Toolbar mToolbar;
-    final Calendar myCalendar = Calendar.getInstance();
+    Calendar myCalendar = Calendar.getInstance();
+
     EditText mDate;
 
-
     private ProgressDialog loadingBar;
-    private Spinner mVisitSpinner, mLanguageSpinner;
+    private Spinner mVisitSpinner;
     private String mGender, mVisit, mAge;
     private List<String> states;
     private String userId;
@@ -64,7 +65,6 @@ public class UserHealthDataActivity extends AppCompatActivity {
 
     private String risk;
 
-    Users users;
     //global variables
     AtomicInteger sectionOneYes = new AtomicInteger();
     //declaring the radio group;
@@ -85,8 +85,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
             rbDifficultyInBreathing, rbLossOfSmellSymptoms, rbLossOfTasteSymptoms,
             rbContactWithFamily;
     Button mBtn_submit;
-    Locale myLocale;
-    String currentLanguage = "en", currentLang;
+
     DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
         @Override
@@ -106,15 +105,8 @@ public class UserHealthDataActivity extends AppCompatActivity {
         loadingBar = new ProgressDialog(this);
         mToolbar = findViewById(R.id.main_page_toolbar);
         setSupportActionBar(mToolbar);
-        setTitle("User Health Data");
+        setTitle("Covid Screening");
 
-        currentLanguage = getIntent().getStringExtra(currentLang);
-        mLanguageSpinner = findViewById(R.id.language_spinner);
-        List<String> list = new ArrayList<>();
-        list.add("Select language");
-        list.add("English");
-        list.add("Hausa");
-        list.add("Igbo");
 
         HashMap<String, String> id = getUserId();
         userId = id.get("userId");
@@ -182,7 +174,9 @@ public class UserHealthDataActivity extends AppCompatActivity {
                 final String contactWithFamily = ((RadioButton) findViewById(mContactWithFamily.getCheckedRadioButtonId())).getText().toString();
 
                 //validations of fields
-
+                if (rbFever.getText() == null){
+                    Toast.makeText(getApplicationContext(), "Select an option!", Toast.LENGTH_SHORT).show();
+                }
                 if (TextUtils.isEmpty(date)) {
                     mDate.setError("Enter date!");
                     mDate.requestFocus();
@@ -238,39 +232,6 @@ public class UserHealthDataActivity extends AppCompatActivity {
             }
         });
 
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> languageAdapter = ArrayAdapter.createFromResource(this,
-                R.array.language_array, android.R.layout.simple_spinner_dropdown_item);
-        // Specify the layout to use when the list of choices appears
-        languageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        mLanguageSpinner.setAdapter(languageAdapter);
-
-        mLanguageSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                switch (position) {
-                    case 0:
-                        break;
-                    case 1:
-                        setLocale("en");
-                        break;
-                    case 2:
-                        setLocale("ha");
-                        break;
-                    case 3:
-                        setLocale("ig");
-                        break;
-                    case 4:
-                        setLocale("yo");
-                        break;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-            }
-        });
 
         mDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -280,31 +241,16 @@ public class UserHealthDataActivity extends AppCompatActivity {
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
-
         });
     }
 
     private void updateLabel() {
         String myFormat = "MM/dd/yy";   //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+        Date date = new Date();
+        mDate.setText(sdf.format(date));
         mDate.setText(sdf.format(myCalendar.getTime()));
 
-    }
-
-    public void setLocale(String localeName) {
-        if (!localeName.equals(currentLanguage)) {
-            myLocale = new Locale(localeName);
-            Resources res = getResources();
-            DisplayMetrics dm = res.getDisplayMetrics();
-            Configuration conf = res.getConfiguration();
-            conf.locale = myLocale;
-            res.updateConfiguration(conf, dm);
-            Intent refresh = new Intent(this, MainActivity.class);
-            refresh.putExtra(currentLang, localeName);
-            startActivity(refresh);
-        } else {
-            Toast.makeText(UserHealthDataActivity.this, "Language already selected!", Toast.LENGTH_SHORT).show();
-        }
     }
 
     public void onRadioButtonClicked(View view) {

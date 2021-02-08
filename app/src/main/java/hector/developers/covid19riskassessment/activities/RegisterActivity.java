@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
@@ -61,6 +63,8 @@ public class RegisterActivity extends AppCompatActivity {
 
     private Util util;
 
+    private SwipeRefreshLayout swipeRefresh;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +86,7 @@ public class RegisterActivity extends AppCompatActivity {
         loadingBar = new ProgressDialog(this);
         spSupervisor = findViewById(R.id.spinner1);
         mAgeSpinner = findViewById(R.id.age_spinner);
+        swipeRefresh = findViewById(R.id.swipeRefresh);
 
         Intent intent = new Intent();
 
@@ -98,6 +103,33 @@ public class RegisterActivity extends AppCompatActivity {
         states = Nigeria.getStates();
 //        call to method that'll set up state and lga spinner
         setupSpinners();
+
+        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Your code here
+                network();
+                Toast.makeText(getApplicationContext(), "Works!", Toast.LENGTH_LONG).show();
+                // To keep animation for 4 seconds
+                new Handler().postDelayed(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        // Stop animation (This will be after 3 seconds)
+                        swipeRefresh.setRefreshing(false);
+                    }
+                }, 4000); // Delay in millis
+            }
+        });
+
+        // Scheme colors for animation
+        swipeRefresh.setColorSchemeColors(
+                getResources().getColor(android.R.color.holo_blue_bright),
+                getResources().getColor(android.R.color.holo_green_light),
+                getResources().getColor(android.R.color.holo_orange_light),
+                getResources().getColor(android.R.color.holo_red_light)
+        );
+
         mButtonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -143,7 +175,6 @@ public class RegisterActivity extends AppCompatActivity {
                         mAddress.requestFocus();
                         return;
                     }
-
 
                     if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                         mEmail.setError("Enter a valid email!");
@@ -199,67 +230,6 @@ public class RegisterActivity extends AppCompatActivity {
         mGender.setAdapter(genderAdapter);
 
     }
-
-//    private void statesFetch() {
-//        AndroidNetworking.get("https://covid-19-risk-assesment-server.herokuapp.com/api/v1/states")
-//                .addHeaders("token", "1234")
-//                .setTag("test")
-//                .setPriority(Priority.LOW)
-//                .build()
-//                .getAsJSONArray(new JSONArrayRequestListener() {
-//                    @Override
-//                    public void onResponse(JSONArray response) {
-//                        // do anything with response
-//                        Log.d("resp2", response.toString());
-//
-//                        List<String> stateNames = new ArrayList<>();
-//                        List<Long> idss2 = new ArrayList<>();
-//                        for (int i = 0; i < response.length(); i++) {
-//                            try {
-//                                JSONObject json_data = response.getJSONObject(i);
-//                                id = json_data.getString("id");
-//                                stateName = json_data.getString("stateName");
-//                                Long id = json_data.getLong("id");
-//                                Log.d("resp4", "id: " + id + " stateName: " + stateName);
-//                                //initializing spinner;
-//                                idss2.add(id);
-//                                stateNames.add(stateName);
-////                                System.out.println("IDD22  +++++ " + idss2);
-//
-//                            } catch (Exception e) {
-//                                e.printStackTrace();
-//                            }
-//                        }
-//                        spinner2(idss2, stateNames);
-//                    }
-//
-//                    @Override
-//                    public void onError(ANError error) {
-//                        // handle error
-//                        Log.d("err2", error.toString());
-//                    }
-//                });
-//    }
-
-//    private void spinner2(List<Long> idLits2, List<String> stateNames1) {
-////        System.out.println("idsggsgs " + idLits2 + "nmammeme" + stateNames1);
-//        final ArrayAdapter states = new ArrayAdapter<>(RegisterActivity.this, R.layout.support_simple_spinner_dropdown_item, stateNames1);
-//        states.notifyDataSetChanged();
-//        mStateSpinner.setAdapter(states);
-//        mStateSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                Long ids2 = idLits2.get(position);
-//                System.out.println("stanley " + ids2);
-//                saveId(ids2);
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//            }
-//        });
-//    }
-
 
     private void network() {
         AndroidNetworking.get("https://covid-19-risk-assesment-server.herokuapp.com/api/v1/users")

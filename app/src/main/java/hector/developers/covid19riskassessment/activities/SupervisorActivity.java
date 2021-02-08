@@ -14,6 +14,7 @@ import android.graphics.ColorSpace;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -56,6 +57,7 @@ public class SupervisorActivity extends AppCompatActivity {
     private SearchView searchView;
     private Paint p = new Paint();
     private List<UserHealthData> userHealthDataList;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +72,35 @@ public class SupervisorActivity extends AppCompatActivity {
         setTitle("Supervisor Dashboard");
         userHealthDataList = populateList();
         loadingBar = new ProgressDialog(this);
+        swipeRefreshLayout = findViewById(R.id.refresh);
         fetchHealthData(userId);
         enableSwipe();
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Your code here
+                fetchHealthData(userId);
+
+                Toast.makeText(getApplicationContext(), "Refreshed Supervisors!", Toast.LENGTH_LONG).show();
+                // To keep animation for 4 seconds
+                new Handler().postDelayed(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        // Stop animation (This will be after 3 seconds)
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                }, 4000); // Delay in millis
+            }
+        });
+        // Scheme colors for animation
+        swipeRefreshLayout.setColorSchemeColors(
+                getResources().getColor(android.R.color.holo_blue_bright),
+                getResources().getColor(android.R.color.holo_green_light),
+                getResources().getColor(android.R.color.holo_orange_light),
+                getResources().getColor(android.R.color.holo_red_light)
+        );
     }
 
     private void enableSwipe() {
