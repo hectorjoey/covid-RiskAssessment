@@ -174,9 +174,6 @@ public class UserHealthDataActivity extends AppCompatActivity {
                 final String contactWithFamily = ((RadioButton) findViewById(mContactWithFamily.getCheckedRadioButtonId())).getText().toString();
 
                 //validations of fields
-                if (rbFever.getText() == null){
-                    Toast.makeText(getApplicationContext(), "Select an option!", Toast.LENGTH_SHORT).show();
-                }
                 if (TextUtils.isEmpty(date)) {
                     mDate.setError("Enter date!");
                     mDate.requestFocus();
