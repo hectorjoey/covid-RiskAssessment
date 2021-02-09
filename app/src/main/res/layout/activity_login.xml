@@ -137,6 +137,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
+                                android:background="@drawable/et_custom"
                                 android:inputType="textEmailAddress" />
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -160,6 +161,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
+                                android:background="@drawable/et_custom"
                                 android:inputType="textPassword" />
                         </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
@@ -169,7 +171,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/cv"
-                    android:layout_alignLeft="@+id/cv"
+                    android:layout_alignStart="@+id/cv"
                     android:layout_alignEnd="@+id/cv"
                     android:layout_marginLeft="35dp"
                     android:layout_marginTop="-50dp"

@@ -41,6 +41,8 @@ public class HealthDetailsActivity extends AppCompatActivity {
     TextView detailsPhone;
     TextView mDisplayOutcome;
 
+    TextView detailRisk;
+
     Button mBtnCall, mBtnText;
 
 
@@ -67,6 +69,7 @@ public class HealthDetailsActivity extends AppCompatActivity {
         detailsLossOfTasteSymptoms = findViewById(R.id.detailsLossOfTasteSymptoms);
 
         detailsContactWithFamily = findViewById(R.id.detailsContactWithFamily);
+        detailRisk = findViewById(R.id.detailsRisk);
 
         detailsPhone = findViewById(R.id.detailsPhone);
         mBtnCall = findViewById(R.id.btnCall);
@@ -122,33 +125,10 @@ public class HealthDetailsActivity extends AppCompatActivity {
         detailsContactWithFamily.setText(userHealthData.getContactWithFamily());
 
 
-        if ((detailsContactWithFamily.getText().toString().equalsIgnoreCase("yes")
-                || (detailsLossOfSmellSymptoms.getText().toString().equalsIgnoreCase("yes")
-                || detailsLossOfTasteSymptoms.getText().toString().equalsIgnoreCase("yes")
-                || detailDifficultyInBreathingSymptom.getText().toString().equalsIgnoreCase("yes")
-                && (detailFeverSymptom.getText().toString().equalsIgnoreCase("yes")
-                || detailsHeadacheSymptom.getText().toString().equalsIgnoreCase("yes")
-                || detailSneezingSymptoms.getText().toString().equalsIgnoreCase("yes")
-                || detailsChestPainSymptoms.getText().toString().equalsIgnoreCase("yes")
-                || detailsBodyPainSymptoms.getText().toString().equalsIgnoreCase("yes")
-                || detailsNauseaOrVomitingSymptom.getText().toString().equalsIgnoreCase("yes")
-                || detailNewOrWorseningCoughSymptom.getText().toString().equalsIgnoreCase("yes")
-                || detailsFatigueSymptoms.getText().toString().equalsIgnoreCase("yes"))))) {
+        if (detailRisk.getText().toString().equalsIgnoreCase("High Risk")) {
             mDisplayOutcome.setText("High risk");
             mDisplayOutcome.setBackgroundColor(Color.parseColor("#E82815"));
-        } else if ((detailsContactWithFamily.getText().toString().equalsIgnoreCase("No")
-                || (detailsLossOfSmellSymptoms.getText().toString().equalsIgnoreCase("No")
-                || detailsLossOfTasteSymptoms.getText().toString().equalsIgnoreCase("No")
-                || detailDifficultyInBreathingSymptom.getText().toString().equalsIgnoreCase("No")
-                && (detailFeverSymptom.getText().toString().equalsIgnoreCase("yes")
-                || detailsHeadacheSymptom.getText().toString().equalsIgnoreCase("yes")
-                || detailSneezingSymptoms.getText().toString().equalsIgnoreCase("yes")
-                || detailsChestPainSymptoms.getText().toString().equalsIgnoreCase("yes")
-                || detailsBodyPainSymptoms.getText().toString().equalsIgnoreCase("yes")
-                || detailsNauseaOrVomitingSymptom.getText().toString().equalsIgnoreCase("yes")
-                || detailNewOrWorseningCoughSymptom.getText().toString().equalsIgnoreCase("yes")
-                || detailsFatigueSymptoms.getText().toString().equalsIgnoreCase("yes")))
-        )) {
+        } else {
             mDisplayOutcome.setText("Low risk");
             mDisplayOutcome.setBackgroundColor(Color.parseColor("#1BE815"));
         }

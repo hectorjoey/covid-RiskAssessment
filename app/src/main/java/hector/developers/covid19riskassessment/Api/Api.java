@@ -59,9 +59,8 @@ public interface Api {
             @Field("userId") Long userId,
             @Field("firstname") String firstname,
             @Field("phone") String phone,
-            @Field("userType") String userType,
-            @Field("risk") String risk
-
+            @Field("risk") String risk,
+            @Field("userType") String userType
     );
 
     //the users login call

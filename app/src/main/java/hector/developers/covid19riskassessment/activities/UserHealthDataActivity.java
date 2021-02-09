@@ -302,7 +302,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
                                        String diarrhoeaSymptom, String fluSymptom, String soreThroatSymptom,
                                        String fatigueSymptom, String newOrWorseningCough, String difficultyInBreathing,
                                        String lossOfOrDiminishedSenseOfSmell, String lossOfOrDiminishedSenseOfTaste,
-                                       String contactWithFamily, Long userId, String firstname, String phone, String userType, String risk) {
+                                       String contactWithFamily, Long userId, String firstname, String phone,  String risk, String userType) {
         //making api calls
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Sending Data...");
@@ -320,7 +320,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
                         fluSymptom, soreThroatSymptom,
                         fatigueSymptom, newOrWorseningCough, difficultyInBreathing,
                         lossOfOrDiminishedSenseOfSmell, lossOfOrDiminishedSenseOfTaste, contactWithFamily,
-                        userId, firstname, phone, userType, risk);
+                        userId, firstname, phone, risk, userType);
         call.enqueue(new Callback<UserHealthData>() {
             @Override
             public void onResponse(Call<UserHealthData> call, Response<UserHealthData> response) {

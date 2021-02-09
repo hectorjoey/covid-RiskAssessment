@@ -542,6 +542,33 @@
                 android:gravity="center"
                 android:textSize="10sp" />
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout_risk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:padding="2dp"
+            android:visibility="gone">
+
+        <TextView
+            android:id="@+id/vRisk"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/in_the_last_14_days_have_you_been_around_anyone_with_any_of_these_symptoms"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/detailsRisk"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="10sp" />
+    </LinearLayout>
 
         <View
             android:layout_width="match_parent"
