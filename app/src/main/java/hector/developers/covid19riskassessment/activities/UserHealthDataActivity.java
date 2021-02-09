@@ -86,18 +86,6 @@ public class UserHealthDataActivity extends AppCompatActivity {
             rbContactWithFamily;
     Button mBtn_submit;
 
-//    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
-//
-//        @Override
-//        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-//            // TODO Auto-generated method stub
-//            myCalendar.set(Calendar.YEAR, year);
-//            myCalendar.set(Calendar.MONTH, monthOfYear);
-//            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-//            updateLabel();
-//        }
-//    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -148,7 +136,6 @@ public class UserHealthDataActivity extends AppCompatActivity {
 
 
         mBtn_submit = findViewById(R.id.btn_submit);
-//        mUserId = findViewById(R.id.userId);
 
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
@@ -157,17 +144,22 @@ public class UserHealthDataActivity extends AppCompatActivity {
         mDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //   initialize date picker dialog
                 DatePickerDialog datePickerDialog = new DatePickerDialog(UserHealthDataActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        //   store date in string
                         String sDate = dayOfMonth + "/" + month + "/" + year;
+                        // set date on view
                         mDate.setText(sDate);
                     }
-                },year, month, day
+                }, year, month, day
                 );
-                //
-                datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis()-10000);
+                //disable future dates
+                datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 10000);
+                //disable past dates
                 datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+                //show date
                 datePickerDialog.show();
             }
         });
@@ -250,24 +242,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
             }
         });
 
-
-//        mDate.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //            // TODO Auto-generated method stub
-//                new DatePickerDialog(UserHealthDataActivity.this, date, myCalendar
-//                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-//                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-//            }
-//        });
     }
-
-//    private void updateLabel() {
-//        String myFormat = "MM/dd/yy";   //In which you need put here
-//        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-//        mDate.setText(sdf.format(date));
-//        mDate.setText(sdf.format(myCalendar.getTimeInMillis()));
-//    }
 
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
@@ -406,20 +381,6 @@ public class UserHealthDataActivity extends AppCompatActivity {
         finish();
     }
 
-    public void onBackPressed() {
-        new AlertDialog.Builder(this)
-                .setTitle("Go back?")
-                .setMessage("Are you sure you want to go back?")
-                .setNegativeButton(android.R.string.no, null)
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface arg0, int arg1) {
-                        Intent intent = new Intent(UserHealthDataActivity.this, LoginActivity.class);
-                        // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        startActivity(intent);
-                        finish();
-                    }
-                }).create().show();
-    }
 
     public HashMap<String, String> getUserId() {
         HashMap<String, String> id = new HashMap<>();
@@ -457,4 +418,20 @@ public class UserHealthDataActivity extends AppCompatActivity {
             }
         }
     }
+
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setTitle("Go back?")
+                .setMessage("Are you sure you want to go back?")
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        Intent intent = new Intent(UserHealthDataActivity.this, LoginActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        finish();
+                    }
+                }).create().show();
+    }
+
 }

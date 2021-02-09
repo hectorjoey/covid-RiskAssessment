@@ -18,7 +18,6 @@
         <activity android:name=".activities.DetailsActivity" />
         <activity android:name=".activities.SupervisorListActivity" />
         <activity android:name=".activities.HealthDetailsActivity" />
-        <activity android:name=".activities.RegisterUserActivity" />
         <activity
             android:name=".activities.SupervisorActivity"
             android:parentActivityName=".activities.DashboardActivity">
