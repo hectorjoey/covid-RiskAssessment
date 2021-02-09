@@ -50,7 +50,11 @@ public class Users implements Serializable {
     @Expose
     private String supervisedBy;
 
-    public Users(Long id, String firstname, String lastname, String phone, String designation, String email, String password, String userType, String gender, String state, String enabled, String supervisedBy) {
+    public Users() {
+    }
+
+    public Users(Long id, String firstname, String lastname, String phone, String designation,
+                 String email, String password, String userType, String gender, String state, String enabled, String supervisedBy) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;

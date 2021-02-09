@@ -22,6 +22,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import org.json.JSONObject;
 
 import java.util.HashMap;
 
@@ -108,7 +112,132 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
+//    public void loginUser(String email, String password){
+//        try {
+//            JSONObject loginUsers = new JSONObject();
+//            loginUsers.put("email", email);
+//            loginUsers.put("password", password);
+//            JsonParser jsonParser = new JsonParser();
+//            Call<JsonObject> call = RetrofitClient
+//                    .getInstance()
+//                    .getApi()
+//                    .login2((JsonObject) jsonParser.parse(loginUsers.toString()));
+//            final ProgressDialog progressDialog = new ProgressDialog(this);
+//            progressDialog.setMessage("Authenticating Please Wait...");
+//            progressDialog.show();
+//            call.enqueue(new Callback<JsonObject>() {
+//                @Override
+//                public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+//                    System.out.println("Response :::: " +  response);
+//                    System.out.println("Responding $$$$ : " + response );
+//                    if (response.isSuccessful()) {
+////                        Users users = response.body();
+//                        Users users = new Users(response.body().getAsJsonObject("result").get("id").getAsLong(),
+//                                response.body().getAsJsonObject("result").get("firstname").getAsString(),
+//                                response.body().getAsJsonObject("result").get("lastname").getAsString(),
+//                                response.body().getAsJsonObject("result").get("phone").getAsString(),
+//                                response.body().getAsJsonObject("result").get("designation").getAsString(),
+//                                response.body().getAsJsonObject("result").get("email").getAsString(),
+//                                response.body().getAsJsonObject("result").get("password").getAsString(),
+//                                response.body().getAsJsonObject("result").get("userType").getAsString(),
+//                                response.body().getAsJsonObject("result").get("gender").getAsString(),
+//                                response.body().getAsJsonObject("result").get("state").getAsString(),
+//                                response.body().getAsJsonObject("result").get("enabled").getAsString(),
+//                                response.body().getAsJsonObject("result").get("supervisedBy").getAsString());
+//                        System.out.println("users XXXXXX " + response);
+//                        assert response.body() != null;
+////                    userID = response.body().getId();
+//                        assert users != null;
+//                        //save userId to shared pref
+//                        if (users.getUserType().equalsIgnoreCase("admin")) {
+//                            Intent adminIntent = new Intent(LoginActivity.this, MainActivity.class);
+//                            assert response.body() != null;
+//                            sessionManagement.setLoginEmail(email);
+//                            sessionManagement.setLoginPassword(password);
+//                            adminIntent.putExtra("Admin", users.getUserType());
+//                            startActivity(adminIntent);
+//                            finish();
+//                            Toast.makeText(LoginActivity.this, "Welcome Admin!", Toast.LENGTH_LONG).show();
+//                            progressDialog.dismiss();
+//                        } else if (users.getUserType().equalsIgnoreCase("user")) {
+//                            Intent intent = new Intent(LoginActivity.this, UserHealthDataActivity.class);
+//                            intent.putExtra("userId ", users.getId());
+//                            saveUserId(users.getId());
+//                            System.out.println("users ,,,," + users.getId());
+//
+//                            intent.putExtra("phone", users.getPhone());
+//                            saveUserPhone(users.getPhone());
+//                            System.out.println("users ,,,," + users.getPhone());
+//
+//                            intent.putExtra("firstname", users.getFirstname());
+//                            saveUserFirstname(users.getFirstname());
+//                            System.out.println("users ,,,," + users.getFirstname());
+//
+//                            intent.putExtra("userType", users.getUserType());
+//                            saveUserType(users.getUserType());
+//                            System.out.println("users ,,,," + users.getUserType());
+//
+//                            assert response.body() != null;
+//                            intent.putExtra("User", users.getUserType());
+//                            intent.putExtra("state", users.getState());
+//                            intent.putExtra("firstname",users.getFirstname());
+//                            System.out.println("firstname ++:" + users.getFirstname());
+//                            intent.putExtra("phone", users.getPhone());
+//                            System.out.println("phone ++:" + users.getPhone());
+//                            startActivity(intent);
+//                            sessionManagement.setLoginEmail(email);
+//                            sessionManagement.setLoginPassword(password);
+//                            Toast.makeText(LoginActivity.this, "Welcome User!", Toast.LENGTH_SHORT).show();
+//                            progressDialog.dismiss();
+//                        } else {
+//                            Intent intent = new Intent(LoginActivity.this, SupervisorActivity.class);
+//                            editor.putLong("userId", users.getId());
+//                            editor.apply();
+//                            intent.putExtra("userId ", users.getId());
+//                            saveUserId(users.getId());
+//                            System.out.println("users ,,,," + users.getId());
+//
+//                            intent.putExtra("phone", users.getPhone());
+//                            saveUserPhone(users.getPhone());
+//                            System.out.println("users ,,,," + users.getPhone());
+//
+//                            intent.putExtra("firstname", users.getFirstname());
+//                            saveUserFirstname(users.getFirstname());
+//                            System.out.println("users ,,,," + users.getFirstname());
+//
+//                            intent.putExtra("userType", users.getUserType());
+//                            saveUserType(users.getUserType());
+//                            System.out.println("users ,,,," + users.getUserType());
+//                            assert response.body() != null;
+//                            intent.putExtra("User",users.getUserType());
+//                            intent.putExtra("state", users.getState());
+//                            intent.putExtra("phone", users.getPhone());
+//                            //attach the key value pair using putExtra to this intent
+//
+//                            intent.putExtra("phone", users.getPhone());
+//                            startActivity(intent);
+//                            sessionManagement.setLoginEmail(email);
+//                            sessionManagement.setLoginPassword(password);
+//                            Toast.makeText(LoginActivity.this, "Welcome Supervisor!", Toast.LENGTH_SHORT).show();
+//                            progressDialog.dismiss();
+//                        }
+//                    } else {
+//                        System.out.println("RESPONSE ==>> " + response);
+//                        Toast.makeText(LoginActivity.this, "Cannot Login! Check Credentials..!", Toast.LENGTH_SHORT).show();
+//                        progressDialog.dismiss();
+//                    }
+//
+//                }
+//
+//                @Override
+//                public void onFailure(Call<JsonObject> call, Throwable t) {
+//                    System.out.println("Failing ++++ :" + t.getMessage());
+//                }
+//            });
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//    }
     public void loginUser(String email, String password) {
         //do registration API call
         Call<Users> call = RetrofitClient

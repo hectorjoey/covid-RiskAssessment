@@ -28,6 +28,7 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONArrayRequestListener;
 import com.chivorn.smartmaterialspinner.SmartMaterialSpinner;
 import com.ikhiloyaimokhai.nigeriastatesandlgas.Nigeria;
+import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -55,7 +56,8 @@ public class RegisterActivity extends AppCompatActivity {
     private String mState, mLga, mAge, mSupervisor;
     private List<String> states;
 
-    private Spinner spSupervisor, mAgeSpinner;
+    private Spinner mAgeSpinner;
+    private SearchableSpinner spSupervisor;
     private SmartMaterialSpinner spEmptyItem;
     private List<String> supervisorsList;
     ArrayAdapter<String> adapter;
