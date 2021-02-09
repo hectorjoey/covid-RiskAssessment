@@ -50,7 +50,7 @@ import retrofit2.Response;
 public class UserHealthDataActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private Toolbar mToolbar;
-    Calendar myCalendar = Calendar.getInstance();
+//    Calendar myCalendar = Calendar.getInstance();
 
     EditText mDate;
 
@@ -86,17 +86,17 @@ public class UserHealthDataActivity extends AppCompatActivity {
             rbContactWithFamily;
     Button mBtn_submit;
 
-    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
-
-        @Override
-        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-            // TODO Auto-generated method stub
-            myCalendar.set(Calendar.YEAR, year);
-            myCalendar.set(Calendar.MONTH, monthOfYear);
-            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-            updateLabel();
-        }
-    };
+//    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+//
+//        @Override
+//        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+//            // TODO Auto-generated method stub
+//            myCalendar.set(Calendar.YEAR, year);
+//            myCalendar.set(Calendar.MONTH, monthOfYear);
+//            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+//            updateLabel();
+//        }
+//    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -149,6 +149,28 @@ public class UserHealthDataActivity extends AppCompatActivity {
 
         mBtn_submit = findViewById(R.id.btn_submit);
 //        mUserId = findViewById(R.id.userId);
+
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        mDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(UserHealthDataActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        String sDate = dayOfMonth + "/" + month + "/" + year;
+                        mDate.setText(sDate);
+                    }
+                },year, month, day
+                );
+                //
+                datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis()-10000);
+                datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+                datePickerDialog.show();
+            }
+        });
 
         mBtn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -229,25 +251,23 @@ public class UserHealthDataActivity extends AppCompatActivity {
         });
 
 
-        mDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //            // TODO Auto-generated method stub
-                new DatePickerDialog(UserHealthDataActivity.this, date, myCalendar
-                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-            }
-        });
+//        mDate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //            // TODO Auto-generated method stub
+//                new DatePickerDialog(UserHealthDataActivity.this, date, myCalendar
+//                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+//                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+//            }
+//        });
     }
 
-    private void updateLabel() {
-        String myFormat = "MM/dd/yy";   //In which you need put here
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-        Date date = new Date();
-        mDate.setText(sdf.format(date));
-        mDate.setText(sdf.format(myCalendar.getTime()));
-
-    }
+//    private void updateLabel() {
+//        String myFormat = "MM/dd/yy";   //In which you need put here
+//        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+//        mDate.setText(sdf.format(date));
+//        mDate.setText(sdf.format(myCalendar.getTimeInMillis()));
+//    }
 
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
@@ -302,7 +322,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
                                        String diarrhoeaSymptom, String fluSymptom, String soreThroatSymptom,
                                        String fatigueSymptom, String newOrWorseningCough, String difficultyInBreathing,
                                        String lossOfOrDiminishedSenseOfSmell, String lossOfOrDiminishedSenseOfTaste,
-                                       String contactWithFamily, Long userId, String firstname, String phone,  String risk, String userType) {
+                                       String contactWithFamily, Long userId, String firstname, String phone, String risk, String userType) {
         //making api calls
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Sending Data...");

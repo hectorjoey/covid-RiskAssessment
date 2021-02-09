@@ -109,10 +109,9 @@ public class RegisterActivity extends AppCompatActivity {
             public void onRefresh() {
                 // Your code here
                 network();
-                Toast.makeText(getApplicationContext(), "Works!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Refreshing Supervisors!", Toast.LENGTH_LONG).show();
                 // To keep animation for 4 seconds
                 new Handler().postDelayed(new Runnable() {
-
                     @Override
                     public void run() {
                         // Stop animation (This will be after 3 seconds)
@@ -427,6 +426,7 @@ public class RegisterActivity extends AppCompatActivity {
         mLastname.setText("");
         mDesignation.setText("");
         mPhone.setText("");
+        mAddress.setText("");
     }
 
     public void onBackPressed() {

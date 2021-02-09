@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         mImageViewSup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Click on add user to view all", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Click on view user to view all", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -73,10 +73,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent viewUserIntent = new Intent(MainActivity.this, DashboardActivity.class);
                 startActivity(viewUserIntent);
                 finish();
-
             }
         });
-
     }
 
     public void onBackPressed() {

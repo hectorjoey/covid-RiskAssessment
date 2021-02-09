@@ -82,7 +82,7 @@ public class SupervisorActivity extends AppCompatActivity {
                 // Your code here
                 fetchHealthData(userId);
 
-                Toast.makeText(getApplicationContext(), "Refreshed Supervisors!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Refreshing List!", Toast.LENGTH_LONG).show();
                 // To keep animation for 4 seconds
                 new Handler().postDelayed(new Runnable() {
 
