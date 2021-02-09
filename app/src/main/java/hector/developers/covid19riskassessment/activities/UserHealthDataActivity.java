@@ -173,7 +173,6 @@ public class UserHealthDataActivity extends AppCompatActivity {
 
                 final String contactWithFamily = ((RadioButton) findViewById(mContactWithFamily.getCheckedRadioButtonId())).getText().toString();
 
-                //validations of fields
                 if (TextUtils.isEmpty(date)) {
                     mDate.setError("Enter date!");
                     mDate.requestFocus();
@@ -253,7 +252,6 @@ public class UserHealthDataActivity extends AppCompatActivity {
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
-
         int radioButtonId2 = mFever.getCheckedRadioButtonId();
         rbFever = findViewById(radioButtonId2);
 
