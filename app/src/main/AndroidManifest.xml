@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Covid19RiskAssessment">
+        <activity android:name=".DashActivity"></activity>
         <activity android:name=".activities.DetailsActivity" />
         <activity android:name=".activities.SupervisorListActivity" />
         <activity android:name=".activities.HealthDetailsActivity" />

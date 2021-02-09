@@ -12,13 +12,13 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import hector.developers.covid19riskassessment.DashActivity;
 import hector.developers.covid19riskassessment.R;
-
 
 public class MainActivity extends AppCompatActivity {
     ImageView mImageSup, mImgAddUser, mImageViewSup, mImageViewUser;
     private Toolbar mToolbar;
-    Button mAnalyticButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,17 +32,6 @@ public class MainActivity extends AppCompatActivity {
         mImgAddUser = findViewById(R.id.imgAddUser);
         mImageViewSup = findViewById(R.id.imgViewSup);
         mImageViewUser = findViewById(R.id.imgViewUser);
-//        mAnalyticButton = findViewById(R.id.analyticButton);
-
-
-//        mAnalyticButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent chartIntent = new Intent(getApplicationContext(), ChartActivity.class);
-//                startActivity(chartIntent);
-//                finish();
-//            }
-//        });
 
         mImageSup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +52,10 @@ public class MainActivity extends AppCompatActivity {
         mImageViewSup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Click on view user to view all", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Try again!", Toast.LENGTH_SHORT).show();
+//              Intent intent = new Intent(getApplicationContext(), DashActivity.class);
+//              startActivity(intent);
+              finish();
             }
         });
 
