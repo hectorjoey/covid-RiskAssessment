@@ -8,10 +8,11 @@
     tools:context=".activities.HealthDetailsActivity">
 
     <LinearLayout
+        android:id="@+id/detailLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="15dp">
+        android:padding="8dp">
 
         <TextView
             android:id="@+id/displayResult"
@@ -37,7 +38,9 @@
             android:id="@+id/layout_firstname"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_marginStart="12dp"
             android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
             android:orientation="horizontal"
             android:padding="8dp">
 
@@ -45,23 +48,28 @@
                 android:id="@+id/vFirstname"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
                 android:layout_weight="1"
                 android:hint="Firstname:"
-                android:textSize="12sp" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/detailsFirstname"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
                 android:layout_weight="1"
                 android:gravity="start"
-                android:textSize="12sp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/layout_date"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
             android:orientation="horizontal"
             android:padding="8dp">
 
@@ -69,16 +77,19 @@
                 android:id="@+id/vDate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
                 android:layout_weight="1"
                 android:hint="Date:"
-                android:textSize="12sp" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/detailsDate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_weight="1"
-                android:textSize="12sp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -137,7 +148,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             android:orientation="horizontal"
             android:padding="2dp"
             android:visibility="gone">
@@ -193,7 +203,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             android:orientation="horizontal"
             android:padding="2dp"
             android:visibility="gone">
@@ -465,7 +474,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             android:orientation="horizontal"
             android:padding="2dp"
             android:visibility="gone">
@@ -542,6 +550,7 @@
                 android:gravity="center"
                 android:textSize="10sp" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/layout_risk"
             android:layout_width="match_parent"
@@ -552,23 +561,23 @@
             android:padding="2dp"
             android:visibility="gone">
 
-        <TextView
-            android:id="@+id/vRisk"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="@string/in_the_last_14_days_have_you_been_around_anyone_with_any_of_these_symptoms"
-            android:textSize="10sp"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/vRisk"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/in_the_last_14_days_have_you_been_around_anyone_with_any_of_these_symptoms"
+                android:textSize="10sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/detailsRisk"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:textSize="10sp" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/detailsRisk"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="10sp" />
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -579,30 +588,30 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
             android:layout_marginLeft="5dp"
+            android:layout_marginEnd="12dp"
             android:layout_marginRight="5dp"
-            android:layout_marginBottom="12dp"
             android:orientation="horizontal"
             android:padding="10dp">
 
             <Button
                 android:id="@+id/btnCall"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_weight="1"
                 android:background="@drawable/registration_button"
                 android:padding="4dp"
-                android:text="Call"
+                android:text="Call Supervisee"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btnText"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_weight="1"
                 android:background="@drawable/registration_button"
-                android:padding="4dp"
-                android:text="Text"
+                android:text="Text Supervisee"
                 android:textAllCaps="false" />
         </LinearLayout>
     </LinearLayout>

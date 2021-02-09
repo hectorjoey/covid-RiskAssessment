@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,7 @@ import hector.developers.covid19riskassessment.R;
 import hector.developers.covid19riskassessment.model.UserHealthData;
 
 public class HealthDetailsActivity extends AppCompatActivity {
+    LinearLayout linearLayout;
     TextView detailFirstname;
     TextView detailDate;
     TextView detailFeverSymptom;
@@ -70,6 +72,7 @@ public class HealthDetailsActivity extends AppCompatActivity {
 
         detailsContactWithFamily = findViewById(R.id.detailsContactWithFamily);
         detailRisk = findViewById(R.id.detailsRisk);
+        linearLayout = findViewById(R.id.detailLayout);
 
         detailsPhone = findViewById(R.id.detailsPhone);
         mBtnCall = findViewById(R.id.btnCall);
@@ -124,13 +127,12 @@ public class HealthDetailsActivity extends AppCompatActivity {
         detailsLossOfTasteSymptoms.setText(userHealthData.getLossOfOrDiminishedSenseOfTaste());
         detailsContactWithFamily.setText(userHealthData.getContactWithFamily());
 
-
         if (detailRisk.getText().toString().equalsIgnoreCase("High Risk")) {
             mDisplayOutcome.setText("High risk");
-            mDisplayOutcome.setBackgroundColor(Color.parseColor("#E82815"));
+            linearLayout.setBackgroundColor(Color.parseColor("#E82815"));
         } else {
             mDisplayOutcome.setText("Low risk");
-            mDisplayOutcome.setBackgroundColor(Color.parseColor("#1BE815"));
+            linearLayout.setBackgroundColor(Color.parseColor("#1BE815"));
         }
     }
 
