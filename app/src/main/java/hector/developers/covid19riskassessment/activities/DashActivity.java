@@ -1,4 +1,4 @@
-package hector.developers.covid19riskassessment;
+package hector.developers.covid19riskassessment.activities;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,17 +14,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import hector.developers.covid19riskassessment.Api.RetrofitClient;
-import hector.developers.covid19riskassessment.activities.DashboardActivity;
-import hector.developers.covid19riskassessment.activities.LoginActivity;
-import hector.developers.covid19riskassessment.activities.MainActivity;
-import hector.developers.covid19riskassessment.adapter.UserAdapter;
+import hector.developers.covid19riskassessment.R;
 import hector.developers.covid19riskassessment.adapter.UserHealthAdapter;
 import hector.developers.covid19riskassessment.model.UserHealthData;
-import hector.developers.covid19riskassessment.model.Users;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
