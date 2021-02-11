@@ -141,6 +141,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
+
         mDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -149,9 +150,15 @@ public class UserHealthDataActivity extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         //   store date in string
-                        String sDate = dayOfMonth + "/" + month + "/" + year;
+
+                        month=month+1;
+                        String sDate = month + "/" + dayOfMonth + "/" + year;
                         // set date on view
                         mDate.setText(sDate);
+                        String myFormat = "MM/dd/yy";   //In which you need put here
+                        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+                        mDate.setText(sdf.format(calendar.getTime()));
+
                     }
                 }, year, month, day
                 );
