@@ -52,8 +52,8 @@ public class LoginActivity extends AppCompatActivity {
         String statuss = status.get("status");
         util = new Util();
 
-        sharedPreferences = this.getSharedPreferences("userId", Context.MODE_PRIVATE);
-        editor = sharedPreferences.edit();
+//        sharedPreferences = this.getSharedPreferences("userId", Context.MODE_PRIVATE);
+//        editor = sharedPreferences.edit();
 
         sessionManagement = new SessionManagement(this);
 
@@ -252,6 +252,9 @@ public class LoginActivity extends AppCompatActivity {
                     if (users.getUserType().equalsIgnoreCase("admin")) {
                         Intent adminIntent = new Intent(LoginActivity.this, MainActivity.class);
                         assert response.body() != null;
+                        adminIntent.putExtra("state", users.getState());
+                        saveUserState(users.getState());
+                        System.out.println("users state ,,,," + users.getState());
                         sessionManagement.setLoginEmail(email);
                         sessionManagement.setLoginPassword(password);
                         adminIntent.putExtra("Admin", response.body().getUserType());
@@ -263,19 +266,19 @@ public class LoginActivity extends AppCompatActivity {
                         Intent intent = new Intent(LoginActivity.this, UserHealthDataActivity.class);
                         intent.putExtra("userId ", users.getId());
                         saveUserId(users.getId());
-                        System.out.println("users ,,,," + users.getId());
+                        System.out.println("users ,,,, id" + users.getId());
 
                         intent.putExtra("phone", users.getPhone());
                         saveUserPhone(users.getPhone());
-                        System.out.println("users ,,,," + users.getPhone());
+                        System.out.println("users ,,,, phone" + users.getPhone());
 
                         intent.putExtra("firstname", users.getFirstname());
                         saveUserFirstname(users.getFirstname());
-                        System.out.println("users ,,,," + users.getFirstname());
+                        System.out.println("users ,,,, firstname" + users.getFirstname());
 
                         intent.putExtra("userType", users.getUserType());
                         saveUserType(users.getUserType());
-                        System.out.println("users ,,,," + users.getUserType());
+                        System.out.println("users ,,,, userType" + users.getUserType());
 
                         assert response.body() != null;
                         intent.putExtra("User", response.body().getUserType());
@@ -366,6 +369,14 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences.Editor edit = sharedPreferences.edit();
 //        edit.clear();
         edit.putString("userType", userTypes + "");
+        edit.apply();
+    }
+
+    public void saveUserState(String states) {
+        SharedPreferences sharedPreferences = this.getSharedPreferences("state", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+//        edit.clear();
+        edit.putString("state", states + "");
         edit.apply();
     }
 

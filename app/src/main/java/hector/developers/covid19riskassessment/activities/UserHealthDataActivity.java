@@ -43,7 +43,6 @@ import retrofit2.Response;
 public class UserHealthDataActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private Toolbar mToolbar;
-//    Calendar myCalendar = Calendar.getInstance();
 
     EditText mDate;
 

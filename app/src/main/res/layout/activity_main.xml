@@ -43,6 +43,7 @@
         android:padding="8dp">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/addSupLayout"
             android:layout_width="160dp"
             android:layout_height="120dp"
             android:layout_weight="1"
@@ -50,6 +51,7 @@
             app:cardElevation="2dp">
 
             <RelativeLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="8dp">
@@ -73,6 +75,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/addUserLayout"
             android:layout_width="160dp"
             android:layout_height="120dp"
             android:layout_marginStart="18dp"
@@ -81,6 +84,7 @@
             app:cardElevation="4dp">
 
             <RelativeLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="8dp">
@@ -113,6 +117,7 @@
         android:padding="8dp">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/viewSupLayout"
             android:layout_width="160dp"
             android:layout_height="120dp"
             android:layout_weight="1"
@@ -120,6 +125,7 @@
             app:cardElevation="4dp">
 
             <RelativeLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#F7F9F9"
@@ -144,6 +150,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/viewUsersLayout"
             android:layout_width="160dp"
             android:layout_height="120dp"
             android:layout_marginStart="18dp"
@@ -152,6 +159,7 @@
             app:cardElevation="4dp">
 
             <RelativeLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#F7F9F9"

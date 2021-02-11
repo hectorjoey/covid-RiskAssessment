@@ -102,7 +102,6 @@ public class UserHealthAdapter extends RecyclerView.Adapter<UserHealthAdapter.Vi
         super.onAttachedToRecyclerView(recyclerView);
     }
 
-
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView tvFirstname;
         private TextView tvDate;
