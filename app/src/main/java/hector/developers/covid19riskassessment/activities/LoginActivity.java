@@ -280,6 +280,10 @@ public class LoginActivity extends AppCompatActivity {
                         saveUserType(users.getUserType());
                         System.out.println("users ,,,, userType" + users.getUserType());
 
+                        intent.putExtra("state", users.getState());
+                        saveUserState(users.getState());
+                        System.out.println("users state ,,,," + users.getState());
+
                         assert response.body() != null;
                         intent.putExtra("User", response.body().getUserType());
                         intent.putExtra("state", response.body().getState());
@@ -307,6 +311,10 @@ public class LoginActivity extends AppCompatActivity {
                         intent.putExtra("firstname", users.getFirstname());
                         saveUserFirstname(users.getFirstname());
                         System.out.println("users ,,,," + users.getFirstname());
+
+                        intent.putExtra("state", users.getState());
+                        saveUserState(users.getState());
+                        System.out.println("users state ,,,," + users.getState());
 
                         intent.putExtra("userType", users.getUserType());
                         saveUserType(users.getUserType());

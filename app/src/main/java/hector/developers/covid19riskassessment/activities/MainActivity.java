@@ -22,7 +22,7 @@ import hector.developers.covid19riskassessment.R;
 public class MainActivity extends AppCompatActivity {
     ImageView mImageSup, mImgAddUser, mImageViewSup, mImageViewUser;
     private Toolbar mToolbar;
-    CardView mViewSupLayout, mViewUserLayout, mAddSupLayout, mAddUserLayout;
+    CardView mViewSupLayout, mViewUserLayout, mAddUserLayout;
     private String state;
 
     @Override
@@ -33,12 +33,10 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         setTitle("Admin Dashboard");
 
-        mImageSup = findViewById(R.id.imgAddSup);
         mImgAddUser = findViewById(R.id.imgAddUser);
         mImageViewSup = findViewById(R.id.imgViewSup);
         mImageViewUser = findViewById(R.id.imgViewUser);
-        mAddSupLayout = findViewById(R.id.addUserLayout);
-        mAddSupLayout = findViewById(R.id.addSupLayout);
+        mAddUserLayout = findViewById(R.id.addUserLayout);
         mViewSupLayout = findViewById(R.id.viewSupLayout);
         mViewUserLayout = findViewById(R.id.viewUsersLayout);
 
@@ -46,22 +44,14 @@ public class MainActivity extends AppCompatActivity {
         state = states.get("state");
 
         if (!state.equalsIgnoreCase("Abuja")) {
-            mAddSupLayout.setVisibility(View.INVISIBLE);
+            mViewUserLayout.setVisibility(View.INVISIBLE);
             mViewSupLayout.setVisibility(View.INVISIBLE);
             mViewUserLayout.setVisibility(View.INVISIBLE);
 
         } else {
-            mAddSupLayout.setVisibility(View.VISIBLE);
             mViewSupLayout.setVisibility(View.VISIBLE);
             mViewUserLayout.setVisibility(View.VISIBLE);
         }
-
-        mImageSup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Click on add user to add", Toast.LENGTH_LONG).show();
-            }
-        });
 
         mImgAddUser.setOnClickListener(new View.OnClickListener() {
             @Override

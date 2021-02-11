@@ -61,7 +61,8 @@ public interface Api {
             @Field("firstname") String firstname,
             @Field("phone") String phone,
             @Field("risk") String risk,
-            @Field("userType") String userType
+            @Field("userType") String userType,
+            @Field("state") String state
     );
 
     //the users login call

@@ -56,6 +56,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
     private String userType;
 
     private String risk;
+    private String state;
 
     //global variables
     AtomicInteger sectionOneYes = new AtomicInteger();
@@ -96,6 +97,9 @@ public class UserHealthDataActivity extends AppCompatActivity {
 
         HashMap<String, String> firstnames = getFirstname();
         firstname = firstnames.get("firstname");
+
+        HashMap<String, String> states = getState();
+        state = states.get("state");
 
         HashMap<String, String> userTypes = getUserType();
         userType = userTypes.get("userType");
@@ -236,7 +240,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
                         nauseaOrVomitingSymptom, diarrhoeaSymptoms, fluSymptoms, soreThroatSymptoms,
                         fatigueSymptoms, newOrWorseningCough, difficultyInBreathingSymptom,
                         lossOfSmellSymptoms, lossOfTasteSymptoms, contactWithFamily,
-                        Long.parseLong(userId), firstname, phone, risk, userType
+                        Long.parseLong(userId), firstname, phone, risk, userType, state
                 );
             }
         });
@@ -296,7 +300,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
                                        String diarrhoeaSymptom, String fluSymptom, String soreThroatSymptom,
                                        String fatigueSymptom, String newOrWorseningCough, String difficultyInBreathing,
                                        String lossOfOrDiminishedSenseOfSmell, String lossOfOrDiminishedSenseOfTaste,
-                                       String contactWithFamily, Long userId, String firstname, String phone, String risk, String userType) {
+                                       String contactWithFamily, Long userId, String firstname, String phone, String risk, String userType, String state) {
         //making api calls
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Sending Data...");
@@ -314,7 +318,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
                         fluSymptom, soreThroatSymptom,
                         fatigueSymptom, newOrWorseningCough, difficultyInBreathing,
                         lossOfOrDiminishedSenseOfSmell, lossOfOrDiminishedSenseOfTaste, contactWithFamily,
-                        userId, firstname, phone, risk, userType);
+                        userId, firstname, phone, risk, userType, state);
         call.enqueue(new Callback<UserHealthData>() {
             @Override
             public void onResponse(Call<UserHealthData> call, Response<UserHealthData> response) {
@@ -400,6 +404,13 @@ public class UserHealthDataActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = this.getSharedPreferences("firstname", Context.MODE_PRIVATE);
         firstnames.put("firstname", sharedPreferences.getString("firstname", null));
         return firstnames;
+    }
+
+    private HashMap<String, String> getState() {
+        HashMap<String, String> states = new HashMap<>();
+        SharedPreferences sharedPreferences = this.getSharedPreferences("state", Context.MODE_PRIVATE);
+        states.put("state", sharedPreferences.getString("state", null));
+        return states;
     }
 
     private HashMap<String, String> getUserType() {
