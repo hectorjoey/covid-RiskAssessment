@@ -52,8 +52,8 @@ public class LoginActivity extends AppCompatActivity {
         String statuss = status.get("status");
         util = new Util();
 
-//        sharedPreferences = this.getSharedPreferences("userId", Context.MODE_PRIVATE);
-//        editor = sharedPreferences.edit();
+        sharedPreferences = this.getSharedPreferences("userId", Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
 
         sessionManagement = new SessionManagement(this);
 
