@@ -6,30 +6,21 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
-import org.json.JSONObject;
-
 import java.util.HashMap;
 
-import hector.developers.covid19riskassessment.Api.RetrofitClient;
+import hector.developers.covid19riskassessment.api.RetrofitClient;
 import hector.developers.covid19riskassessment.R;
 import hector.developers.covid19riskassessment.model.Users;
 import hector.developers.covid19riskassessment.utils.SessionManagement;

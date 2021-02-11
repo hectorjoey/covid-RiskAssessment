@@ -1,6 +1,4 @@
-package hector.developers.covid19riskassessment.Api;
-
-import com.google.gson.JsonObject;
+package hector.developers.covid19riskassessment.api;
 
 import java.util.List;
 
@@ -9,7 +7,6 @@ import hector.developers.covid19riskassessment.model.UserHealthData;
 import hector.developers.covid19riskassessment.model.Users;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
-import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -92,40 +89,13 @@ public interface Api {
     @GET("users/{id}")
     Call<List<Users>> getUsersById(@Path("id") Long id);
 
-    //supervisors Login
-    @FormUrlEncoded
-    @POST("supLogin")
-    Call<Supervisor> supLogin(
-            @Field("email") String email,
-            @Field("password") String password
-    );
-
-    
-
-    //create supervisor
-    @FormUrlEncoded
-    @POST("supervisors")
-    Call<ResponseBody> createSupervisor(
-            @Field("firstname") String firstname,
-            @Field("lastname") String lastname,
-            @Field("phone") String phone,
-            @Field("email") String email,
-            @Field("password") String password,
-            @Field("userType") String userType,
-            @Field("state") String state,
-            @Field("designation") String designation);
-
-    //fetching users by supervisor Id
-    @GET("user/{supervisorId}")
-    Call<List<Users>> getUsersBySupervisorId(@Path("supervisorId") String supervisorId);
-
-    //fetching user health data
-    @GET("userHealthData/{userId}")
-    Call<List<UserHealthData>> getUserHealthByUserId(@Path("userId") Long userId);
-
-    //fetching all supervisors
-    @GET("supervisors")
-    Call<List<Supervisor>> getSupervisors();
+//    //fetching users by supervisor Id
+//    @GET("user/{supervisorId}")
+//    Call<List<Users>> getUsersBySupervisorId(@Path("supervisorId") String supervisorId);
+//
+//    //fetching user health data
+//    @GET("userHealthData/{userId}")
+//    Call<List<UserHealthData>> getUserHealthByUserId(@Path("userId") Long userId);
 
     @GET("userHealthdata/{userId}")
     Call<List<UserHealthData>> getUserHealthDataBySupervisorId(@Path("userId") String userId);

@@ -17,7 +17,6 @@
         android:theme="@style/Theme.Covid19RiskAssessment">
         <activity android:name=".activities.DashActivity" />
         <activity android:name=".activities.DetailsActivity" />
-        <activity android:name=".activities.SupervisorListActivity" />
         <activity android:name=".activities.HealthDetailsActivity" />
         <activity
             android:name=".activities.SupervisorActivity"

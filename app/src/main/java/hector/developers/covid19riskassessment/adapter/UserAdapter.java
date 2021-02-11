@@ -69,10 +69,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvFirstName;
-        private TextView tvEmail;
+        private final TextView tvFirstName;
+        private final TextView tvEmail;
 //        private TextView tvDesignation;
-        private TextView tvUserType;
+        private final TextView tvUserType;
         CardView cardView;
 
 

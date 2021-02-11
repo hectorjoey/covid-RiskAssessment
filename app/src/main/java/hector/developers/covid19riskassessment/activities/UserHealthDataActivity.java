@@ -6,18 +6,13 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -33,16 +28,14 @@ import androidx.appcompat.widget.Toolbar;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import hector.developers.covid19riskassessment.Api.RetrofitClient;
+import hector.developers.covid19riskassessment.api.RetrofitClient;
 import hector.developers.covid19riskassessment.R;
 import hector.developers.covid19riskassessment.model.UserHealthData;
-import hector.developers.covid19riskassessment.model.Users;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -151,7 +144,7 @@ public class UserHealthDataActivity extends AppCompatActivity {
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         //   store date in string
 
-                        month=month+1;
+                        month = month + 1;
                         String sDate = month + "/" + dayOfMonth + "/" + year;
                         // set date on view
                         mDate.setText(sDate);

@@ -1,4 +1,4 @@
-package hector.developers.covid19riskassessment.Api;
+package hector.developers.covid19riskassessment.api;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

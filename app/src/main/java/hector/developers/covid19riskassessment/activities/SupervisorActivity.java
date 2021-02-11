@@ -1,7 +1,6 @@
 package hector.developers.covid19riskassessment.activities;
 
 import android.app.ProgressDialog;
-import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,7 +9,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.ColorSpace;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Bundle;
@@ -39,7 +37,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-import hector.developers.covid19riskassessment.Api.RetrofitClient;
+import hector.developers.covid19riskassessment.api.RetrofitClient;
 import hector.developers.covid19riskassessment.R;
 import hector.developers.covid19riskassessment.adapter.UserHealthAdapter;
 import hector.developers.covid19riskassessment.model.UserHealthData;

@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import hector.developers.covid19riskassessment.Api.RetrofitClient;
+import hector.developers.covid19riskassessment.api.RetrofitClient;
 import hector.developers.covid19riskassessment.R;
 import hector.developers.covid19riskassessment.adapter.UserHealthAdapter;
 import hector.developers.covid19riskassessment.model.UserHealthData;
