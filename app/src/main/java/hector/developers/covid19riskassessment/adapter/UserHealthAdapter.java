@@ -66,6 +66,7 @@ public class UserHealthAdapter extends RecyclerView.Adapter<UserHealthAdapter.Vi
         holder.tvFirstname.setText(userHealthData.getFirstname());
         holder.tvDate.setText(userHealthData.getDate());
         holder.tvRisk.setText(userHealthData.getRisk());
+        holder.tvState.setText(userHealthData.getState());
 
 
         holder.cardView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_scale));
@@ -101,12 +102,14 @@ public class UserHealthAdapter extends RecyclerView.Adapter<UserHealthAdapter.Vi
         private TextView tvDate;
         private CardView cardView;
         private TextView tvRisk;
+        private TextView tvState;
 
         public ViewHolder(View itemView) {
             super(itemView);
             tvFirstname = itemView.findViewById(R.id.tvUserFirstname);
             tvDate = itemView.findViewById(R.id.tvDate);
             tvRisk = itemView.findViewById(R.id.tvRisk);
+            tvState = itemView.findViewById(R.id.tvDState);
             cardView = itemView.findViewById(R.id.cardView);
         }
     }

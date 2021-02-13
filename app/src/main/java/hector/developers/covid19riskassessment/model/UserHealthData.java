@@ -82,6 +82,8 @@ public class UserHealthData implements Serializable {
     private String phone;
     private String userType;
 
+    private String state;
+
     public UserHealthData() {
     }
 
@@ -281,5 +283,13 @@ public class UserHealthData implements Serializable {
 
     public void setUserType(String userType) {
         this.userType = userType;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 }

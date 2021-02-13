@@ -251,7 +251,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 JSONObject json_data = response.getJSONObject(i);
                                 id = json_data.getString("id");
                                 userType = json_data.getString("userType");
-                                if (userType.equalsIgnoreCase("supervisor") || userType.equalsIgnoreCase("ADMIN")) {
+                                if (userType.equalsIgnoreCase("supervisor") || userType.equals("ADMIN")) {
                                     firstname = json_data.getString("firstname");
                                     Long id = json_data.getLong("id");
                                     Log.d("resp4", "id: " + id + " firstname: " + firstname);
