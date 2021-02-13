@@ -20,7 +20,7 @@ import java.util.HashMap;
 import hector.developers.covid19riskassessment.R;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView mImageSup, mImgAddUser, mImageViewSup, mImageViewUser;
+    ImageView mImageSup, mImgAddUser, mImageViewResults, mImageViewUser;
     private Toolbar mToolbar;
     CardView mViewSupLayout, mViewUserLayout, mAddUserLayout;
     private String state;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setTitle("Admin Dashboard");
 
         mImgAddUser = findViewById(R.id.imgAddUser);
-        mImageViewSup = findViewById(R.id.imgViewSup);
+        mImageViewResults = findViewById(R.id.imgResults);
         mImageViewUser = findViewById(R.id.imgViewUser);
         mAddUserLayout = findViewById(R.id.addUserLayout);
         mViewSupLayout = findViewById(R.id.viewSupLayout);
@@ -62,12 +62,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mImageViewSup.setOnClickListener(new View.OnClickListener() {
+        mImageViewResults.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Try again!", Toast.LENGTH_SHORT).show();
-//              Intent intent = new Intent(getApplicationContext(), DashActivity.class);
-//              startActivity(intent);
+//                Toast.makeText(getApplicationContext(), "Try again!", Toast.LENGTH_SHORT).show();
+              Intent intent = new Intent(getApplicationContext(), DashActivity.class);
+              startActivity(intent);
                 finish();
             }
         });

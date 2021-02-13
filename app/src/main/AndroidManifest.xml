@@ -38,8 +38,8 @@
         <activity android:name=".activities.HighRiskActivity" />
         <activity android:name=".activities.LowRiskActivity" />
         <activity android:name=".activities.MainActivity" />
-        <activity android:name=".activities.SplashActivity" />
-        <activity android:name=".activities.LoginActivity">
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

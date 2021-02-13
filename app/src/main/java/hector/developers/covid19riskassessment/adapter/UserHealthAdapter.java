@@ -32,12 +32,6 @@ public class UserHealthAdapter extends RecyclerView.Adapter<UserHealthAdapter.Vi
     List<UserHealthData> userHealthDataList1;
     Context context;
 
-    //getting current date and time using Date class
-    @SuppressLint("SimpleDateFormat")
-    DateFormat df = new SimpleDateFormat("MM/dd/yy");
-    Date currentDate = new Date();
-
-
     //private UserHealthAdapterListener listener;
     public UserHealthAdapter(Context context, List<UserHealthData> userHealthDataList) {
         this.userHealthDataList = userHealthDataList;

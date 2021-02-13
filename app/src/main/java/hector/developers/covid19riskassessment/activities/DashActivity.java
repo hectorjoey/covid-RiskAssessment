@@ -4,11 +4,13 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -25,9 +27,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DashActivity extends AppCompatActivity {
-
-
-ProgressDialog loadingBar;
+    SwipeRefreshLayout swipeRefreshLayout;
+    ProgressDialog loadingBar;
     private RecyclerView rv;
     private List<UserHealthData> userHealthDataList;
     private UserHealthAdapter adapter;
@@ -38,12 +39,37 @@ ProgressDialog loadingBar;
         setContentView(R.layout.activity_dash);
 
         rv = findViewById(R.id.recyclerView);
+        swipeRefreshLayout = findViewById(R.id.swipeRef);
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
         loadingBar = new ProgressDialog(this);
         fetchData();
-    }
 
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Your code here
+                fetchData();
+                Toast.makeText(getApplicationContext(), "Refreshing List!", Toast.LENGTH_LONG).show();
+                // To keep animation for 4 seconds
+                new Handler().postDelayed(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        // Stop animation (This will be after 3 seconds)
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                }, 4000); // Delay in millis
+            }
+        });
+        // Scheme colors for animation
+        swipeRefreshLayout.setColorSchemeColors(
+                getResources().getColor(android.R.color.holo_blue_bright),
+                getResources().getColor(android.R.color.holo_green_light),
+                getResources().getColor(android.R.color.holo_orange_light),
+                getResources().getColor(android.R.color.holo_red_light)
+        );
+    }
 
     private void fetchData() {
         Call<List<UserHealthData>> call = RetrofitClient
@@ -57,7 +83,7 @@ ProgressDialog loadingBar;
                 userHealthDataList = response.body();
                 System.out.println("Respondingg >>>>" + userHealthDataList);
                 System.out.println("Respondingg ++++++" + response);
-                adapter = new UserHealthAdapter( DashActivity.this, userHealthDataList);
+                adapter = new UserHealthAdapter(DashActivity.this, userHealthDataList);
                 System.out.println(adapter);
                 rv.setAdapter(adapter);
             }
