@@ -6,6 +6,8 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class Users implements Serializable {
+
+
     private Long id;
 
     @SerializedName("firstname")
@@ -32,6 +34,10 @@ public class Users implements Serializable {
     @Expose
     private String password;
 
+    @SerializedName("age")
+    @Expose
+    private  String age;
+
     @SerializedName("userType")
     @Expose
     private String userType;
@@ -44,6 +50,14 @@ public class Users implements Serializable {
     @Expose
     private String state;
 
+    @SerializedName("lga")
+    @Expose
+    private String lga;
+
+    @SerializedName("address")
+    @Expose
+    private String address;
+
     private String enabled;
 
     @SerializedName("supervisedBy")
@@ -54,7 +68,7 @@ public class Users implements Serializable {
     }
 
     public Users(Long id, String firstname, String lastname, String phone, String designation,
-                 String email, String password, String userType, String gender, String state, String enabled, String supervisedBy) {
+                 String email, String password, String userType, String gender, String state, String address, String enabled, String supervisedBy) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -65,8 +79,25 @@ public class Users implements Serializable {
         this.userType = userType;
         this.gender = gender;
         this.state = state;
+        this.address = address;
         this.enabled = enabled;
         this.supervisedBy = supervisedBy;
+    }
+
+
+    public Users(String firstname, String lastname, String age, String designation, String phone, String email,
+                 String gender, String address, String state, String lga) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.phone = phone;
+        this.designation = designation;
+        this.email = email;
+        this.gender = gender;
+        this.state = state;
+        this.address = address;
+        this.age = age;
+        this.lga = lga;
+
     }
 
     public Long getId() {
@@ -163,5 +194,29 @@ public class Users implements Serializable {
 
     public void setSupervisedBy(String supervisedBy) {
         this.supervisedBy = supervisedBy;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getLga() {
+        return lga;
+    }
+
+    public void setLga(String lga) {
+        this.lga = lga;
     }
 }

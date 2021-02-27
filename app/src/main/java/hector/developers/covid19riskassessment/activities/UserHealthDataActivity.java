@@ -39,7 +39,6 @@ import hector.developers.covid19riskassessment.model.UserHealthData;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
 public class UserHealthDataActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private Toolbar mToolbar;

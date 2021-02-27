@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Covid19RiskAssessment">
+       <activity android:name=".activities.UpdateUserActivity"/>
         <activity android:name=".activities.DashActivity" />
         <activity android:name=".activities.DetailsActivity" />
         <activity android:name=".activities.HealthDetailsActivity" />
@@ -33,12 +34,12 @@
         <activity android:name=".activities.DashboardActivity" />
         <activity android:name=".activities.UserHealthDataActivity" />
         <activity
-            android:name=".activities.RegisterActivity"
+            android:name=".activities.LoginActivity"
             android:parentActivityName=".activities.DashboardActivity" />
         <activity android:name=".activities.HighRiskActivity" />
         <activity android:name=".activities.LowRiskActivity" />
         <activity android:name=".activities.MainActivity" />
-        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.RegisterActivity" />
         <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

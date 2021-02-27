@@ -51,18 +51,16 @@ public class RegisterActivity extends AppCompatActivity {
     EditText mFirstname, mLastname, mEmail, mPassword, mDesignation, mPhone, mAddress;
     Button mButtonRegister;
     Spinner mUserTypeSpinner, mStateSpinner, mLgaSpinner,
-            mGender, mSupervisorSpinner;
+            mGender;
+    //    ArrayAdapter<String> adapter;
+    String id, firstname, userType;
     private ProgressDialog loadingBar;
     private String mState, mLga, mAge, mSupervisor;
     private List<String> states;
-
     private Spinner mAgeSpinner;
     private SearchableSpinner spSupervisor;
     private SmartMaterialSpinner spEmptyItem;
     private List<String> supervisorsList;
-    ArrayAdapter<String> adapter;
-    String id, firstname, stateName, userType;
-
     private Util util;
 
     private SwipeRefreshLayout swipeRefresh;
@@ -160,22 +158,22 @@ public class RegisterActivity extends AppCompatActivity {
                         mLastname.requestFocus();
                         return;
                     }
-                    if (TextUtils.isEmpty(phone)) {
-                        mPhone.setError("Phone number is required!");
-                        mPhone.requestFocus();
-                        return;
-                    }
+//                    if (TextUtils.isEmpty(phone)) {
+//                        mPhone.setError("Phone number is required!");
+//                        mPhone.requestFocus();
+//                        return;
+//                    }
 
                     if (TextUtils.isEmpty(email)) {
                         mEmail.setError("Email is required!");
                         mEmail.requestFocus();
                         return;
                     }
-                    if (TextUtils.isEmpty(address)) {
-                        mAddress.setError("Address is required!");
-                        mAddress.requestFocus();
-                        return;
-                    }
+//                    if (TextUtils.isEmpty(address)) {
+//                        mAddress.setError("Address is required!");
+//                        mAddress.requestFocus();
+//                        return;
+//                    }
 
                     if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                         mEmail.setError("Enter a valid email!");
@@ -191,10 +189,13 @@ public class RegisterActivity extends AppCompatActivity {
                     if (password.length() < 6) {
                         mPassword.setError("Password length is too short!");
                         mPassword.requestFocus();
+                        return;
                     }
-                    if (TextUtils.isEmpty(designation)) {
-                        mDesignation.setError("Designation is required!");
-                    }
+//                    if (TextUtils.isEmpty(designation)) {
+//                        mDesignation.setError("Designation is required!");
+//                        mDesignation.requestFocus();
+//                        return;
+
                     HashMap<String, String> id = getId();
                     String id1 = id.get("id");
 

@@ -1,17 +1,25 @@
 package hector.developers.covid19riskassessment.api;
 
+import java.util.HashMap;
 import java.util.List;
 
 import hector.developers.covid19riskassessment.model.Supervisor;
 import hector.developers.covid19riskassessment.model.UserHealthData;
 import hector.developers.covid19riskassessment.model.Users;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
+import retrofit2.http.Multipart;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 
 public interface Api {
@@ -33,6 +41,59 @@ public interface Api {
             @Field("state") String state,
             @Field("lga") String lga,
             @Field("supervisedBy") String supervisedBy);
+
+
+//    @FormUrlEncoded
+//    @PATCH("user/{id}")
+//    Call<Users> updateUser(
+//            @Path("id")Long id,
+//            @Field("firstname") String firstname,
+//            @Field("lastname") String lastname,
+//            @Field("age") String age,
+//            @Field("designation") String designation,
+//            @Field("phone") String phone,
+//            @Field("email") String email,
+////            @Field("password") String password,
+////            @Field("userType") String userType,
+//            @Field("gender") String gender,
+//            @Field("address") String address,
+//            @Field("state") String state,
+//            @Field("lga") String lga
+//    );
+
+
+    @Headers({"Accept: application/json"})
+    @Multipart
+    @PATCH("user/{id}")
+    Call<Users> updateUser(@Path("id") Long id,
+//                           @Part("firstname") RequestBody firstname,
+//                           @Part("lastname") RequestBody lastname,
+                           @Part("age") RequestBody age,
+                           @Part("phone") RequestBody phone,
+//                           @Part("email") RequestBody email,
+                           @Part("gender") RequestBody gender,
+                           @Part("address") RequestBody address,
+
+                           @Part("state") RequestBody state,
+                           @Part("lga") RequestBody lga
+
+    );
+
+    @Headers({"Accept: application/json"})
+    @Multipart
+    @PATCH("user/{id}")
+    Call<Users> updateUser1(@Path("id") Long id,
+                            @Field("firstname") String firstname,
+                            @Field("lastname") String lastname,
+                            @Field("age") String age,
+                            @Field("designation") String designation,
+                            @Field("phone") String phone,
+                            @Field("email") String email,
+                            @Field("gender") String gender,
+                            @Field("address") String address,
+                            @Field("state") String state,
+                            @Field("lga") String lga
+    );
 
     @FormUrlEncoded
     @POST("userHealthData")
@@ -73,10 +134,6 @@ public interface Api {
             @Field("email") String email,
             @Field("password") String password
     );
-//    @Headers({"Accept: application/json"})
-//    @POST("login")
-//    Call<JsonObject> login2(@Body JsonObject jsonObject
-//    );
 
     //fetching all users
     @GET("users")

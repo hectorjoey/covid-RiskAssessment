@@ -99,6 +99,7 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:visibility="gone"
                 android:fontFamily="sans-serif-condensed"
                 android:padding="4dp"
                 android:text="@string/age"
@@ -111,6 +112,7 @@
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
+                android:visibility="gone"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/et_custom" />
@@ -125,6 +127,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textPhone"
                 android:layout_width="match_parent"
+                android:visibility="gone"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 app:errorEnabled="true">
@@ -135,6 +138,7 @@
                     android:layout_height="70dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
+
                     android:layout_marginBottom="8dp"
                     android:background="@drawable/et_custom"
                     android:hint="Phone"
@@ -147,6 +151,7 @@
                 android:id="@+id/addressInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:layout_marginTop="6dp"
                 app:errorEnabled="true">
 
@@ -265,6 +270,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:visibility="gone"
                     android:orientation="vertical"
                     android:padding="4dp">
 
@@ -297,6 +303,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="8dp"
+                android:visibility="gone"
                 android:background="@drawable/et_custom"
                 android:orientation="horizontal"
                 tools:ignore="DisableBaselineAlignment">
@@ -404,7 +411,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="40dp"
                 android:background="@drawable/registration_button"
-                android:text="Register"
+                android:text="Save"
                 android:textAllCaps="false" />
         </LinearLayout>
     </ScrollView>
